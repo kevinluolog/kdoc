@@ -1,9 +1,15 @@
 ###
 MY
 ---
+-repoType:001test
+git@github.com:kevinluolog/test.git
+git@github.com:kevinluolog/test1.git
+
+-repoType:002work
 git@github.com:kevinluolog/kdoc.git
 git@github.com:kevinluolog/kprj.git
 https://github.com/kevinluolog/kprj.git
+
 
 ---
 
