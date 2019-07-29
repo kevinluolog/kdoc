@@ -1,6 +1,7 @@
 ###
 MY
 ---
+github www.github.com
 -repoType:001test
 git@github.com:kevinluolog/test.git
 git@github.com:kevinluolog/test1.git
@@ -10,9 +11,17 @@ git@github.com:kevinluolog/kdoc.git
 git@github.com:kevinluolog/kprj.git
 https://github.com/kevinluolog/kprj.git
 
+https://www.atlassian.com/software
+www.bitbucket.org
+---
+git@bitbucket.org:kevinluolog/test.git
+git@bitbucket.org:kevinluolog/test1.git
+git@bitbucket.org:kevinluolog/kdoc.git
+git@bitbucket.org:kevinluolog/prj.git
+
+
 
 ---
-
 echo "# kdoc" >> README.md
 git init
 git add README.md
