@@ -1,0 +1,64 @@
+﻿---
+sublime
+---
+---
+basic information
+1.website
+- main page:
+
+
+- package get:
+
+- help:
+
+- tutorial:
+
+
+---
+package control install:
+portable sublime 缺省没有安装，可2个方法安装
+1.tools-package control install
+装完此菜单消失，preferences出现->package setting; ->package control
+2.https://packagecontrol.io/installation
+在页面查看2种另外的方法，自动和手动
+
+---
+sublimegit package install:
+tools-command palette ctl+shift+p
+pci package control install
+等待载入package information,然后在命令行输入sublimeGit
+安装完后，在
+preference->package Settings-> 此处出现安装的sublimeGit
+同时在
+preference->package settings-> package control -> user setting 中可以看到已经增加选项
+
+---
+sumlimeGit usage:
+https://sublimegit.readthedocs.io/en/latest/
+
+【下面的有些问题，看readthedocs就可以了】
+full tutorial, go to:
+https://docs.sublimegit.net/tutorial.html
+how to get set up:
+https://docs.sublimegit.net/quickstart.html
+
+
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+

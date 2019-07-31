@@ -44,9 +44,39 @@ git@github.com:apachecn/AiLearning.git
 	url = git@github.com:exercism/go.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
 
----
+Stock analysis/prediction model using machine learning
+https://github.com/ltnguyen14/Quant_stock.git
 
+一个通过设定选股条件来帮我们筛选股票的python程序
+https://github.com/cat-steel/stock_pick.git
+
+30天掌握量化交易 (持续更新)
+https://github.com/Rockyzsu/stock.git
+
+每月定投ETF基金的模拟买卖程序，辅以二十日线为买卖标准
+https://github.com/SteveWongBUAA/stock
+
+量化投资中各类指标的择时策略的实现，基于JoinQuant回测平台。
+https://github.com/yeates/StockTimingStrategy
+
+predict the price trend of individual stocks using deep learning and natural language processing
+https://github.com/ddddwy/StockForecast
 ---
+machine learning deep learning
+
+Content for Udacity's Machine Learning curriculum
+https://github.com/udacity/machine-learning
+---
+python
+Code to exercise your Python knowledge.
+https://github.com/manahl/PythonTrainingExercises
+
+Lecture and training materials for a 10-session Internet Programming with Python course
+https://github.com/cewing/training.python_web
+
+A Python for Analysts Training course
+https://github.com/Tommo565/python-for-analysts
+
 
 ---
 
