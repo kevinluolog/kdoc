@@ -1,4 +1,4 @@
------
+﻿-----
 sumary command
 -----
 1.ssh
@@ -42,18 +42,18 @@ git config --global core.editor "'E:\E-ProgramFiles\Sublime3207portable\sublime_
 
 -------------
 
-�鿴������Զ�˲ֿ�
+查看关联的远端仓库
 $ git remote
 origin
 $ git remote -v
 origin https://github.com/schacon/ticgit (fetch)
 origin https://github.com/schacon/ticgit (push)
 
-��ô������Զ�˺ͱ��زֿ�
-clone ��ʽ���� ��origin
+怎么关联的远端和本地仓库
+clone 隐式关联 到origin
 $ git clone https://github.com/schacon/ticgit
 
-add ��ʽ��������
+add 显式关联名字
 $ git remote
 origin
 $ git remote add pb https://github.com/paulboone/ticgit
@@ -63,7 +63,7 @@ origin https://github.com/schacon/ticgit (push)
 pb https://github.com/paulboone/ticgit (fetch)
 pb https://github.com/paulboone/ticgit (push)
 
-����ʽ�ϴ���Զ�˲ֿ�
+创建式上传到远端仓库
 run git remote add <shortname> <url>:
 $ git remote
 origin
@@ -77,114 +77,114 @@ pb https://github.com/paulboone/ticgit (push)
 git remote add 001test https://github.com/kevinluolog/test.git
 
 
-�ش�ʽ�ϴ���Զ�˲ֿ� ĳ��֧
+回传式上传到远端仓库 某分支
 git push <remote> <branch>.
 $ git push origin master
 
-ȡ���޶˲ֿ�ĸ���
+取回无端仓库的更新
 $ git fetch pb
 
-�鿴Զ�˲ֿ�
+查看远端仓库
 git remote show <remote>
 ---
 
-GitHub ������ϸ�̳�
+GitHub 新手详细教程
 https://blog.csdn.net/Hanani_Jia/article/details/77950594
 
-1.��װGit��
-msysgit�� windows���Git,���£�
-��Ҫ����������һ����Ȼ�����Ĭ�ϰ�װ���ɡ���װ��ɺ��ڿ�ʼ�˵������ҵ� "Git --> Git Bash",���£�
+1.安装Git？
+msysgit是 windows版的Git,如下：
+需要从网上下载一个，然后进行默认安装即可。安装完成后，在开始菜单里面找到 "Git --> Git Bash",如下：
 
-2.SSH key������������ҳ��������
-����Ҫ�ڱ��ش���һ��ssh key �����Ŀ�ľ�����������Ҫ��������ϻ��һ���ܳ�
+2.SSH key创建并填入网页版设置中
+首先要在本地创建一个ssh key 这个的目的就是你现在需要在你电脑上获得一个密匙
 $ ssh-keygen -t rsa-C "your_email@youremail.com"
-id_rsa��˽Կ������й¶��ȥ��id_rsa.pub�ǹ�Կ�����Է��ĵظ����κ��ˡ�
-�ܳ��Ѿ��ɹ������ˡ����������Ҫȥ���ո���ʾ�Ĵ洢λ�ô����������е����ݸ��Ƴ�����
-��¼�����GitHub�ϱ�����id_rsa.pub�ļ�������,����, personal setting->SSH and GPG keys->SSH keys
+id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+密匙已经成功创建了。现在你就需要去他刚刚显示的存储位置打开它，把其中的内容复制出来。
+登录到你的GitHub上边添加id_rsa.pub文件的内容,公匙, personal setting->SSH and GPG keys->SSH keys
 
 
 
-�ͻ��˼���
-Ȼ��������룬������Ƿ�ɹ��󶨡�
+客户端检验
+然后下面代码，来检查是否成功绑定。
 $ ssh -T git@github.com
 
-�����ÿͻ���
+简单设置客户端
 $ git config --global user.name "your name"
 $ git config --global user.email "your email@email.com"
 
 3.clone repository
-3.1 ����repository
-3.1.1��ҳ�д���repository
-�ڿⴴ�����֮�� ����һ����ַ��������ҳ�С�
+3.1 创建repository
+3.1.1网页中创建repository
+在库创建完成之后 会有一个网址出现在网页中。
 
-3.1.2�ͻ��������repository���ȴ���Ŀ¼������init����ת�ɲֿ�
+3.1.2客户端命令创建repository，先创建目录，再用init命令转成仓库
 $ cd www
 $ mkdir testgit
 $ cd testgit
 $ pwd
 /D/www/testgit
 $ git init
-pwd ������������ʾ��ǰ��Ŀ¼��
-- ͨ������ git init �����Ŀ¼���git���Թ����Ĳֿ⣬���£�
-��ʱ���㵱ǰtestgitĿ¼�»����һ��.git��Ŀ¼�����Ŀ¼��Git�����ٹ����汾�ģ�û��ǧ��Ҫ�ֶ��Ҹ����Ŀ¼������ļ������򣬻��git�ֿ���ƻ��ˡ�
+pwd 命令是用于显示当前的目录。
+- 通过命令 git init 把这个目录变成git可以管理的仓库，如下：
+这时候你当前testgit目录下会多了一个.git的目录，这个目录是Git来跟踪管理版本的，没事千万不要手动乱改这个目录里面的文件，否则，会把git仓库给破坏了。
 
-3.1 �ͻ���clone���������ҳ������repositoryҪclone����
-�����Ҫ����Ĳֿ��¡���������ص����У������Ժ�����ϴ����롣
-��git bash��λ��d����
-��git bash������ cd /D ע��������һ��Ҫ�Ǵ�д���粻���������� ����git bash��λ�Ļ���Ĭ�ϵı����ļ�λ������c���С�
+3.1 客户端clone，如果是网页创建的repository要clone下来
+下面就要将你的仓库克隆下来到本地电脑中，方便以后进行上传代码。
+将git bash定位在d盘中
+在git bash中输入 cd /D 注意盘名字一定要是大写。如不输入这个语句 不给git bash定位的话，默认的本地文件位置是在c盘中。
 
-git clone��ߵ���ַ�����㴴����ɹ�֮�����ַ
+git clone后边的网址就是你创建库成功之后的网址
 $ git clone https://github/xxx/test.git
-D�����Ѿ������ҵĿ������������ļ����ˡ�
+D盘中已经有以我的库名所创建的文件夹了。
 
-ת��git clone����Ŀ¼ test
+转到git clone创建目录 test
 cd D/TEST
 
-4 �汾����
-4.1.�����汾
-�ֹ���Ŀ¼D/test�����ļ�
-��һ����ʹ������ git add xx.xx���ӵ��ݴ�������ȥ��
-���� git add test.txt
+4 版本管理
+4.1.新增版本
+手工在目录D/test创建文件
+第一步：使用命令 git add xx.xx添加到暂存区里面去。
+输入 git add test.txt
 
-�ڶ����������� git commit����Git�����ļ��ύ���ֿ⡣
-���� git commit -m "cc"  �����ڵ����ݿ�������Ķ������������˼�� ����ո��ϴ����ļ�һ����ע��������Ҽ������
+第二步：用命令 git commit告诉Git，把文件提交到仓库。
+输入 git commit -m "cc"  引号内的内容可以随意改动，这个语句的意思是 给你刚刚上传的文件一个备注，方便查找记忆而已
 
-Ȼ��������git push origin master ֮������һ�����棬�������½��֮ǰע���GitHub�˺�֮����login��
+然后在输入git push origin master 之后会出现一个界面，在这里登陆你之前注册的GitHub账号之后点击login。
 
-��֮����ֻ��Ҫ����Ĵ��룬�ŵ���Ķ�Ӧ���ļ����У�Ȼ��ʹ�ã�git add ��git commit -m "   " �����git push origin master������Ĵ����ύ�Ϳ����ˡ�
+再之后，你只需要将你的代码，放到库的对应的文件夹中，然后使用，git add 、git commit -m "   " 、最后git push origin master，将你的代码提交就可以了。
 
-����ͨ������git status���鿴�Ƿ����ļ�δ�ύ:
-���������뿴��readme.txt�ļ����׸���ʲô���ݣ���β鿴�أ�����ʹ���������
+可以通过命令git status来查看是否还有文件未提交:
+接下来我想看下readme.txt文件到底改了什么内容，如何查看呢？可以使用如下命令：
 git diff readme.txt
 
-4.2.�汾����
-4.2.1 �鿴�޸���ʷ
-�Ѿ���readme.txt�ļ����������޸��ˣ���ô��������鿴����ʷ��¼����β��أ��������ڿ���ʹ������ git log 
-�����������ʾ����Ϣ̫��Ļ������ǿ���ʹ������ git log �Cpretty=oneline ��ʾ���£�
+4.2.版本回退
+4.2.1 查看修改历史
+已经对readme.txt文件做了三次修改了，那么我现在想查看下历史记录，如何查呢？我们现在可以使用命令 git log 
+如果嫌上面显示的信息太多的话，我们可以使用命令 git log –pretty=oneline 演示如下：
 
-4.2.2 �汾���˲�������
-4.2.2.1. git reset  --hard HEAD^ ���˵��ϸ��汾
-���˵����ϸ��汾ֻ���HEAD^ �ĳ� HEAD^^ �Դ����ơ�
+4.2.2 版本回退操作命令
+4.2.2.1. git reset  --hard HEAD^ 回退到上个版本
+回退到上上个版本只需把HEAD^ 改成 HEAD^^ 以此类推。
 
 4.2.2.2. git reset  --hard HEAD~100
-���˵�ǰ100���汾
+回退到前100个版本
 
-4.2.2.3.ͨ���汾�Ż���
-git reset  --hard �汾��
+4.2.2.3.通过版本号回退
+git reset  --hard 版本号
 
-��ôȡ���汾�ţ�
-ͨ����������ɻ�ȡ���汾�ţ�git reflog
-git reset  --hard 6fcfc89���ָ���
+怎么取到版本号？
+通过如下命令即可获取到版本号：git reflog
+git reset  --hard 6fcfc89来恢复了
 
-5.Git�����޸ĺ�ɾ���ļ�����
-5.1 git checkout  --  readme.txt,������ʾ��
-���� git checkout --readme.txt ��˼���ǣ���readme.txt�ļ��ڹ����������޸�ȫ��������������2����������£�
-readme.txt�Զ��޸ĺ󣬻�û�зŵ��ݴ�����ʹ�� �����޸ľͻص��Ͱ汾��һģһ����״̬��
-����һ����readme.txt�Ѿ������ݴ����ˣ������������޸ģ������޸ľͻص������ݴ������״̬��
+5.Git撤销修改和删除文件操作
+5.1 git checkout  --  readme.txt,如下所示：
+命令 git checkout --readme.txt 意思就是，把readme.txt文件在工作区做的修改全部撤销，这里有2种情况，如下：
+readme.txt自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。
+另外一种是readme.txt已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。
 
-6.Զ�ֿ̲�
-6.1. Զ�̹���
-6.1.1. ���б��ؿ⣬����Զ�̿�ʱ����ι���Զ�̿⡣
+6.远程仓库
+6.1. 远程关联
+6.1.1. 先有本地库，后有远程库时候，如何关联远程库。
 touch README.MD
 git init
 git add README.md
@@ -192,119 +192,119 @@ commit -m "first commit"
 git remote add origin https://github.com/xxxx/testgit.git
 git push -u origin master
 
-�����ú�ֻҪ��
-git push origin master �Ϳ���Զ��
+关联好后，只要用
+git push origin master 就可以远程
 
-�ѱ���master��֧�������޸����͵�github���ˣ����������ķֲ�ʽ�汾��
+把本地master分支的最新修改推送到github上了，这样真正的分布式版本库
 
 6.1.2. 
-Զ�̿����µ������ˣ������¡�������� ��ο�¡�أ�
-����3.1
+远程库有新的内容了，我想克隆到本地来 如何克隆呢？
+见上3.1
 $ git clone https://github/xxx/test.git
 
 
-7. ������ϲ���֧��
+7. 创建与合并分支。
 
-�ܽᴴ����ϲ���֧�������£�
-�鿴��֧��git branch
-������֧��git branch name
-�л���֧��git checkout name
-����+�л���֧��git checkout �Cb name
-�ϲ�ĳ��֧����ǰ��֧��git merge name
-ɾ����֧��git branch �Cd name
+总结创建与合并分支命令如下：
+查看分支：git branch
+创建分支：git branch name
+切换分支：git checkout name
+创建+切换分支：git checkout –b name
+合并某分支到当前分支：git merge name
+删除分支：git branch –d name
 
-7.1 ������֧
-git checkout ������� �Cb������ʾ�������л����൱������2������
+7.1 创建分支
+git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令
 git branch dev
 git checkout dev
 
-git checkout master ��ʾ�л���master��֧��
+git checkout master 表示切换到master分支上
 
 7.2 merge
-�������ǿ��԰�dev��֧�ϵ����ݺϲ�����֧master���ˣ�������master��֧�ϣ�ʹ���������� git merge dev ������ʾ��
+现在我们可以把dev分支上的内容合并到分支master上了，可以在master分支上，使用如下命令 git merge dev 如下所示：
 
-7.3.��֧�������ԡ�                                                                                                                                                               
+7.3.分支管理策略。                                                                                                                                                               
                                                                                                                                                                                
-ͨ���ϲ���֧ʱ��gitһ��ʹ�á�Fast forward��ģʽ��������ģʽ�£�ɾ����֧�󣬻ᶪ����֧��Ϣ������������ʹ�ô����� �Cno-ff�����á�Fast forward��ģʽ��������������demo��ʾ�£�
+通常合并分支时，git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式。首先我们来做demo演示下：
                                                                                                                                                                                
-����һ��dev��֧��
-�޸�readme.txt���ݡ�
-���ӵ��ݴ�����
-�л�������֧(master)��
-�ϲ�dev��֧��ʹ������git merge �Cno-ff-m��ע�͡�dev
-�鿴��ʷ��¼
+创建一个dev分支。
+修改readme.txt内容。
+添加到暂存区。
+切换回主分支(master)。
+合并dev分支，使用命令git merge –no-ff-m“注释”dev
+查看历史记录
 
-8. bug��֧
+8. bug分支
 
-8.1. git stash �����ֳ� ������������
-Git���ṩ��һ��stash���ܣ����԰ѵ�ǰ�����ֳ� �����������������Ժ�ָ��ֳ������������
-�������Ǹɾ��ģ���ô���ǹ����ֳ�ȥ�����أ����ǿ���ʹ������ git stash list���鿴�¡�
+8.1. git stash 工作现场 ”隐藏起来”
+Git还提供了一个stash功能，可以把当前工作现场 ”隐藏起来”，等以后恢复现场后继续工作。
+工作区是干净的，那么我们工作现场去哪里呢？我们可以使用命令 git stash list来查看下。
 
-8.2.�ָ��� �����ֳ����ڣ�Git��stash���ݴ���ĳ���ط��ˣ�������Ҫ�ָ�һ�£�����ʹ������2��������
-- git stash apply�ָ����ָ���stash���ݲ���ɾ��������Ҫʹ������git stash drop��ɾ����
--��һ�ַ�ʽ��ʹ��git stash pop,�ָ���ͬʱ��stash����Ҳɾ���ˡ�
+8.2.恢复。 工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，可以使用如下2个方法：
+- git stash apply恢复，恢复后，stash内容并不删除，你需要使用命令git stash drop来删除。
+-另一种方式是使用git stash pop,恢复的同时把stash内容也删除了。
 
-9.0. ����Э����
-�����Զ�̿��¡ʱ��ʵ����Git�Զ��ѱ��ص�master��֧��Զ�̵�master��֧��Ӧ�����ˣ�����Զ�̿��Ĭ��������origin��
+9.0. 多人协作。
+当你从远程库克隆时候，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程库的默认名称是origin。
 
-Ҫ�鿴Զ�̿����Ϣ ʹ�� git remote
-Ҫ�鿴Զ�̿����ϸ��Ϣ ʹ�� git remote �Cv
+要查看远程库的信息 使用 git remote
+要查看远程库的详细信息 使用 git remote –v
 
-9.1. ���ͷ�֧��
-���ͷ�֧���ǰѸ÷�֧�����б����ύ��Զ�̿��У�����ʱ��Ҫָ�����ط�֧��������Git�ͻ�Ѹ÷�֧���͵�Զ�̿��Ӧ��Զ�̷�֧�ϣ�
+9.1. 推送分支：
+推送分支就是把该分支上所有本地提交到远程库中，推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：
 
-ʹ������ git push origin master
+使用命令 git push origin master
 
-�����������Ҫ���͵�������֧������dev��֧�ϣ����ǻ����Ǹ����� git push origin dev
-��ôһ������£���Щ��֧Ҫ�����أ�
-master��֧������֧�����Ҫʱ����Զ��ͬ����
-һЩ�޸�bug��֧����Ҫ���͵�Զ��ȥ�������Ⱥϲ�������֧�ϣ�Ȼ�������֧master���͵�Զ��ȥ��
+如果我们现在要推送到其他分支，比如dev分支上，我们还是那个命令 git push origin dev
+那么一般情况下，那些分支要推送呢？
+master分支是主分支，因此要时刻与远程同步。
+一些修复bug分支不需要推送到远程去，可以先合并到主分支上，然后把主分支master推送到远程去。
 
-9.2. ץȡ��֧��
+9.2. 抓取分支：
 
 
-10.����Э��
-����Э������ģʽһ���������ģ�
-���ȣ�������ͼ��git push origin branch-name�����Լ����޸�.
-�������ʧ�ܣ�����ΪԶ�̷�֧����ı��ظ����磬��Ҫ����git pull��ͼ�ϲ���
-����ϲ��г�ͻ������Ҫ�����ͻ�����ڱ����ύ������git push origin branch-name���͡�
+10.多人协作
+多人协作工作模式一般是这样的：
+首先，可以试图用git push origin branch-name推送自己的修改.
+如果推送失败，则因为远程分支比你的本地更新早，需要先用git pull试图合并。
+如果合并有冲突，则需要解决冲突，并在本地提交。再用git push origin branch-name推送。
 
-11.Git���������������£�
+11.Git基本常用命令如下：
 
-mkdir��         XX (����һ����Ŀ¼ XXָĿ¼��)
-pwd��          ��ʾ��ǰĿ¼��·����
-git init          �ѵ�ǰ��Ŀ¼��ɿ��Թ�����git�ֿ⣬��������.git�ļ���
-git add XX       ��xx�ļ����ӵ��ݴ���ȥ��
-git commit �Cm ��XX��  �ύ�ļ� �Cm �������ע�͡�
-git status        �鿴�ֿ�״̬
-git diff  XX      �鿴XX�ļ��޸�����Щ����
-git log          �鿴��ʷ��¼
-git reset  --hard HEAD^ ���� git reset  --hard HEAD~ ���˵���һ���汾
-(�������˵�100���汾��ʹ��git reset �Chard HEAD~100 )
-cat XX         �鿴XX�ļ�����
-git reflog       �鿴��ʷ��¼�İ汾��id
-git checkout -- XX  ��XX�ļ��ڹ��������޸�ȫ��������
-git rm XX          ɾ��XX�ļ�
-git remote add origin https://github.com/tugenhua0707/testgit ����һ��Զ�̿�
-git push �Cu(��һ��Ҫ��-u �Ժ���Ҫ) origin master �ѵ�ǰmaster��֧���͵�Զ�̿�
-git clone https://github.com/tugenhua0707/testgit  ��Զ�̿��п�¡
-git checkout �Cb dev  ����dev��֧ ���л���dev��֧��
-git branch  �鿴��ǰ���еķ�֧
-git checkout master �л���master��֧
-git merge dev    �ڵ�ǰ�ķ�֧�Ϻϲ�dev��֧
-git branch �Cd dev ɾ��dev��֧
-git branch name  ������֧
-git stash �ѵ�ǰ�Ĺ����������� ���Ժ�ָ��ֳ����������
-git stash list �鿴���б����ص��ļ��б�
-git stash apply �ָ������ص��ļ����������ݲ�ɾ��
-git stash drop ɾ���ļ�
-git stash pop �ָ��ļ���ͬʱ Ҳɾ���ļ�
-git remote �鿴Զ�̿����Ϣ
-git remote �Cv �鿴Զ�̿����ϸ��Ϣ
-git push origin master  Git���master��֧���͵�Զ�̿��Ӧ��Զ�̷�֧��
+mkdir：         XX (创建一个空目录 XX指目录名)
+pwd：          显示当前目录的路径。
+git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+git add XX       把xx文件添加到暂存区去。
+git commit –m “XX”  提交文件 –m 后面的是注释。
+git status        查看仓库状态
+git diff  XX      查看XX文件修改了那些内容
+git log          查看历史记录
+git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本
+(如果想回退到100个版本，使用git reset –hard HEAD~100 )
+cat XX         查看XX文件内容
+git reflog       查看历史记录的版本号id
+git checkout -- XX  把XX文件在工作区的修改全部撤销。
+git rm XX          删除XX文件
+git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库
+git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+git clone https://github.com/tugenhua0707/testgit  从远程库中克隆
+git checkout –b dev  创建dev分支 并切换到dev分支上
+git branch  查看当前所有的分支
+git checkout master 切换回master分支
+git merge dev    在当前的分支上合并dev分支
+git branch –d dev 删除dev分支
+git branch name  创建分支
+git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+git stash list 查看所有被隐藏的文件列表
+git stash apply 恢复被隐藏的文件，但是内容不删除
+git stash drop 删除文件
+git stash pop 恢复文件的同时 也删除文件
+git remote 查看远程库的信息
+git remote –v 查看远程库的详细信息
+git push origin master  Git会把master分支推送到远程库对应的远程分支上
 
 
 11. FAQ
-11.1. Q:��������޸ĵ��ļ�̫�࣬�������ӵ��ļ�̫�࣬ �ѵ���Ҫgit commit��git add�������Ҫ�Լ��ֶ�д�� ����֪��git��ν���������
-A:��git ui�ģ�ide��eclipse��git�ͻ��˲������SVN��ࡣ�� �鷳�����½���֧���ϲ���֧��reset��֧���н����ͻ����SVN�鷳�ܶ�
+11.1. Q:如果本次修改的文件太多，或者添加的文件太多， 难道需要git commit和git add命令挨个都要自己手动写吗？ 我想知道git如何解决这个问题
+A:有git ui的，ide和eclipse有git客户端插件，和SVN差不多。。 麻烦的是新建分支、合并分支、reset分支还有解决冲突都比SVN麻烦很多
 

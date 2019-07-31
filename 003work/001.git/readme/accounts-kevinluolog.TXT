@@ -1,4 +1,4 @@
-###
+ï»¿###
 MY
 ---
 git@github.com:kevinluolog/kdoc.git
@@ -13,10 +13,10 @@ git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:kevinluolog/kdoc.git
 git push -u origin master
-¡­or push an existing repository from the command line
+â€¦or push an existing repository from the command line
 git remote add origin git@github.com:kevinluolog/kdoc.git
 git push -u origin master
-¡­or import code from another repository
+â€¦or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 ---
 
@@ -24,7 +24,7 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 ###
 import: 
 ---
-AiLearning: »úÆ÷Ñ§Ï° - MachineLearning - ML¡¢Éî¶ÈÑ§Ï° - DeepLearning - DL¡¢×ÔÈ»ÓïÑÔ´¦Àí NLP http://ailearning.apachecn.org/
+AiLearning: æœºå™¨å­¦ä¹  - MachineLearning - MLã€æ·±åº¦å­¦ä¹  - DeepLearning - DLã€è‡ªç„¶è¯­è¨€å¤„ç† NLP http://ailearning.apachecn.org/
 https://github.com/apachecn/AiLearning.git
 https://github.com/apachecn/AiLearning.git
 git@github.com:apachecn/AiLearning.git
@@ -47,16 +47,16 @@ git@github.com:apachecn/AiLearning.git
 Stock analysis/prediction model using machine learning
 https://github.com/ltnguyen14/Quant_stock.git
 
-Ò»¸öÍ¨¹ıÉè¶¨Ñ¡¹ÉÌõ¼şÀ´°ïÎÒÃÇÉ¸Ñ¡¹ÉÆ±µÄpython³ÌĞò
+ä¸€ä¸ªé€šè¿‡è®¾å®šé€‰è‚¡æ¡ä»¶æ¥å¸®æˆ‘ä»¬ç­›é€‰è‚¡ç¥¨çš„pythonç¨‹åº
 https://github.com/cat-steel/stock_pick.git
 
-30ÌìÕÆÎÕÁ¿»¯½»Ò× (³ÖĞø¸üĞÂ)
+30å¤©æŒæ¡é‡åŒ–äº¤æ˜“ (æŒç»­æ›´æ–°)
 https://github.com/Rockyzsu/stock.git
 
-Ã¿ÔÂ¶¨Í¶ETF»ù½ğµÄÄ£ÄâÂòÂô³ÌĞò£¬¸¨ÒÔ¶şÊ®ÈÕÏßÎªÂòÂô±ê×¼
+æ¯æœˆå®šæŠ•ETFåŸºé‡‘çš„æ¨¡æ‹Ÿä¹°å–ç¨‹åºï¼Œè¾…ä»¥äºŒåæ—¥çº¿ä¸ºä¹°å–æ ‡å‡†
 https://github.com/SteveWongBUAA/stock
 
-Á¿»¯Í¶×ÊÖĞ¸÷ÀàÖ¸±êµÄÔñÊ±²ßÂÔµÄÊµÏÖ£¬»ùÓÚJoinQuant»Ø²âÆ½Ì¨¡£
+é‡åŒ–æŠ•èµ„ä¸­å„ç±»æŒ‡æ ‡çš„æ‹©æ—¶ç­–ç•¥çš„å®ç°ï¼ŒåŸºäºJoinQuantå›æµ‹å¹³å°ã€‚
 https://github.com/yeates/StockTimingStrategy
 
 predict the price trend of individual stocks using deep learning and natural language processing

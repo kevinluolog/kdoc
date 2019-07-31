@@ -28,6 +28,11 @@ portable sublime 缺省没有安装，可2个方法安装
 在页面查看2种另外的方法，自动和手动
 
 ---
+用Package Control安装插件的方法：
+按下Ctrl+Shift+P调出命令面板
+输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件。
+不爽的是，有的网络环境可能会不允许访问陌生的网络环境从而设置一道防火墙，而Sublime Text 3貌似无法设置代理，可能就获取不到安装包列表了。
+---
 sublimegit package install:
 tools-command palette ctl+shift+p
 pci package control install
@@ -51,6 +56,16 @@ https://docs.sublimegit.net/quickstart.html
 
 
 ---
+有用的插件：
+~~ ConvertToUTF8：
+比上面的那个要方便，直接在菜单栏中可以转了，专为中文设计，妈妈再也不通担心中文乱码问题了
+~~
+
+~~
+
+~~
+
+~~
 
 ---
 
