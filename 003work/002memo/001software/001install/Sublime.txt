@@ -13,7 +13,12 @@ basic information
 
 - tutorial:
 
-
+---
+install components:
+0. portable sublime
+1. package control install
+2. packages
+1.1. sublimeGit
 ---
 package control install:
 portable sublime 缺省没有安装，可2个方法安装
@@ -33,10 +38,10 @@ preference->package Settings-> 此处出现安装的sublimeGit
 preference->package settings-> package control -> user setting 中可以看到已经增加选项
 
 ---
-sumlimeGit usage:
+sumlimeGit usage用法:
 https://sublimegit.readthedocs.io/en/latest/
 
-【下面的有些问题，看readthedocs就可以了】
+【下面的有些问题，看readthedocs就行】
 full tutorial, go to:
 https://docs.sublimegit.net/tutorial.html
 https://sublimegit.readthedocs.io/en/latest/tutorial.html
