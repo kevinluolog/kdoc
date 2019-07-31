@@ -39,6 +39,7 @@ https://sublimegit.readthedocs.io/en/latest/
 【下面的有些问题，看readthedocs就可以了】
 full tutorial, go to:
 https://docs.sublimegit.net/tutorial.html
+https://sublimegit.readthedocs.io/en/latest/tutorial.html
 how to get set up:
 https://docs.sublimegit.net/quickstart.html
 
