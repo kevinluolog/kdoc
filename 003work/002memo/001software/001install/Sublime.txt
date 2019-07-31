@@ -41,7 +41,7 @@ preference->package settings-> package control -> user setting 中可以看到�
 sumlimeGit usage用法:
 https://sublimegit.readthedocs.io/en/latest/
 
-【下面的有些问题，看readthedocs就行】
+【下面的有些问题，看readthedocs就行了】
 full tutorial, go to:
 https://docs.sublimegit.net/tutorial.html
 https://sublimegit.readthedocs.io/en/latest/tutorial.html
