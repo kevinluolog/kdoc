@@ -49,11 +49,13 @@ $ git remote -v
 origin https://github.com/schacon/ticgit (fetch)
 origin https://github.com/schacon/ticgit (push)
 
+$ git remote show origin
+
 怎么关联的远端和本地仓库
-clone 隐式关联 到origin
+隐式关联到origin: git clone
 $ git clone https://github.com/schacon/ticgit
 
-add 显式关联名字
+显式关联远程仓库名字： git remote add
 $ git remote
 origin
 $ git remote add pb https://github.com/paulboone/ticgit
@@ -63,7 +65,7 @@ origin https://github.com/schacon/ticgit (push)
 pb https://github.com/paulboone/ticgit (fetch)
 pb https://github.com/paulboone/ticgit (push)
 
-创建式上传到远端仓库
+创建式上传到远端仓库:
 run git remote add <shortname> <url>:
 $ git remote
 origin
@@ -73,19 +75,32 @@ origin https://github.com/schacon/ticgit (fetch)
 origin https://github.com/schacon/ticgit (push)
 pb https://github.com/paulboone/ticgit (fetch)
 pb https://github.com/paulboone/ticgit (push)
-
-git remote add 001test https://github.com/kevinluolog/test.git
+git push -u origin master 注意此处-u 即--upstream-set-to 表示当前分支跟踪origin/master分支
 
 
 回传式上传到远端仓库 某分支
 git push <remote> <branch>.
 $ git push origin master
 
-取回无端仓库的更新
+取回远端仓库的更新到对应的本地remote分支
 $ git fetch pb
 
 查看远端仓库
 git remote show <remote>
+
+看设置的所有跟踪分支，可以使用 git branch 的 -vv 选项
+
+设置跟踪分支：git branch <--set-upstream-to|-u> <remote>/<branch name>
+
+拉取： git fetch and git pull
+git fetch 命令从服务器上抓取本地没有的数据链，同时修改本地远程分支remote/branch的当前指针到最新，但并不会修改工作目录中的内容和对应跟踪分支内容。
+git pull = git fetch + git merge, 即先拉取到本地的remote分支上，再merge到当前的对应跟踪分支
+
+删除远程分支
+$ git push origin --delete serverfix
+
+远程分支说明：
+https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF
 ---
 
 GitHub 新手详细教程
