@@ -1,0 +1,40 @@
+.. title
+
+#############
+use case
+#############
+
+
+.. subtitle
+ ***************
+ subtitle
+ ***************
+
+:Author: |aw_name|
+:Contact: |aw_email|
+:date: |date|
+
+.. 
+ :revision: 
+
+.. :backlinks:"entry" or "top" or "none"
+ .. section-numbering::
+   :depth: 6
+   :start: 1
+   :prefix:
+   :suffix:
+
+.. contents:: contents
+   :depth: 6
+   :backlinks: entry
+   :local:
+
+.. |date| date::
+.. |aw_email| replace:: hwang04@lear.com
+.. |aw_name| replace:: Annie Wang
+
+.. .. default-role:: superscript
+
+.. 
+ use case 1
+ ======================

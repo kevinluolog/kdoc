@@ -1,0 +1,108 @@
+############
+网站资源站点
+############
+
+.. contents:: 目录
+.. section-numbering::
+
+下载池
+======
+
+sublime
+-------
+
+`packagecontrol.io <https://packagecontrol.io/>`__
+
+python
+------
+
+PyPI - Python Packaging Index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Python Package Index (PyPI) is a repository of software for the
+Python programming language.
+
+-  `pypi.org <https://pypi.org/>`__
+-  `pypi.org/project/pip <https://pypi.org/project/pip/>`__
+
+PyPA Python Packaging
+~~~~~~~~~~~~~~~~~~~~~
+
+tex
+---
+
+`CTAN-Comprehensive TEX Archive Network <https://ctan.org/>`__
+
+::
+
+   TEX package:
+   such as: hypereff xeCJK xcolor 
+
+perl
+----
+
+vscode
+------
+
+书籍服务
+========
+
+readthedocs
+-----------
+
+`readthedocs <https://readthedocs.org/>`__
+
+-  `Getting Started
+   Guide <https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html>`__
+
+-  `docs <https://docs.readthedocs.io/>`__
+
+   -  `Sphinx documentation <http://www.sphinx-doc.org/>`__
+   -  `RestructuredText
+      primer <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`__
+   -  `An introduction to Sphinx and Read the Docs for technical
+      writers <http://ericholscher.com/blog/2016/jul/1/sphinx-and-rtd-for-writers/>`__
+
+bookdown
+--------
+
+`bookdown.org <https://bookdown.org/>`__
+
+VCS version control
+===================
+
+github,bitbucket,gitlab
+
+github
+------
+
+`github <www.github.com>`__
+
+GitTools
+~~~~~~~~
+
+sourceTree, tortoisGit,
+
+tools
+=====
+
+sphinx
+------
+
+-  `sphinx pypi <https://pypi.org/project/Sphinx/>`__
+-  `sphinx doc <http://www.sphinx-doc.org/en/master/>`__
+-  `sphinx dev#get
+   start <http://www.sphinx-doc.org/en/master/devguide.html#getting-started>`__
+-  `Getting Started with
+   Sphinx <https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html>`__
+
+standard
+========
+
+restructtext
+------------
+
+`reStructuredText doc and
+tools <http://docutils.sourceforge.net/rst.html>`__ `rst quick with
+yellow
+sample <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`__

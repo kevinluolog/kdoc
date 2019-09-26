@@ -1,0 +1,128 @@
+
+#########
+版本控制
+#########
+
+**********
+历史和软件
+**********
+
+.. contents:: 目录
+.. section-numbering::
+
+
+历史
+----
+
+`知乎-代码版本管理系统的历史 <https://www.zhihu.com/question/25491925>`__
+
+
+概述
+------
+
+GIT（分布式版本控制系统）
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- 典型软件
+  
+  * Git-2.22.0-`32`-bit
+  * PortableGit-2.22.0-:subscript:`32`-bit.7z
+  * GitHubDesktop
+  * sourceTree
+  * smartgit
+  * TortoiseGit
+
+- 插件
+  
+  * eclipse-EGIT
+  * sublimeGit
+
+- git仓库服务
+  
+  * github
+  * gitlab
+  * bitbucket
+
+SVN subversion
+^^^^^^^^^^^^^^
+
+- 典型软件
+  
+  * subversion
+  * smartSVN
+  * TortoiseSVN
+    
+- 插件
+
+
+CVS
+^^^
+
+.. it's like | vertical bar for lyrics, :: will have indentment
+.. line-block::
+
+	CVS（Concurrent Versions System）版本控制系统是一种GNU软件包，主要用于在多人开发环境下源码的维护。
+	免费软件项目都使用CVS作为其程序员之间的中心点，以便能够综合各程序员的改进和更改。这些项目包括GNOME、KDE、THE GIMP和Wine等
+
+- 典型软件
+- 插件
+  
+
+软件安装
+--------
+
+- smartSVN
+
+  * 破解
+    License文件如下，适合smartSVN9:
+
+::
+
+	Name=csdn  
+	Address=1337 iNViSiBLE Str.  
+	Email=admin@csdn.net  
+	FreeUpdatesUntil=2099-09-26  
+	LicenseCount=1337  
+	Addon-xMerge=true  
+	Addon-API=true  
+	Enterprise=true  
+	Key=4kl-<Zqcm-iUF7I-IVmYG-XAyvv-KYRoC-xlgsv-sSBds-VAnP6
+
+- TortoiseSVN
+
+
+
+:Author: kevinluo
+:Address: 
+:Contact: kevinluo_72@163.com
+:Authors: 
+:organization: 
+:date: |date|
+:status: 
+:revision: 
+:version: 1
+:copyright:
+
+:abstract:
+
+    This document is about version controll software.
+
+.. meta::
+   :keywords: SVN, git, github
+
+
+.. contents:: 目录
+   :depth: 6
+   :backlinks: entry
+   :local:
+.. "entry" or "top" or "none"
+
+.. 
+ .. section-numbering::
+   :depth: 6
+   :start: 1
+.. 
+   :prefix:
+   :suffix:
+
+.. |date| date::

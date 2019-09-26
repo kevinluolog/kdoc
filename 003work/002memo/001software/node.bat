@@ -1,0 +1,1 @@
+E:\E-ProgramFiles\portable\node12\nodevars.bat
