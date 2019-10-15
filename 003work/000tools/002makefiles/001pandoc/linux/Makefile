@@ -1,48 +1,17 @@
-# 检测是什么操作系统
-ifeq ($(OS),Windows_NT)
-uname_S := Windows
-else
-uname_S := $(shell uname -s)
-endif
-
-# windows
-ifeq ($(uname_S), Windows)
-DIR_BASE_SRC := .
-#	system("dir /b /s $DIR_BASE_SRC\*.* >d:\\allfiles.txt")
-endif
-# linux
-ifeq ($(uname_S), Linux)
-DIR_BASE_SRC := .
-endif
-#ifeq ($(uname_S), .....) #See https://stackoverflow.com/a/27776822/938111
-#	target = .....
-#endif
-
 ###---输入变量
 
 # 基目录
-DIR_BASE_SRC := H:\tmp_H\001.work\002git\kdoc\003work\002memo
-#DIR_BASE_SRC := H:\tmp_H\001.work\002git\kdoc\003work\002memo\001software\001install
-DIR_BASE_OBJ := H:\tmp_H\001.work\004.env\01prjsp\04make\01rst2md\tmp
-#DIR_BASE_COPYTO := H:\tmp_H\001.work\004.env\01prjsp\hexo\klBlog\source\_posts\kl_notes\002memo
+DIR_BASE_SRC := /H/tmp_H/001.work/002git/kdoc/003work/002memo
+DIR_BASE_OBJ := /H/tmp_H/001.work/004.env/01prjsp/04make/01rst2md/tmp
+#DIR_BASE_COPYTO := 
 DIR_BASE_COPYTO :=
 
-# 支持的文件后缀名
-#SUFFIX_RST  := .rst
-#SUFFIX_MD   := .md
-#SUFFIX_html := .html
-#SUFFIX_pdf  := .pdf
-#SUFFIX_doc  := .doc
-#SUFFIX_ppt  := .ppt
-#SUFFIX_docx := .docx
-#SUFFIX_pptx := .pptx
+# template directory for xelatext to create PDF, 
+DIR_TEMPLATE := /H/tmp_H/001.work/002git/kdoc/003work/000tools/002makefiles/001pandoc/templates
 
 # 后缀名，文件类型
 SUFFIX_FROM := .rst
 SUFFIX_TO := .md
-
-# template directory for xelatext to create PDF, 
-DIR_TEMPLATE := H:\tmp_H\001.work\002git\kdoc\003work\000tools\002makefiles\001pandoc\templates
 
 # 控制是否加入hexo需要的frontmatter meta数据,只在rst2md的模式中用到，其它可以任意值
 ADD_HEXO_HEAD := TRUE
@@ -51,11 +20,11 @@ ADD_HEXO_TAG_FROM_DIR := 技术
 ###---生成变量
 
 # 获得源$(SUFFIX_FROM)路径名。
-# 利用dos命令dir获取当前目录及子目录下所有$(SUFFIX_FROM)路径文件名
-SRC_PATH_RSTS := $(shell dir $(DIR_BASE_SRC)\*$(SUFFIX_FROM) /b /w /s)
+# 利用find命令取得目录名
+SRC_PATH_DIR := $(shell find $(DIR_BASE_SRC) -type d)
 
-# 利用dos命令dir获取当前目录及子目录下的所有子目录名
-SRC_PATH_DIR := $(shell dir $(DIR_BASE_SRC)\ /aD /s /b)
+# 取得源文件名,包括路径
+SRC_PATH_RSTS := $(foreach dir,$(SRC_PATH_DIR),$(addprefix $(dir)/,$(wildcard $(dir)/*.rst)))
 
 
 # $(SUFFIX_FROM)路径文件名替换成$(SUFFIX_TO)路径文件名
@@ -70,43 +39,10 @@ OBJ_PATH_MDS := $(subst $(DIR_BASE_SRC),$(DIR_BASE_OBJ),$(SRC_PATH_MDS))
 # 获得目标路径目录名
 OBJ_PATH_DIR := $(subst $(DIR_BASE_SRC),$(DIR_BASE_OBJ),$(SRC_PATH_DIR))
 
-OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)\,,$(SRC_PATH_MDS))
+OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)/,,$(SRC_PATH_MDS))
 
 
 ###---生成目标
-#define def_dash :=
-#---
-#endef
-#
-#define def_title :=
-#title:
-#endef
-#
-#define def_toc :=
-#toc:
-#endef
-#
-#define def_tag :=
-#tag:
-#endef
-#
-#define def_categories :=
-#categories:
-#endef
-#
-#define def_hexo_md_head
-#$(def_dash)
-#$(def_title) $(1)
-#$(def_toc) TRUE
-#$(def_tag)
-#- 自动生成
-#- 技术
-#- 笔记
-#$(def_categories)
-#- 技术
-#- 笔记
-#$(def_dash)
-#endef
 
 #【参数1:title =没有后缀的光文件名 】
 #【参数2:tag =技术...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
@@ -137,7 +73,7 @@ $(OBJ_PATH_DIR):
 
 define PROGRAM_template
 #下面两行在引用DIR_STEM时会取到foreach中的最后一个变量值，不理解为何。据现在的理解eval双$二次展开后，用:=赋值的应该是每次循环的值。留待以后解决吧。现在先直接赋值绕过去。
-#DIR_WORDS := $(subst \, ,$(dir $(1)))
+#DIR_WORDS := $(subst /, ,$(dir $(1)))
 #DIR_LAST := $(word $(words $$(DIR_WORDS)),$$(DIR_WORDS))
 #DIR_STEM := $(subst $(DIR_BASE_OBJ),,$(basename $(1)))
 #TBFILENAME := $(subst $(SUFFIX_TO),,$(notdir $(1)))
@@ -154,15 +90,15 @@ ifdef ADD_HEXO_TAG_FROM_DIR
 	$$(file >$$@.tmp,\
 $$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1)))\
 ,$(ADD_HEXO_TAG_FROM_DIR)\
-,$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))\
+,$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1))))\
 )\
 )
 else
 	$$(file >$$@.tmp,
 $$(call def_hexo_md_head\
 ,$(subst $(SUFFIX_TO),,$(notdir $(1)))\
-,$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))\
-,$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))\
+,$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1))))\
+,$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1))))\
 )\
 )
 endif
@@ -190,10 +126,10 @@ ifeq ($(SUFFIX_TO),.pdf)
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 #	pandoc $$< -o - >>$$@
 ifdef DIR_TEMPLATE
-	pandoc $$< --metadata-file $(DIR_TEMPLATE)\metadata.yaml -o $$@ \
+	pandoc $$< --metadata-file $(DIR_TEMPLATE)/metadata.yaml -o $$@ \
 --pdf-engine=xelatex -s -N \
 --toc --toc-depth=6 \
---template=$(DIR_TEMPLATE)\default.latex
+--template=$(DIR_TEMPLATE)/default.latex
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
 	xcopy $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
@@ -234,7 +170,7 @@ all: startconv
 .phony: all startconv
 # OBJ_PATH_DIR保证目录存在，OBJ_PATH_MDS转换文件
 startconv: $(OBJ_PATH_DIR) $(OBJ_PATH_MDS)
-#	@echo 转换 $(DIR_BASE_SRC)\$(SUFFIX_FROM) 到 $(DIR_BASE_OBJ)\$(SUFFIX_TO)
+#	@echo 转换 $(DIR_BASE_SRC)/$(SUFFIX_FROM) 到 $(DIR_BASE_OBJ)/$(SUFFIX_TO)
 	@echo is updated.
 	
 #	@move xxx xxx ## MOVE [/Y | /-Y] [drive:][path]filename1[,...] destination

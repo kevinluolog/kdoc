@@ -254,6 +254,8 @@ command (md->pdf):
 
       元变量 可用 -V 在命令行输入
 
+      注意: 要加入 --metadata-file 或 -M 引用metadata.yaml, pandoc帮助文档的案例是.md 的文件不用加，但是实践证明，在.rst转成.pdf时，必须要加上，不然直接加入了文档中，同时因引用不到汉字字体定义CJKmainfont: "SimSun"，会报错汉字找不到。所以统一加上。
+
    -  default.latex
 
       修改了latex的模板，主要是为了框线链接
@@ -262,7 +264,7 @@ command (md->pdf):
 
       ::
 
-           pandoc slidy00.md .\templates\metadata.yaml -o slidy00.tex -s -N --toc --toc-depth=3 --template .\templates\default.latex
+           pandoc slidy00.md --metadata-file .\templates\metadata.yaml -o slidy00.tex -s -N --toc --toc-depth=3 --template .\templates\default.latex
 
            xelatex slidy00.tex
 
@@ -270,7 +272,7 @@ command (md->pdf):
 
       ::
 
-           pandoc slidy00.md .\templates\metadata.yaml --pdf-engine=xelatex -o slidy00.pdf -s -N --toc --toc-depth=3 --data-dir=.\templates
+           pandoc slidy00.md --metadata-file .\templates\metadata.yaml --pdf-engine=xelatex -o slidy00.pdf -s -N --toc --toc-depth=3 --data-dir=.\templates
 
 2. xelatex
 

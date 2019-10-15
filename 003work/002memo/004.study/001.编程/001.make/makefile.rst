@@ -12,6 +12,8 @@ makefiles
 通用makefile,自动遍历子目录源文件，自动生成依赖。
 --------------------------------------------------------
 
+`一份通用makefile,自动遍历子目录源文件，自动生成依赖Ubuntu和OSX <https://blog.csdn.net/yuliying/article/details/49635485>`__
+
 
 这份makefile可以将当前makefile所在文件夹以及所有子文件夹中的cpp文件打包成静态库/动态库/可执行文件.
 自动生成所有依赖关系，修改任何文件都可以触发重新编译相应依赖的文件。
@@ -101,6 +103,7 @@ makefile操作系统检测方法
 然后您可以根据以下内容选择相关内容detected_OS：
 
 ::
+
    ifeq ($(detected_OS),Windows)
        CFLAGS += -D WIN32
    endif
@@ -333,6 +336,8 @@ make两个平台上的命令都是相同的。给定的输出是在类Unix操作
 
 
 
+next
+----
 
 
 next

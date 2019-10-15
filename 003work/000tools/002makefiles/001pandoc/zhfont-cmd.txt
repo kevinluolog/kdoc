@@ -1,0 +1,49 @@
+refto: pandoc.rst p:537
+列出电脑中已安装字体
+--------------------
+
+列出所有的中文字体的字体族名，要列出日文和韩文 zh改成 ja或 ko。
+
+::
+
+   fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+
+DFKai-SB,標楷體
+Adobe Ming Std,Adobe 明體 Std,Adobe 明體 Std L,Adobe Ming Std L
+Microsoft YaHei,微软雅黑
+MingLiU,細明體
+AR PL Mingti2L Big5,文鼎ＰＬ細上海宋
+Adobe Fangsong Std,Adobe 仿宋 Std,Adobe Fangsong Std R,Adobe 仿宋 Std R
+PMingLiU,新細明體
+FandolSong
+FandolHei
+FandolHei
+Adobe Kaiti Std,Adobe 楷体 Std,Adobe Kaiti Std R,Adobe 楷体 Std R
+Adobe Heiti Std,Adobe 黑体 Std,Adobe Heiti Std R,Adobe 黑体 Std R
+FZLanTingHeiS-UL-GB,方正兰亭超细黑简体
+MingLiU_HKSCS,細明體_HKSCS
+FandolSong
+Microsoft YaHei,微软雅黑
+FandolFang,FandolFang R
+FangSong,仿宋
+AR PL SungtiL GB,文鼎ＰＬ简报宋
+FandolKai
+Microsoft JhengHei,微軟正黑體
+AR PL KaitiM GB,文鼎ＰＬ简中楷
+SimHei,黑体
+Microsoft JhengHei,微軟正黑體
+NSimSun,新宋体
+SimSun,宋体
+KaiTi,楷体
+Adobe Song Std,Adobe 宋体 Std,Adobe Song Std L,Adobe 宋体 Std L
+ZHSRXT-GBK,张海山锐线体简
+Adobe Fan Heiti Std,Adobe 繁黑體 Std,Adobe 繁黑體 Std B,Adobe Fan Heiti Std B
+AR PL KaitiM Big5,文鼎ＰＬ中楷
+
+--------------------                --------                
+                                                            
+列出所有的中文字体的字体族名，要列出日文和韩文 zh改成 ja或 ko。族名，要列出日文和韩文 zh改成 ja或 ko。
+                                                            
+::                                                          
+                                                            
+   fc-list -f "%{family}\n" :lang=zh > zhfont.txtf "%{family}\n" :lang=zh > zhfont.txt
