@@ -9,8 +9,29 @@ sphinx is great
 .. contents:: 目录
 .. section-numbering::
 
+
+sphinx install
+==============
+
+`pypi sphinx website <https://pypi.org/project/Sphinx/>`__
+
+pip install Sphinx
+
+or 
+
+pip install -U sphinx
+
+版本显示：
+
+sphinx-build --version
+
+sphinx项目创建
+==============
+
+sphinx-quickstart
+
 sphinx选项
-==========
+==============
 
 .. graphviz::
 
