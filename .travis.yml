@@ -23,10 +23,7 @@ before_install:
 install:
 # install sphinx
   - pip install Sphinx
-  - sphinx-build --version
-  - make --version
-  - gnumake --version
-
+ 
 # pandoc （提供基本转换环境）
 # 针对Ubuntu12.04,5下安装pandoc如果使用cabal处理依赖关系总是出现版本不符合的问题，不知道如何解决，反而直接下载 deb包 来安装却非常简单，适合travis-ci虚拟机环境
   - wget https://github.com/jgm/pandoc/releases/download/1.17.1/pandoc-1.17.1-2-amd64.deb
@@ -34,6 +31,8 @@ install:
 
   - pandoc --version
   - python --version
+  - sphinx-build --version
+  - make --version
 
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）
 # 使用xelatex这个引擎为Pandoc提供pdf转换中文支持，Ubuntu12.04.5LTS需要 texlive-xetex texlive-latex-extra 这两个包，安装这两个包需要添加 texlive-backports/ppa 这个库。
