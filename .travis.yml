@@ -43,6 +43,8 @@ script:
   - mkdir -p output
   - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
   - cp index.html ./output/
+  - ls
+  - ls ./output
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
 #  - git config user.name "kevinluolog"
@@ -57,10 +59,10 @@ deploy:
   skip_cleanup: true
   github_token: $GH_TOKEN  # Set in the settings page of your repository,    as a secure variable
   keep_history: true
-  local_dir: ./output/
+  local_dir: ./output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
   on:
-    branch: output
+    branch: dev
 
 # End: Build LifeCycle
