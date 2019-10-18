@@ -29,22 +29,20 @@ install:
   - wget https://github.com/jgm/pandoc/releases/download/1.17.1/pandoc-1.17.1-2-amd64.deb
   - sudo dpkg -i pandoc-1.17.1-2-amd64.deb
 
-  - pandoc --version
-  - python --version
-  - sphinx-build --version
-  - make --version
-
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）
 # 使用xelatex这个引擎为Pandoc提供pdf转换中文支持，Ubuntu12.04.5LTS需要 texlive-xetex texlive-latex-extra 这两个包，安装这两个包需要添加 texlive-backports/ppa 这个库。
 #  - sudo apt-get install python-software-properties #这个在Travis下是不需要的
-  - sudo add-apt-repository ppa:texlive-backports/ppa -y
+#  - sudo add-apt-repository ppa:texlive-backports/ppa -y
 #  - sudo apt-get update -y
-  - sudo apt-get install texlive-xetex texlive-latex-extra -y
+#  - sudo apt-get install texlive-xetex texlive-latex-extra -y
 
 
 # 
 script:
-
+  - ls
+  - mkdir -p output
+  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
+  - cp index.html ./output/
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
 #  - git config user.name "kevinluolog"
@@ -52,4 +50,17 @@ after_script:
   # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
 #  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
 #  - hexo deploy
+
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN  # Set in the settings page of your repository,    as a secure variable
+  keep_history: true
+  local_dir: ./output/
+  repo: kevinluolog/travisci_out_kdoc
+  target_branch: output
+  on:
+    branch: output
+
 # End: Build LifeCycle
