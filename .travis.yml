@@ -62,5 +62,7 @@ deploy:
   local_dir: ./output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
+  on:
+    branch: dev
 
 # End: Build LifeCycle
