@@ -18,10 +18,7 @@ branches:
     - dev 
 
 env:
-  - T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo
-  - T_DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/002memo
-  - T_DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/copy2
-  - T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/templates
+  - T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo T_DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/002memo  T_DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/copy2 T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/templates
 
 before_install:
 
