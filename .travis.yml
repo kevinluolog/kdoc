@@ -18,6 +18,10 @@ branches:
     - dev 
 
 before_install:
+  - $T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo
+  - $T_DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/002memo
+  - $T_DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/copy2
+  - $T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/templates
 
 # Start: Build Lifecycle
 install:
@@ -36,15 +40,21 @@ install:
 #  - sudo apt-get update -y
 #  - sudo apt-get install texlive-xetex texlive-latex-extra -y
 
-
 # 
 script:
+  - echo $TRAVIS_BUILD_DIR
   - ls
-  - mkdir -p output
-  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
-  - cp index.html ./output/
+  - mkdir -p output/002memo
+  - mkdir -p output/copy2
+  - ls
+#  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
+  - make startconv -f makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE
+
+#  - cp index.html ./output/
   - ls
   - ls ./output
+  - find -type d
+  - tree
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
 #  - git config user.name "kevinluolog"
