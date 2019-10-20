@@ -63,7 +63,7 @@ endef
 $(OBJ_PATH_DIR):
 #因为mkdir支持多目录同时写在一起,所以不用再用模式来拆开成一个一个了。
 	@echo "   MKDIR $@..." 
-	@mkdir $@ 
+	@mkdir -p $@ 
 
 
 ##定义一个命令包, 来重新组合【目标:依赖】关系, 配合$(eval ) 和foreach 来使用。eval用来二次展开命令包，使用真正成为makefile的一部分，命令包只是一堆makefile标识文本。foreach用来展开目标集的每一个目标，并送入命令包进行替换重组。
@@ -116,7 +116,7 @@ else
 endif
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to 【hexo post】$(DIR_BASE_COPYTO) ...
-	xcopy $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
+	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
 endif
 endif
 endif

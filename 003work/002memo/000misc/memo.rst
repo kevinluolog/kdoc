@@ -23,3 +23,5 @@ wiki:
 
 `www.answers.com <https://www.answers.com/>`__
 
+`吸管秒变笛子 <https://www.sohu.com/a/230583209_614840>`__
+
