@@ -26,7 +26,7 @@ SRC_PATH_DIR := $(shell find $(DIR_BASE_SRC) -type d)
 # 取得源文件名,包括路径
 #SRC_PATH_RSTS := $(foreach dir,$(SRC_PATH_DIR),$(addprefix $(dir)/,$(wildcard $(dir)/*.rst)))
 # $(wildcard $(dir)/*.rst) 的返回，已经包含了目录，所以不用再addprefix加上目录名，要不重复了。
-SRC_PATH_RSTS := $(foreach dir,$(SRC_PATH_DIR),$(dir)/,$(wildcard $(dir)/*.rst))
+SRC_PATH_RSTS := $(foreach dir,$(SRC_PATH_DIR),$(wildcard $(dir)/*.rst))
 
 
 # $(SUFFIX_FROM)路径文件名替换成$(SUFFIX_TO)路径文件名
@@ -66,10 +66,12 @@ $(OBJ_PATH_DIR):
 #因为mkdir支持多目录同时写在一起,所以不用再用模式来拆开成一个一个了。
 	@echo "   MKDIR $@  ..." 
 	@mkdir -p $@
+	@echo "SRC_PATH_DIR %%%"
+	@echo $(SRC_PATH_DIR)
 	@echo "OBJ_PATH_MDS %%%"
-	@echo $OBJ_PATH_MDS
+	@echo $(OBJ_PATH_MDS)
 	@echo "SRC_PATH_MDS %%%"
-	@echo $SRC_PATH_MDS
+	@echo $(SRC_PATH_MDS)
 
 
 ##定义一个命令包, 来重新组合【目标:依赖】关系, 配合$(eval ) 和foreach 来使用。eval用来二次展开命令包，使用真正成为makefile的一部分，命令包只是一堆makefile标识文本。foreach用来展开目标集的每一个目标，并送入命令包进行替换重组。
