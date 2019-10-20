@@ -105,18 +105,19 @@ endif
 #	@echo $$(TBFILENAME)+2
 #	@echo $(subst $(SUFFIX_TO),,$(notdir $(1)))+1#直接函数填入才能取到。
 	@echo convert to utf8
-	iconv -f GBK -t UTF-8 $$@.tmp >$$@
+#	iconv -f GBK -t UTF-8 $$@.tmp >$$@
+	cp $$@.tmp $$@
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o - >>$$@
 	@echo delete .tmp file...
-	del $$@.tmp
+	rm $$@.tmp
 else
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o $$@
 endif
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to 【hexo post】$(DIR_BASE_COPYTO) ...
-	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
+	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 endif
 endif
 endif
@@ -132,7 +133,7 @@ ifdef DIR_TEMPLATE
 --template=$(DIR_TEMPLATE)/default.latex
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	xcopy $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
+	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
 endif
 endif
 endif
@@ -144,7 +145,7 @@ ifeq ($(SUFFIX_TO),.html)
 	pandoc $$< -o $$@
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	xcopy $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
+	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 endif
 endif
 endif
@@ -155,7 +156,7 @@ ifeq ($(SUFFIX_TO),.rst)
 	pandoc $$< -o $$@
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	xcopy $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y
+	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 endif
 endif
 endif
