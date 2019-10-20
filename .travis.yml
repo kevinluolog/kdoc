@@ -49,7 +49,9 @@ script:
   - ls
   - make --version
 #  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
-  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile.mk DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE
+# Makefile.mk
+#  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile.mk DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE
 
 
 #  - cp index.html ./output/
