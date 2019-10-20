@@ -108,4 +108,52 @@ Specify when you want to get notified:
        on_success: never # default: change
        on_failure: always # default: always
 
+travis CI 问题集锦
+=======================
+
+
+
+KDOC:
+
+travis CI环境变量 设置
+-----------------------------
+
+不能这样分开写：会报错，变量找不到，要写到同一行
+
+::
+
+   env:
+     - T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo
+     - T_DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/002memo
+     - T_DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/copy2 
+     - T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/   001pandoc/templates
+
+参考：
+
+`travis CI spec: 环境变量environment-variables <https://docs.travis-ci.com/user/environment-variables#defining-public-variables-in-travisyml>`__
+
+::
+
+   env:
+     - FOO=foo BAR=bar
+
+一个build要写到同一行中, 不同行是不同的build中的变量
+
+
+
+  
+
+linux上文件名大小写敏感，包括后缀名。
+-----------------------------------------------
+
+::
+
+   make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/makefile
+
+报错找不文件或目录，没有编译rule
+
+原因：makefile 和 Makefile 是两个不一样的文件
+
+.c 和 .C 也是不一样的，要用脚本更改过来。
+
 
