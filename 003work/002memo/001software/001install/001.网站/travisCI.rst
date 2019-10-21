@@ -115,8 +115,8 @@ travis CI 问题集锦
 
 KDOC:
 
-travis CI环境变量 设置
------------------------------
+travis CI环境变量 设置,env: -单行 VS 多行
+-----------------------------------------------
 
 不能这样分开写：会报错，变量找不到，要写到同一行
 
@@ -143,8 +143,8 @@ travis CI环境变量 设置
 
   
 
-linux上文件名大小写敏感，包括后缀名。
------------------------------------------------
+linux上文件名大小写敏感，包括后缀名。Makefile VS makefile
+----------------------------------------------------------------
 
 ::
 
@@ -156,4 +156,39 @@ linux上文件名大小写敏感，包括后缀名。
 
 .c 和 .C 也是不一样的，要用脚本更改过来。
 
+
+cp目标目录不存在，先mkdir -p
+--------------------------------
+
+::
+
+   ifdef DIR_BASE_COPYTO
+       @echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
+   #   cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+   #因copy目标目录如果不存在，不能直接用cp命令，会出错，所以分两步，先mkdir, 再CP
+       mkdir -p $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+       cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
+   endif
+
+gnumake-file写文件命令输出GBK码，$(file, 需iconv转换
+--------------------------------------------------
+
+::
+
+   $(file >$$@.tmp
+
+
+拷贝命令比较，XCOPY(win) VS cp(linux)
+--------------------------------------------
+
+windows下XCOPY命令，目标目录的父目录可以不存在，命令自己会创建
+
+Linux下cp不会自动创建目标目录的父目录，如果目标目录不在在会直接报错。
+
+gnumake-wildcard(win) VS cp(linux)
+----------------------------------
+
+windows 下gnumake命令wildcard返回匹配文件名带目录（待确认）
+
+Linux 下gnumake命令wildcard返回匹配文件名带目录（已确认）
 

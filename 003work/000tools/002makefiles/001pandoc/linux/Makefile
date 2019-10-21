@@ -66,12 +66,12 @@ $(OBJ_PATH_DIR):
 #因为mkdir支持多目录同时写在一起,所以不用再用模式来拆开成一个一个了。
 	@echo "   MKDIR $@  ..." 
 	@mkdir -p $@
-	@echo "SRC_PATH_DIR %%%"
-	@echo $(SRC_PATH_DIR)
-	@echo "OBJ_PATH_MDS %%%"
-	@echo $(OBJ_PATH_MDS)
-	@echo "SRC_PATH_MDS %%%"
-	@echo $(SRC_PATH_MDS)
+#	@echo "SRC_PATH_DIR %%%"
+#	@echo $(SRC_PATH_DIR)
+#	@echo "OBJ_PATH_MDS %%%"
+#	@echo $(OBJ_PATH_MDS)
+#	@echo "SRC_PATH_MDS %%%"
+#	@echo $(SRC_PATH_MDS)
 
 
 ##定义一个命令包, 来重新组合【目标:依赖】关系, 配合$(eval ) 和foreach 来使用。eval用来二次展开命令包，使用真正成为makefile的一部分，命令包只是一堆makefile标识文本。foreach用来展开目标集的每一个目标，并送入命令包进行替换重组。
@@ -113,8 +113,9 @@ endif
 #	@echo $$(TBFILENAME)+2
 #	@echo $(subst $(SUFFIX_TO),,$(notdir $(1)))+1#直接函数填入才能取到。
 	@echo convert to utf8
-#	iconv -f GBK -t UTF-8 $$@.tmp >$$@
-	cp $$@.tmp $$@
+	iconv -f GBK -t UTF-8 $$@.tmp >$$@
+#用cp来替代iconv，以为linux下，gnumake的file命令输出的是UTF8文件类型。
+#	cp $$@.tmp $$@
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o - >>$$@
 	@echo delete .tmp file...
@@ -126,7 +127,7 @@ endif
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
 #	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
-#因copy目标目录如果不存在，不能直接用cp命令，会出错，所以先mkdir, "$_"表示是指前面命令的返回值，也就是新建的目录。
+#因copy目标目录如果不存在，不能直接用cp命令，会出错，所以分两步，先mkdir, 再CP
 	mkdir -p $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
 endif
