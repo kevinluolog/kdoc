@@ -113,7 +113,10 @@ endif
 #	@echo $$(TBFILENAME)+2
 #	@echo $(subst $(SUFFIX_TO),,$(notdir $(1)))+1#直接函数填入才能取到。
 	@echo convert to utf8
-	iconv -f GBK -t UTF-8 $$@.tmp >$$@
+	
+#	iconv -f GBK -t UTF-8 $$@.tmp >$$@
+# 加入-c，表示忽略那些不能解释的字符
+	iconv -f GBK -t UTF-8 -c $$@.tmp >$$@
 #用cp来替代iconv，以为linux下，gnumake的file命令输出的是UTF8文件类型。
 #	cp $$@.tmp $$@
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
