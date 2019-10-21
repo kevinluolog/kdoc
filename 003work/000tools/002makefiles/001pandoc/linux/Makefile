@@ -16,7 +16,8 @@ SUFFIX_TO := .md
 # 控制是否加入hexo需要的frontmatter meta数据,只在rst2md的模式中用到，其它可以任意值
 ADD_HEXO_HEAD := TRUE
 # 控制输入TAG的模式: =,空表示自动从所在最后一级目录来 =xxx,非空值则直接填入这个值
-ADD_HEXO_TAG_FROM_DIR := 技术
+#ADD_HEXO_TAG_FROM_DIR := 技术
+ADD_HEXO_TAG_FROM_DIR :=
 ###---生成变量
 
 # 获得源$(SUFFIX_FROM)路径名。
