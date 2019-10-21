@@ -124,8 +124,10 @@ else
 	pandoc $$< -o $$@
 endif
 ifdef DIR_BASE_COPYTO
-	@echo copy $(SUFFIX_TO) file to 【hexo post】$(DIR_BASE_COPYTO) ...
-	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
+#	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+#因copy目标目录如果不存在，不能直接用cp命令，会出错，所以先mkdir, "$_"表示是指前面命令的返回值，也就是新建的目录。
+	mkdir -p $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) && cp $$@ "$_"
 endif
 endif
 endif
