@@ -14,7 +14,7 @@ SUFFIX_FROM := .rst
 SUFFIX_TO := .md
 
 # 控制是否加入hexo需要的frontmatter meta数据,只在rst2md的模式中用到，其它可以任意值
-ADD_HEXO_HEAD := TRUE
+ADD_HEXO_HEAD := FALSE
 # 控制输入TAG的模式: =,空表示自动从所在最后一级目录来 =xxx,非空值则直接填入这个值
 ADD_HEXO_TAG_FROM_DIR := 技术
 ###---生成变量
@@ -101,7 +101,7 @@ $$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1)))\
 ,$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1))))\
 )\
 )
-else
+else #ADD_HEXO_TAG_FROM_DIR
 	$$(file >$$@.tmp,
 $$(call def_hexo_md_head\
 ,$(subst $(SUFFIX_TO),,$(notdir $(1)))\
@@ -123,19 +123,19 @@ endif
 	pandoc $$< -o - >>$$@
 	@echo delete .tmp file...
 	rm $$@.tmp
-else
+else #ADD_HEXO_HEAD
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o $$@
-endif
+endif #ADD_HEXO_HEAD
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
 #	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 #因copy目标目录如果不存在，不能直接用cp命令，会出错，所以分两步，先mkdir, 再CP
 	mkdir -p $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
-endif
-endif
-endif
+endif #DIR_BASE_COPYTO
+endif #SUFFIX_TO
+endif #SUFFIX_FROM
 # rst2pdf
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.pdf)
