@@ -60,12 +60,7 @@ script:
 
 # .rst转换成 格式.html
 
-  - make startconv -f \
-$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile \
-DIR_BASE_SRC=$T_DIR_BASE_SRC \
-DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/002memo \
-DIR_BASE_COPYTO= \
-SUFFIX_FROM=.rst SUFFIX_TO=.html 
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html 
 #DIR_TEMPLATE=$T_DIR_TEMPLATE \
 #ADD_HEXO_TAG_FROM_DIR=\
 
