@@ -1,0 +1,52 @@
+*******************
+字符文件编码
+*******************
+
+.. contents:: contents
+.. section-numbering::
+
+参考链接
+===========
+
+`libiconv gnu官方 itro&download <http://www.gnu.org/software/libiconv/>`__
+
+`浅析windows下字符集和文件编码存储/utf8/gbk <https://blog.csdn.net/seanyxie/article/details/89151903>`__
+
+`UNICODE编码UTF-16中的BigEndian（FEFF）和LittleEndian（FFFE）形象描述 <https://www.cnblogs.com/yzl050819/p/6667702.html>`__
+
+
+` <>`__
+
+` <>`__
+
+
+字符编码小知识
+===========-=======
+
+中文字集进化，GB2312->GBK 通称他们叫做 "DBCS"（Double Byte Charecter Set 双字节字符集）。
+
+中文windows notepad存盘默认用的ansi编码，也就是对应gbk字符集。
+
+1，字符集
+----------------
+
+这里主要讲两种字符集，DBCS和UCS
+
+UCS规定如何编码，
+
+UTF规定如何传输、保存这个编码。UTF8、UTF7、UTF16都是被广泛接受的方案。
+
+2，BOM
+----------------
+
+BOM是在一个文本文件之前，用来标记改文件编码方式的一种记录方式，windows下是这样做的，linux不知道。
+
+UCS编码中 ”ZERO WIDTH NO-BREAK SPACE”的字符，它的编码是FEFF。而FFFE在UCS中是不存在的字符。
+
+FEFF，就表明这个字节流是Big-Endian的
+FFFE，就表明这个字节流是Little-Endian的。
+
+UTF8不需要BOM来表明字节顺序，但可以用BOM来表明编码方式。
+EFBBBF，就知道这是UTF8编码。
+
+假如文件用UTF8无BOM格式来保存文件，那就不能靠BOM头来判断是否是utf8编码的，而要对文件中的数据进行简单的编码分析来确定文件的编码格式，也就是对文件的二进制进行分析，和对应编码的字符集进行匹配，最终确定其编码格式。

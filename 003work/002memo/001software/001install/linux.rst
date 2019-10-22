@@ -524,6 +524,20 @@ Linux-cp命令详解
 
 
 
+拷贝命令比较，XCOPY(win) VS cp(linux)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+windows下XCOPY命令，目标目录的父目录可以不存在，命令自己会创建
+
+Linux下cp不会自动创建目标目录的父目录，如果目标目录不在在会直接报错。
+
+gnumake-wildcard(win) VS cp(linux)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+windows 下gnumake命令wildcard返回匹配文件名带目录（待确认）
+
+Linux 下gnumake命令wildcard返回匹配文件名带目录（已确认）
+
 
 ` <>`__
 

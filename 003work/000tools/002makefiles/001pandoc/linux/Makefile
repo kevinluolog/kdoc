@@ -90,7 +90,7 @@ define PROGRAM_template
 #dep := $(patsubst %$(SUFFIX_TO),%$(SUFFIX_FROM),$(subst $(DIR_BASE_OBJ),$(DIR_BASE_SRC),$(1)))
 dep := $(basename $(subst $(DIR_BASE_OBJ),$(DIR_BASE_SRC),$(1)))$(SUFFIX_FROM)
 $(1): $$(dep)
-# rst2md: with hexo head and deploy copy
+## rst2md: with hexo head and deploy copy
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.md)
 ifeq ($(ADD_HEXO_HEAD),TRUE)
@@ -137,7 +137,7 @@ ifdef DIR_BASE_COPYTO
 endif #DIR_BASE_COPYTO
 endif #SUFFIX_TO
 endif #SUFFIX_FROM
-# rst2pdf
+## rst2pdf
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.pdf)
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
@@ -154,7 +154,7 @@ endif
 endif
 endif
 endif
-# rst2html
+## rst2html
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.html)
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
@@ -165,7 +165,7 @@ ifdef DIR_BASE_COPYTO
 endif
 endif
 endif
-# md2rst
+## md2rst
 ifeq ($(SUFFIX_FROM),.md)
 ifeq ($(SUFFIX_TO),.rst)
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...

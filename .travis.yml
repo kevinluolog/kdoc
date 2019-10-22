@@ -18,7 +18,7 @@ branches:
     - dev 
 
 env:
-  - T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo T_DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/002memo  T_DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/copy2 T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/templates
+  - T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/templates
 
 before_install:
 
@@ -48,15 +48,33 @@ script:
   - mkdir -p output/copy2
   - ls
   - make --version
+
+#pandoc:
+
+# .rst转换成hexo 格式.md
 #  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
-# Makefile.mk
-#  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile.mk DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE
-# Makefile
-#  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE 
 # ADD_HEXO_TAG_FROM_DIR=技术+
-#  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=技术+
+#  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/copy2 SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=技术+
 # ADD_HEXO_TAG_FROM_DIR=
-  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$T_DIR_BASE_OBJ DIR_BASE_COPYTO=$T_DIR_BASE_COPYTO SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/copy2 SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
+
+# .rst转换成 格式.html
+
+  - make startconv -f \
+$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile \
+DIR_BASE_SRC=$T_DIR_BASE_SRC \
+DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/002memo \
+DIR_BASE_COPYTO= \
+SUFFIX_FROM=.rst SUFFIX_TO=.html 
+#DIR_TEMPLATE=$T_DIR_TEMPLATE \
+#ADD_HEXO_TAG_FROM_DIR=\
+
+# .rst转换成 格式.pdf
+
+#sphinx:
+
+#sphinx: .rst转换成 格式.html
+
 
 #  - cp index.html ./output/
   - ls
