@@ -117,9 +117,9 @@ endif
 	
 #	iconv -f GBK -t UTF-8 $$@.tmp >$$@
 # 加入-c，表示忽略那些不能解释的字符
-	iconv -f GBK -t UTF-8 -c $$@.tmp >$$@
+#	iconv -f GBK -t UTF-8 -c $$@.tmp >$$@
 #用cp来替代iconv，以为linux下，gnumake的file命令输出的是UTF8文件类型。
-#	cp $$@.tmp $$@
+	cp $$@.tmp $$@
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o - >>$$@
 	@echo delete .tmp file...
