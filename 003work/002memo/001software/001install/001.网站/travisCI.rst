@@ -19,7 +19,7 @@ install
 
 `spec for deploy of github pages <https://docs.travis-ci.com/user/deployment/pages/>`__
 
-` <>`__
+`Travis Ci的最接地气的中文使用教程 <https://www.jianshu.com/p/8308b8f08de9>`__
 
 ` <>`__
 

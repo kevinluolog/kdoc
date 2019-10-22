@@ -69,7 +69,8 @@ script:
 #sphinx:
 
 #sphinx: .rst转换成 格式.html
-
+  - $TRAVIS_BUILD_DIR/003work/002memo/make html
+  - mkdir -p $TRAVIS_BUILD_DIR/output/sphinx/memo-build & cp $TRAVIS_BUILD_DIR/003work/002memo/build/html -R $TRAVIS_BUILD_DIR/output/sphinx/memo-build/
 
 #  - cp index.html ./output/
   - ls
