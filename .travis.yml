@@ -75,6 +75,8 @@ script:
   - sphinx-build --version
   - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/memo-build
+# 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
+  - touch $TRAVIS_BUILD_DIR/output/sphinx/memo-build/.nojekyll
 
 #  - cp index.html ./output/
   - ls
@@ -89,23 +91,24 @@ after_script:
 #  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
 #  - hexo deploy
 
-
+#deploy ./output 2 /travisci_out_kdoc
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-  keep_history: true
+#  keep_history: true
   local_dir: ./output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
   on:
     branch: dev
 
+#deploy sphinx memo-build 2 /gp-memo
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-  keep_history: true
+#  keep_history: true
   local_dir: ./output/sphinx/memo-build
   repo: kevinluolog/gp-memo
   target_branch: gh-pages

@@ -539,6 +539,31 @@ windows 下gnumake命令wildcard返回匹配文件名带目录（待确认）
 Linux 下gnumake命令wildcard返回匹配文件名带目录（已确认）
 
 
+
+touch命令直接创建空白文件
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+touch test.txt
+
+命令为：“touch [选项] [文件]”。 
+
+::
+
+  -a   只更改访问时间
+  -c, --no-create 不创建任何文件
+  -d, --date=字符串 使用指定字符串表示时间而非当前时间
+  -f   (忽略)
+  -h, --no-dereference  会影响符号链接本身，而非符号链接所指示的目的地
+    (当系统支持更改符号链接的所有者时，此选项才有用)
+  -m   只更改修改时间
+  -r, --reference=FILE  use this file's times instead of current time
+  -t STAMP              use [[CC]YY]MMDDhhmm[.ss] instead of current time
+      --time=WORD        change the specified time:
+                          WORD is access, atime, or use: equivalent to -a
+                          WORD is modify or mtime: equivalent to -m
+      --help  显示此帮助信息并退出
+      --version  显示版本信息并退出
+
 ` <>`__
 
 ` <>`__
