@@ -25,8 +25,9 @@ before_install:
 # Start: Build Lifecycle
 install:
 # install sphinx
+#  - apt-get install python3-sphinx
   - pip install Sphinx
- 
+
 # pandoc （提供基本转换环境）
 # 针对Ubuntu12.04,5下安装pandoc如果使用cabal处理依赖关系总是出现版本不符合的问题，不知道如何解决，反而直接下载 deb包 来安装却非常简单，适合travis-ci虚拟机环境
   - wget https://github.com/jgm/pandoc/releases/download/1.17.1/pandoc-1.17.1-2-amd64.deb
@@ -97,6 +98,17 @@ deploy:
   local_dir: ./output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
+  on:
+    branch: dev
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
+  keep_history: true
+  local_dir: ./output/sphinx/memo-build
+  repo: kevinluolog/gp-memo
+  target_branch: gh-pages
   on:
     branch: dev
 
