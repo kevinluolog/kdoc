@@ -13,6 +13,11 @@ sphinx is great
 sphinx install
 ==============
 
+`sphinx install 官方spec <http://www.sphinx-doc.org/en/master/usage/installation.html#linux>`__
+
+windows
+^^^^^^^
+
 `pypi sphinx website <https://pypi.org/project/Sphinx/>`__
 
 pip install Sphinx
@@ -25,10 +30,81 @@ pip install -U sphinx
 
 sphinx-build --version
 
+Linux
+^^^^^
+
+Debian/Ubuntu
+"""""""""""""
+
+Install either python3-sphinx (Python 3) or python-sphinx (Python 2) 
+
+using apt-get:
+::
+
+  $ apt-get install python3-sphinx
+If it not already present, this will install Python for you.
+
+RHEL, CentOS
+""""""""""""
+
+Install python-sphinx using yum:
+::
+
+  $ yum install python-sphinx
+If it not already present, this will install Python for you.
+
+mac Os
+^^^^^^
+
+Sphinx can be installed using Homebrew, MacPorts, or as part of a Python distribution such as Anaconda.
+
+Homebrew
+::
+
+  $ brew install sphinx-doc
+
+
+
 sphinx项目创建
 ==============
 
-sphinx-quickstart
+`sphinx spec: Getting Started <http://www.sphinx-doc.org/en/master/usage/quickstart.html>`__
+
+需要创建两个文件必须文件：
+
+- conf.py
+
+  where you can configure all aspects of how Sphinx reads your sources and builds your documentation. 
+
+- index.rst
+
+  a master document, The main function of the master document is to serve as a welcome page, and to contain the root of the “table of contents tree” (or toctree). This is one of the main things that Sphinx adds to reStructuredText, a way to connect multiple files to a single hierarchy of documents.
+
+
+可以手工添加，也可以用下面的sphinx-quickstart来创建一个模板
+
+sphinx-quickstart 模式
+----------------------
+
+::
+
+  $ sphinx-quickstart
+
+自动创建两个文件必须文件
+conf.py， index.rst (if you accepted the defaults)，
+
+还有文件make.bat，makefile， 目录_static，_templates
+
+直接用sphinx-build program:
+---------------------------
+
+有了conf.py， index.rst, 就可以直接
+
+::
+
+  $ sphinx-build -b html sourcedir builddir
+
+
 
 sphinx选项
 ==============

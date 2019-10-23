@@ -1071,11 +1071,11 @@ fontawesome是什么？
 
 
 怎么解决githubpages不能识别下划线开头的目录？
--------------------------------------------------
+--------------------------------------------------------
 
 `githubpages不能识别下划线开头的目录解决方法 <https://blog.csdn.net/lineuman/article/details/89600484>`__
 
-使用sphinx创建的文档，资源文件夹前面会带着下划线，本地使用没有问题，提交到github上面，想使用github pages的时候提示404，原因为github pages的jekyll模版会忽略下划线开头的文件，所以要禁用jekyll
+使用sphinx创建的文档，资源文件夹前面会带着下划线，本地使用没有问题，提交到github上面，想使用github pages的时候提示404，原因为github pages的jekyll模版会忽略下划线开头的文件，自动忽略下划线开头的目录，从而导致引用不到CSS,JAVASCRIPT,ETC.，所以要禁用jekyll
 
 禁用方法就是在文件在项目目录下添加.nojekyll文件
 
@@ -1262,7 +1262,8 @@ https://github.com/settings/tokens
      1. 主要是修改deploy部分，决定gh-token和推送部署到什么repo的什么分支。
      如果是xxxx.github.io就推到master, 如果是子目录repo,则推送到gh-pages分支。
      
-     2. 设置 root变量， 如果是子目录repo，则需要设置相应的子目录repo名字。这样在网页引用css等资源时可以直接引用到。因为hexo引用CSS等资源时用的是绝对目录，如/{子目录repo名}/css/xxx.css, sphinx 用的是相对目录，如 _static/css/xxx.css。 此处因为sphinx资源目录前面带了下划线， _ , 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 `怎么解决githubpages不能识别下划线开头的目录？`_
+     2. 设置 root变量， 如果是子目录repo，则需要设置相应的子目录repo名字。这样在网页引用css等资源时可以直接引用到。因为hexo引用CSS等资源时用的是绝对目录，如/{子目录repo名}/css/xxx.css, sphinx 用的是相对目录，如 _static/css/xxx.css。 此处因为sphinx资源目录前面带了下划线， _ , 因hexo和jekyll会自动忽略下划线开头的目录，从而导致引用不到CSS,JAVASCRIPT,ETC.，所以在根目录要添加.nojekyll文件, 详细请参考 `怎么解决githubpages不能识别下划线开头的目录？`_
+
         
      ::
 

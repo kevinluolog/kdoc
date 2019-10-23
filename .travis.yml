@@ -44,44 +44,70 @@ install:
 script:
   - echo $TRAVIS_BUILD_DIR
   - echo $T_DIR_BASE_SRC
-  - ls
   - mkdir -p output/002memo
   - mkdir -p output/copy2
   - ls
-  - make --version
 
-#pandoc:
+#1. 学习memo笔记： kdoc/003work/002memo
 
-# .rst转换成hexo 格式.md
+#1.1 pandoc:
+
+#1.1.1 .rst转换成hexo 格式.md
 #  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
 # ADD_HEXO_TAG_FROM_DIR=技术+
 #  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/copy2 SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=技术+
 # ADD_HEXO_TAG_FROM_DIR=
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/copy2 SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
 
-# .rst转换成 格式.html
-
+#1.1.2 .rst转换成 格式.html
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html 
 #DIR_TEMPLATE=$T_DIR_TEMPLATE \
 #ADD_HEXO_TAG_FROM_DIR=\
 
-# .rst转换成 格式.pdf
+#1.1.3 .rst转换成 格式.pdf
 
-#sphinx:
+#1.2 sphinx:
 
-#sphinx: .rst转换成 格式.html
+#1.2.1 sphinx: .rst转换成 格式.html
 # sphinx-build -b html sourcedir builddir
 #  - mkdir -p $TRAVIS_BUILD_DIR/output/sphinx/memo-build
-  - sphinx-build --version
-  - sphinx-build --help
+#  - sphinx-build --version
+#  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/memo-build
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/memo-build/.nojekyll
 
+
+#2 博客post文章： kdoc/003work/003post
+
+#2.1 pandoc:
+
+#2.1.1 .rst转换成hexo 格式.md
+# ADD_HEXO_TAG_FROM_DIR=post+
+#  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+
+# ADD_HEXO_TAG_FROM_DIR= ,置空表示取文件路径的最后目录作为hexo tag
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR= 
+  
+#2.1.2 .rst转换成 格式.html
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR= 
+
+#2.1.3 .rst转换成 格式.pdf
+
+#2.2 sphinx:
+
+#2.2.1 sphinx: .rst转换成 格式.html
+# sphinx-build -b html sourcedir builddir
+#  - mkdir -p $TRAVIS_BUILD_DIR/output/sphinx/memo-build
+#  - sphinx-build --version
+#  - sphinx-build --help
+  - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/post-build
+# 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
+  - touch $TRAVIS_BUILD_DIR/output/sphinx/post-build/.nojekyll
+
 #  - cp index.html ./output/
-  - ls
-  - ls ./output
-  - find -type d
+#  - ls
+#  - ls ./output
+#  - find -type d
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
@@ -91,7 +117,7 @@ after_script:
 #  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
 #  - hexo deploy
 
-#deploy ./output 2 /travisci_out_kdoc
+#dx.01 所有输出： ./output 2 kevinluolog/travisci_out_kdoc, all output can gitclone on kevinluolog/travisci_out_kdoc
 deploy:
   provider: pages
   skip_cleanup: true
@@ -103,7 +129,7 @@ deploy:
   on:
     branch: dev
 
-#deploy sphinx memo-build 2 /gp-memo
+#d1.02 学习memo笔记：sphinx memo-build 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
 deploy:
   provider: pages
   skip_cleanup: true
@@ -111,6 +137,18 @@ deploy:
 #  keep_history: true
   local_dir: ./output/sphinx/memo-build
   repo: kevinluolog/gp-memo
+  target_branch: gh-pages
+  on:
+    branch: dev
+
+#d2.02 博客post文章：sphinx memo-build 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
+#  keep_history: true
+  local_dir: ./output/sphinx/memo-post
+  repo: kevinluolog/gp-post
   target_branch: gh-pages
   on:
     branch: dev
