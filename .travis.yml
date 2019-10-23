@@ -109,13 +109,6 @@ script:
 #  - ls ./output
 #  - find -type d
 
-# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
-after_script:
-#  - git config user.name "kevinluolog"
-#  - git config user.email "kevinluolog_72@163.com"
-  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
-#  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
-#  - hexo deploy
 
 #d1 学习memo笔记：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
 #deploy:
@@ -131,9 +124,18 @@ after_script:
   - touch .nojekyll
   - git add .
   - git commit -m "kl+travis+"
-  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git 
+  - git push -u https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git gh-pages
   - cd $TRAVIS_BUILD_DIR
   - pwd
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+#  - git config user.name "kevinluolog"
+#  - git config user.email "kevinluolog_72@163.com"
+  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
+#  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
+#  - hexo deploy
+
 #d2 博客post文章：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
 #deploy:
 
