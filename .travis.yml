@@ -122,8 +122,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-#  keep_history: true
-  local_dir: ./output
+  keep_history: true
+  local_dir: $TRAVIS_BUILD_DIR/output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
   on:
@@ -134,8 +134,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-#  keep_history: true
-  local_dir: ./output/sphinx/memo-build
+  keep_history: true
+  local_dir: $TRAVIS_BUILD_DIR/output/sphinx/memo-build
   repo: kevinluolog/gp-memo
   target_branch: gh-pages
   on:
@@ -146,8 +146,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-#  keep_history: true
-  local_dir: ./output/sphinx/memo-post
+  keep_history: true
+  local_dir: $TRAVIS_BUILD_DIR/output/sphinx/memo-post
   repo: kevinluolog/gp-post
   target_branch: gh-pages
   on:
