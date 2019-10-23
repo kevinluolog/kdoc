@@ -113,7 +113,7 @@ $$(call def_hexo_md_head\
 endif
 #	@echo $$(TBFILENAME)+2
 #	@echo $(subst $(SUFFIX_TO),,$(notdir $(1)))+1#直接函数填入才能取到。
-	@echo convert to utf8
+#	@echo convert to utf8
 	
 #	iconv -f GBK -t UTF-8 $$@.tmp >$$@
 # 加入-c，表示忽略那些不能解释的字符
@@ -122,7 +122,7 @@ endif
 	cp $$@.tmp $$@
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o - >>$$@
-	@echo delete .tmp file...
+#	@echo delete .tmp file...
 	rm $$@.tmp
 else #ADD_HEXO_HEAD
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
