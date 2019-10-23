@@ -123,7 +123,7 @@ script:
   - ls
 #  - rm 
 # 选项-RT表示只复制文件和子目录，不包括.开头的文件和隐藏文件。同时如果文件在在会自动覆盖
-  - cp -RT $TRAVIS_BUILD_DIR/output/sphinx/build-memo/* ./
+  - cp -RT $TRAVIS_BUILD_DIR/output/sphinx/build-memo/* /tmp/klgit/gp-memo/
   - pwd
   - ls
   - touch .nojekyll
