@@ -16,7 +16,7 @@ sphinx install
 `sphinx install 官方spec <http://www.sphinx-doc.org/en/master/usage/installation.html#linux>`__
 
 windows
-^^^^^^^
+---------
 
 `pypi sphinx website <https://pypi.org/project/Sphinx/>`__
 
@@ -31,10 +31,10 @@ pip install -U sphinx
 sphinx-build --version
 
 Linux
-^^^^^
+----------
 
 Debian/Ubuntu
-"""""""""""""
+^^^^^^^^^^^^^^^^^^^
 
 Install either python3-sphinx (Python 3) or python-sphinx (Python 2) 
 
@@ -46,7 +46,7 @@ using apt-get:
 If it not already present, this will install Python for you.
 
 RHEL, CentOS
-""""""""""""
+^^^^^^^^^^^^^^^^^
 
 Install python-sphinx using yum:
 ::
@@ -56,7 +56,7 @@ Install python-sphinx using yum:
 If it not already present, this will install Python for you.
 
 mac Os
-^^^^^^
+-----------
 
 Sphinx can be installed using Homebrew, MacPorts, or as part of a Python distribution such as Anaconda.
 

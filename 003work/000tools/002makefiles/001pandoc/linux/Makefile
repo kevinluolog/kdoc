@@ -119,7 +119,7 @@ endif
 # 加入-c，表示忽略那些不能解释的字符
 #	iconv -f GBK -t UTF-8 -c $$@.tmp >$$@
 #用cp来替代iconv，以为linux下，gnumake的file命令输出的是UTF8文件类型。
-	cp $$@.tmp $$@
+	@cp $$@.tmp $$@
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o - >>$$@
 #	@echo delete .tmp file...
@@ -129,11 +129,11 @@ else #ADD_HEXO_HEAD
 	pandoc $$< -o $$@
 endif #ADD_HEXO_HEAD
 ifdef DIR_BASE_COPYTO
-	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
-#	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+#	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
+#	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 #因copy目标目录如果不存在，不能直接用cp命令，会出错，所以分两步，先mkdir, 再CP
 	mkdir -p $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
-	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
+	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
 endif #DIR_BASE_COPYTO
 endif #SUFFIX_TO
 endif #SUFFIX_FROM
@@ -148,8 +148,8 @@ ifdef DIR_TEMPLATE
 --toc --toc-depth=6 \
 --template=$(DIR_TEMPLATE)/default.latex
 ifdef DIR_BASE_COPYTO
-	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
+#	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
+	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
 endif
 endif
 endif
@@ -161,7 +161,7 @@ ifeq ($(SUFFIX_TO),.html)
 	pandoc $$< -o $$@
 ifdef DIR_BASE_COPYTO
 #	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 endif
 endif
 endif
@@ -172,7 +172,7 @@ ifeq ($(SUFFIX_TO),.rst)
 	pandoc $$< -o $$@
 ifdef DIR_BASE_COPYTO
 #	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
 endif
 endif
 endif
