@@ -42,7 +42,7 @@ install:
 
 # 
 script:
-  - echo $TRAVIS_BUILD_DIR
+#  - echo $TRAVIS_BUILD_DIR
   - echo $T_DIR_BASE_SRC
   - mkdir -p output/002memo
   - mkdir -p output/copy2
