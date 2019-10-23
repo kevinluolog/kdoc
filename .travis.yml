@@ -42,8 +42,8 @@ install:
 
 # 
 script:
-  - mkdir -p /tmp/klgit
-  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit
+  - mkdir -p /tmp/klgit/gp-memo
+  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
   - pwd
 
 #  - echo $TRAVIS_BUILD_DIR
