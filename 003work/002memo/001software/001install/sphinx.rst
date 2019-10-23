@@ -42,6 +42,7 @@ using apt-get:
 ::
 
   $ apt-get install python3-sphinx
+
 If it not already present, this will install Python for you.
 
 RHEL, CentOS
@@ -51,6 +52,7 @@ Install python-sphinx using yum:
 ::
 
   $ yum install python-sphinx
+
 If it not already present, this will install Python for you.
 
 mac Os
@@ -70,7 +72,7 @@ sphinx项目创建
 
 `sphinx spec: Getting Started <http://www.sphinx-doc.org/en/master/usage/quickstart.html>`__
 
-需要创建两个文件必须文件：
+需要创建两个文件必须文件
 
 - conf.py
 
@@ -84,7 +86,7 @@ sphinx项目创建
 可以手工添加，也可以用下面的sphinx-quickstart来创建一个模板
 
 sphinx-quickstart 模式
-----------------------
+---------------------------------------
 
 ::
 
@@ -96,7 +98,7 @@ conf.py， index.rst (if you accepted the defaults)，
 还有文件make.bat，makefile， 目录_static，_templates
 
 直接用sphinx-build program:
----------------------------
+-------------------------------------
 
 有了conf.py， index.rst, 就可以直接
 
@@ -108,6 +110,8 @@ conf.py， index.rst (if you accepted the defaults)，
 
 sphinx选项
 ==============
+
+引入graphviz???要加入详细描述。。。kl+
 
 .. graphviz::
 
@@ -126,7 +130,7 @@ issues
 kevinluo
 
 makefile 中设定 SOURCEDIR 失败
-------------------------------
+----------------------------------------
 
 .. 
  - 目的：

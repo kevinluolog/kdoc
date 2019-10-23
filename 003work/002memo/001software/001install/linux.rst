@@ -234,6 +234,7 @@ find常见命令参数
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
+
    find /home/omd/ -type f ! -name h.txt  | xargs  rm –f  
    ls | grep -v "h.txt" |xargs rm -rf (与上面类似，删除除了某个文件外的所有文件)
 

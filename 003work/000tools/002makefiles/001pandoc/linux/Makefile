@@ -120,13 +120,13 @@ endif
 #	iconv -f GBK -t UTF-8 -c $$@.tmp >$$@
 #用cp来替代iconv，以为linux下，gnumake的file命令输出的是UTF8文件类型。
 	cp $$@.tmp $$@
-	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-	pandoc $$< -o - >>$$@
+	@echo start pandoc --quiet $(SUFFIX_FROM)2$(SUFFIX_TO)...
+	pandoc --quiet $$< -o - >>$$@
 #	@echo delete .tmp file...
 	rm $$@.tmp
 else #ADD_HEXO_HEAD
-	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-	pandoc $$< -o $$@
+	@echo start pandoc --quiet $(SUFFIX_FROM)2$(SUFFIX_TO)...
+	pandoc --quiet $$< -o $$@
 endif #ADD_HEXO_HEAD
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
@@ -140,10 +140,10 @@ endif #SUFFIX_FROM
 ## rst2pdf
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.pdf)
-	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-#	pandoc $$< -o - >>$$@
+	@echo start pandoc --quiet $(SUFFIX_FROM)2$(SUFFIX_TO)...
+#	pandoc --quiet $$< -o - >>$$@
 ifdef DIR_TEMPLATE
-	pandoc $$< --metadata-file $(DIR_TEMPLATE)/metadata.yaml -o $$@ \
+	pandoc --quiet $$< --metadata-file $(DIR_TEMPLATE)/metadata.yaml -o $$@ \
 --pdf-engine=xelatex -s -N \
 --toc --toc-depth=6 \
 --template=$(DIR_TEMPLATE)/default.latex
@@ -157,8 +157,8 @@ endif
 ## rst2html
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.html)
-#	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-	pandoc $$< -o $$@
+#	@echo start pandoc --quiet $(SUFFIX_FROM)2$(SUFFIX_TO)...
+	pandoc --quiet $$< -o $$@
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
 	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
@@ -168,8 +168,8 @@ endif
 ## md2rst
 ifeq ($(SUFFIX_FROM),.md)
 ifeq ($(SUFFIX_TO),.rst)
-	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-	pandoc $$< -o $$@
+	@echo start pandoc --quiet $(SUFFIX_FROM)2$(SUFFIX_TO)...
+	pandoc --quiet $$< -o $$@
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
 	cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
