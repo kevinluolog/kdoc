@@ -42,6 +42,10 @@ install:
 
 # 
 script:
+  - mkdir -p /tmp/klgit
+  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git 
+  - pwd
+
 #  - echo $TRAVIS_BUILD_DIR
   - echo $T_DIR_BASE_SRC
 #  - mkdir -p output/002memo
@@ -112,10 +116,7 @@ script:
 
 #d1 学习memo笔记：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
 #deploy:
-  - mkdir -p /tmp/klgit
   - cd /tmp/klgit
-  - pwd
-  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git 
   - pwd
   - ls
   - find -type d
