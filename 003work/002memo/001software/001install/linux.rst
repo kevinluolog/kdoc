@@ -491,6 +491,12 @@ Linux-cp命令详解
 
 `Linux-cp命令详解 <https://www.linuxidc.com/Linux/2019-08/159913.htm>`__
 
+默认情况下，如果目标文件存在，它将被覆盖。-n 选项告诉 cp 不要覆盖现有文件。要提示确认，请使用该 -i 选项。
+
+::
+
+  cp -i file.txt file_backup.txt
+
 如果要仅在文件比目标更新时复制文件，请使用以下 -u 选项：
 
 ::
