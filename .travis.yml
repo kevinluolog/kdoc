@@ -126,7 +126,7 @@ script:
   - touch --help
 #  - rm 
 # 选项-rt(一定要小t，表示DEST是目录，大T表示是文件会出错)表示只复制文件和子目录，不包括.开头的文件和隐藏文件。同时如果文件在在会自动覆盖
-  - cp -f -rt $TRAVIS_BUILD_DIR/output/sphinx/build-memo/* /tmp/klgit/gp-memo
+  - cp -f -rt $TRAVIS_BUILD_DIR/output/sphinx/build-memo /tmp/klgit/gp-memo
   - pwd
   - ls
   - touch .nojekyll
