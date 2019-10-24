@@ -198,8 +198,8 @@ script:
 #deploy:
 #  - mkdir -p /tmp/klgit
   - cd /tmp/klgit
-  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd hexo-klblog-src-master
+  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git ./hexo-klblog-src-master
+  - cd hexo-klblog-src-master/hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-master/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -v -f -rt ./hexo-klblog-src-master/source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
