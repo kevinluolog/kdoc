@@ -42,10 +42,6 @@ install:
 
 # 
 script:
-  - mkdir -p /tmp/klgit/gp-memo
-  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
-  - pwd
-
 #  - echo $TRAVIS_BUILD_DIR
   - echo $T_DIR_BASE_SRC
 #  - mkdir -p output/002memo
@@ -116,22 +112,64 @@ script:
 
 #d1 学习memo笔记：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
 #deploy:
-  - cd /tmp/klgit
-  - pwd
-  - ls
-  - find -type d
-  - cd gp-memo
-  - ls
-  - rm --help
-  - touch --help
+  - mkdir -p /tmp/klgit/gp-memo
+  - cd /tmp/klgit/gp-memo
+  
+  # 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+  #- git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
+  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git
+  - ls --help
+  - find --help
+  - sed --help
+  - gawk --help
+  - awk --help
+  - sub --help
+  - gsub --help
+
+#  - pwd
+#  - ls
+#  - find -type d
+#  - cp --help
+#  - rm --help
+#  - touch --help
 #  - rm 
-# 选项-rt(一定要小t，表示DEST是目录，大T表示是文件会出错)表示只复制文件和子目录，不包括.开头的文件和隐藏文件。同时如果文件在在会自动覆盖
-  - cp -f -rt /tmp/klgit/gp-memo $TRAVIS_BUILD_DIR/output/sphinx/build-memo/*
+
+# 选项-rt(一定要小t，表示DEST是目录，大T表示目标是文件source是文件时会出错)表示只复制文件和子目录，不包括.开头的文件和隐藏文件。同时如果文件在在会自动覆盖
+# Usage: cp [OPTION]... [-T] SOURCE DEST
+#   or:  cp [OPTION]... SOURCE... DIRECTORY
+#   or:  cp [OPTION]... -t DIRECTORY SOURCE...
+# Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+#  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+#  -T, --no-target-directory    treat DEST as a normal file
+#  -u, --update                 copy only when the SOURCE file is newer
+  - cp -v -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-memo/*
+  - touch .nojekyll
   - pwd
   - ls
-  - touch .nojekyll
+
+# git add . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
+# git add -u ：他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add --update的缩写）
+# git add -A ：是上面两个功能的合集（git add --all的缩写）
   - git add -A
+# git commit -m ‘message’
+# -m 参数表示可以直接输入后面的“message”，如果不加 -m参数，那么是不能直接输入message的，而是会调用一个编辑器一般是vim来让你输入这个message，
+# message即是我们用来简要说明这次提交的语句。
+# git commit -am ‘message’ -am等同于-a -m
+# -a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区，
+# 注意: 新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。
   - git commit -m "kl+travis+"
+# git push的一般形式为 git push <远程主机名> <本地分支名> <远程分支名> ，例如 git push origin master：refs/for/master ，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名。第一个master是本地分支名，第二个master是远程分支名。
+# git push origin master
+# 如果远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
+# git push origin ：refs/for/master
+# 如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 git push origin –delete master
+# git push origin
+# 如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支
+# git push
+# 如果当前分支只有一个远程分支，那么主机名都可以省略，形如 git push，可以使用git branch -r ，查看远程的分支名
+#  关于 refs/for：
+# refs/for 的意义在于我们提交代码到服务器之后是需要经过code review 之后才能进行merge的，而refs/heads 不需要
+# 原文链接：https://blog.csdn.net/qq_37577660/article/details/78565899
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
