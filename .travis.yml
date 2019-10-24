@@ -112,8 +112,8 @@ script:
 
 #d1 学习memo笔记：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
 #deploy:
-  - mkdir -p /tmp/klgit/gp-memo
-  - cd /tmp/klgit/gp-memo
+  - mkdir -p /tmp/klgit
+  - cd /tmp/klgit
   
   # 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
   #- git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
@@ -123,9 +123,6 @@ script:
   - sed --help
   - gawk --help
   - awk --help
-  - sub --help
-  - gsub --help
-
 #  - pwd
 #  - ls
 #  - find -type d
@@ -134,6 +131,8 @@ script:
 #  - touch --help
 #  - rm 
 
+# 进入到clone 创建的repo目录
+  - cd gp-memo
 # 选项-rt(一定要小t，表示DEST是目录，大T表示目标是文件source是文件时会出错)表示只复制文件和子目录，不包括.开头的文件和隐藏文件。同时如果文件在在会自动覆盖
 # Usage: cp [OPTION]... [-T] SOURCE DEST
 #   or:  cp [OPTION]... SOURCE... DIRECTORY
