@@ -143,6 +143,7 @@ script:
 #  -u, --update                 copy only when the SOURCE file is newer
 #  -v, --verbose         explain what is being done
   - cp -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-memo/*
+# 因hexo和jekyll会自动忽略下划线开头的目录，从而导致引用不到CSS,JAVASCRIPT,ETC.，所以在根目录要添加.nojekyll文件
   - touch .nojekyll
   - pwd
   - ls
@@ -197,115 +198,199 @@ script:
 # hexo-next-muse
 # hexo-next-Pisces
 # hexo-maup
-#d3.1 博客post文章+学习memo笔记 => [branch:master]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/master
+
+#d3.0 博客post文章+学习memo笔记 => [branch:上面5个分支一起]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/master
 #deploy:
-  - mkdir -p /tmp/klgit/hexo-klblog-src-master
-  - cd /tmp/klgit/hexo-klblog-src-master
+  - mkdir -p /tmp/klgit/hexo-klblog-src-total
+  - cd /tmp/klgit/hexo-klblog-src-total
 # 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
-  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+  - git clone https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
   - cd hexo-klblog-src
+
+#workOnB1. master
+  - git checkout master
 #  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_post/003post
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
-  - git commit --allow-empty -m "kl+travis++"
+  - git commit --allow-empty -m "kl+travis+master+"
+
+#workOnB2. hexo-next-Gemini
+  - git checkout hexo-next-Gemini
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+# copy 002 memo目录+文件 2 source/_posts/kl_notes
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+# copy 003post 目录+文件 2 source/_posts/kl_notes
+  - mkdir -p ./source/_posts/kl_post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - touch .nojekyll
+  - git add -A
+  - git commit --allow-empty -m "kl+travis+hexo-next-Gemini"
+
+#workOnB3. hexo-next-muse  
+  - git checkout hexo-next-muse
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+# copy 002 memo目录+文件 2 source/_posts/kl_notes
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+# copy 003post 目录+文件 2 source/_posts/kl_notes
+  - mkdir -p ./source/_posts/kl_post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - touch .nojekyll
+  - ls
+  - git add -A
+  - git commit --allow-empty -m "kl+travis+hexo-next-muse"
+
+#workOnB4. hexo-next-Pisces
+  - git checkout hexo-next-Pisces
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+# copy 002 memo目录+文件 2 source/_posts/kl_notes
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+# copy 003post 目录+文件 2 source/_posts/kl_notes
+  - mkdir -p ./source/_posts/kl_post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - touch .nojekyll
+  - ls
+  - git add -A
+  - git commit --allow-empty -m "kl+travis+hexo-next-Pisces"
+
+#workOnB5. hexo-maup       
+  - git checkout hexo-maup
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+# copy 002 memo目录+文件 2 source/_posts/kl_notes
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+# copy 003post 目录+文件 2 source/_posts/kl_notes
+  - mkdir -p ./source/_posts/kl_post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - touch .nojekyll
+  - ls
+  - git add -A
+  - git commit --allow-empty -m "kl+travis+hexo-maup"
+
+# 统一push, totally
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
 
-#d3.2 博客post文章+学习memo笔记 => [branch:hexo-next-Gemini]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-gemini
-#deploy:
-  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-gemini
-  - cd /tmp/klgit/hexo-klblog-src-hexo-next-gemini
-# 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
-  - git clone -b hexo-next-Gemini https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd hexo-klblog-src
-#  - rm -rv ./hexo-klblog-src-hexo-next-gemini/hexo-klblog-src/source/_posts/kl_notes/002memo
-# copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-hexo-next-gemini/hexo-klblog-src/source/_posts/kl_post/003post
-# copy 003post 目录+文件 2 source/_posts/kl_notes
-  - mkdir -p ./source/_posts/kl_post
-  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
-  - touch .nojekyll
-  - ls
-  - git add -A
-  - git commit --allow-empty -m "kl+travis+"
-  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd $TRAVIS_BUILD_DIR
-  - pwd
 
-#d3.3 博客post文章+学习memo笔记 => [branch:hexo-next-muse]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-muse
-#deploy:
-  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-muse
-  - cd /tmp/klgit/hexo-klblog-src-hexo-next-muse
-# 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
-  - git clone -b hexo-next-muse https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd hexo-klblog-src
-#  - rm -rv ./hexo-klblog-src-hexo-next-muse/hexo-klblog-src/source/_posts/kl_notes/002memo
-# copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-hexo-next-muse/hexo-klblog-src/source/_posts/kl_post/003post
-# copy 003post 目录+文件 2 source/_posts/kl_notes
-  - mkdir -p ./source/_posts/kl_post
-  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
-  - touch .nojekyll
-  - ls
-  - git add -A
-  - git commit --allow-empty -m "kl+travis+"
-  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd $TRAVIS_BUILD_DIR
-  - pwd
-
-#d3.4 博客post文章+学习memo笔记 => [branch:hexo-next-Pisces]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-Pisces
-#deploy:
-  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-Pisces
-  - cd /tmp/klgit/hexo-klblog-src-hexo-next-Pisces
-# 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
-  - git clone -b hexo-next-Pisces https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd hexo-klblog-src
-#  - rm -rv ./hexo-klblog-src-hexo-next-Pisces/hexo-klblog-src/source/_posts/kl_notes/002memo
-# copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-hexo-next-Pisces/hexo-klblog-src/source/_posts/kl_post/003post
-# copy 003post 目录+文件 2 source/_posts/kl_notes
-  - mkdir -p ./source/_posts/kl_post
-  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
-  - touch .nojekyll
-  - ls
-  - git add -A
-  - git commit --allow-empty -m "kl+travis+"
-  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd $TRAVIS_BUILD_DIR
-  - pwd
-
-#d3.5 博客post文章+学习memo笔记 => [branch:hexo-maup]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-maup
-#deploy:
-  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-maup
-  - cd /tmp/klgit/hexo-klblog-src-hexo-maup
-# 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
-  - git clone -b hexo-maup https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd hexo-klblog-src
-#  - rm -rv ./hexo-klblog-src-hexo-maup/hexo-klblog-src/source/_posts/kl_notes/002memo
-# copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-hexo-maup/hexo-klblog-src/source/_posts/kl_post/003post
-# copy 003post 目录+文件 2 source/_posts/kl_notes
-  - mkdir -p ./source/_posts/kl_post
-  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
-  - touch .nojekyll
-  - ls
-  - git add -A
-  - git commit --allow-empty -m "kl+travis+"
-  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
-  - cd $TRAVIS_BUILD_DIR
-  - pwd
+###d3.1 博客post文章+学习memo笔记 => [branch:master]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/master
+###deploy:
+##  - mkdir -p /tmp/klgit/hexo-klblog-src-master
+##  - cd /tmp/klgit/hexo-klblog-src-master
+### 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+##  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd hexo-klblog-src
+###  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_notes/002memo
+### copy 002 memo目录+文件 2 source/_posts/kl_notes
+##  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+###  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_post/003post
+### copy 003post 目录+文件 2 source/_posts/kl_notes
+##  - mkdir -p ./source/_posts/kl_post
+##  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+##  - touch .nojekyll
+##  - ls
+##  - git add -A
+##  - git commit --allow-empty -m "kl+travis++"
+##  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd $TRAVIS_BUILD_DIR
+##  - pwd
+##
+###d3.2 博客post文章+学习memo笔记 => [branch:hexo-next-Gemini]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-gemini
+###deploy:
+##  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-gemini
+##  - cd /tmp/klgit/hexo-klblog-src-hexo-next-gemini
+### 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+##  - git clone -b hexo-next-Gemini https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd hexo-klblog-src
+###  - rm -rv ./hexo-klblog-src-hexo-next-gemini/hexo-klblog-src/source/_posts/kl_notes/002memo
+### copy 002 memo目录+文件 2 source/_posts/kl_notes
+##  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+###  - rm -rv ./hexo-klblog-src-hexo-next-gemini/hexo-klblog-src/source/_posts/kl_post/003post
+### copy 003post 目录+文件 2 source/_posts/kl_notes
+##  - mkdir -p ./source/_posts/kl_post
+##  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+##  - touch .nojekyll
+##  - ls
+##  - git add -A
+##  - git commit --allow-empty -m "kl+travis+"
+##  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd $TRAVIS_BUILD_DIR
+##  - pwd
+##
+###d3.3 博客post文章+学习memo笔记 => [branch:hexo-next-muse]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-muse
+###deploy:
+##  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-muse
+##  - cd /tmp/klgit/hexo-klblog-src-hexo-next-muse
+### 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+##  - git clone -b hexo-next-muse https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd hexo-klblog-src
+###  - rm -rv ./hexo-klblog-src-hexo-next-muse/hexo-klblog-src/source/_posts/kl_notes/002memo
+### copy 002 memo目录+文件 2 source/_posts/kl_notes
+##  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+###  - rm -rv ./hexo-klblog-src-hexo-next-muse/hexo-klblog-src/source/_posts/kl_post/003post
+### copy 003post 目录+文件 2 source/_posts/kl_notes
+##  - mkdir -p ./source/_posts/kl_post
+##  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+##  - touch .nojekyll
+##  - ls
+##  - git add -A
+##  - git commit --allow-empty -m "kl+travis+"
+##  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd $TRAVIS_BUILD_DIR
+##  - pwd
+##
+###d3.4 博客post文章+学习memo笔记 => [branch:hexo-next-Pisces]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-Pisces
+###deploy:
+##  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-Pisces
+##  - cd /tmp/klgit/hexo-klblog-src-hexo-next-Pisces
+### 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+##  - git clone -b hexo-next-Pisces https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd hexo-klblog-src
+###  - rm -rv ./hexo-klblog-src-hexo-next-Pisces/hexo-klblog-src/source/_posts/kl_notes/002memo
+### copy 002 memo目录+文件 2 source/_posts/kl_notes
+##  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+###  - rm -rv ./hexo-klblog-src-hexo-next-Pisces/hexo-klblog-src/source/_posts/kl_post/003post
+### copy 003post 目录+文件 2 source/_posts/kl_notes
+##  - mkdir -p ./source/_posts/kl_post
+##  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+##  - touch .nojekyll
+##  - ls
+##  - git add -A
+##  - git commit --allow-empty -m "kl+travis+"
+##  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd $TRAVIS_BUILD_DIR
+##  - pwd
+##
+###d3.5 博客post文章+学习memo笔记 => [branch:hexo-maup]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-maup
+###deploy:
+##  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-maup
+##  - cd /tmp/klgit/hexo-klblog-src-hexo-maup
+### 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+##  - git clone -b hexo-maup https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd hexo-klblog-src
+###  - rm -rv ./hexo-klblog-src-hexo-maup/hexo-klblog-src/source/_posts/kl_notes/002memo
+### copy 002 memo目录+文件 2 source/_posts/kl_notes
+##  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+###  - rm -rv ./hexo-klblog-src-hexo-maup/hexo-klblog-src/source/_posts/kl_post/003post
+### copy 003post 目录+文件 2 source/_posts/kl_notes
+##  - mkdir -p ./source/_posts/kl_post
+##  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+##  - touch .nojekyll
+##  - ls
+##  - git add -A
+##  - git commit --allow-empty -m "kl+travis+"
+##  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+##  - cd $TRAVIS_BUILD_DIR
+##  - pwd
 
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署

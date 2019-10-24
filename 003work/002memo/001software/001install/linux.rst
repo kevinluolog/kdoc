@@ -13,6 +13,516 @@ gramma and template
 `Linux命令大全 <https://man.linuxde.net/>`__
 
 
+Linux命令--help
+===========================================================
+
+`GNU coreutils online help: <http://www.gnu.org/software/coreutils/>`__
+
+`GNU findutils <https://www.gnu.org/software/findutils/>`__
+
+`GNU gawk <https://www.gnu.org/software/gawk/>`__
+
+`GNU sed <https://www.gnu.org/software/sed/>`__
+
+
+`Decoded: GNU coreutils <http://www.maizure.org/projects/decoded-gnu-coreutils/>`__
+
+`cp <http://www.maizure.org/projects/decoded-gnu-coreutils/cp.html>`__
+
+`touch <http://www.maizure.org/projects/decoded-gnu-coreutils/touch.html>`__
+
+
+`rm <http://www.maizure.org/projects/decoded-gnu-coreutils/rm.html>`__
+
+`ls <http://www.maizure.org/projects/decoded-gnu-coreutils/ls.html>`__
+
+`mv <http://www.maizure.org/projects/decoded-gnu-coreutils/mv.html>`__
+
+`mkdir <http://www.maizure.org/projects/decoded-gnu-coreutils/mkdir.html>`__
+
+
+`cat <http://www.maizure.org/projects/decoded-gnu-coreutils/cat.html>`__
+
+`GNU find <https://www.gnu.org/software/findutils/manual/html_mono/find.html>`__
+
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+rm
+---------------------------------------------------------------------
+
+::
+
+  $ rm --help
+  Usage: rm [OPTION]... [FILE]...
+  Remove (unlink) the FILE(s).
+    -f, --force           ignore nonexistent files and arguments, never   prompt
+    -i                    prompt before every removal
+    -I                    prompt once before removing more than three   files, or
+                            when removing recursively; less intrusive than   -i,
+                            while still giving protection against most   mistakes
+        --interactive[=WHEN]  prompt according to WHEN: never, once (-I),   or
+                            always (-i); without WHEN, prompt always
+        --one-file-system  when removing a hierarchy recursively, skip any
+                            directory that is on a file system different   from
+                            that of the corresponding command line argument
+        --no-preserve-root  do not treat '/' specially
+        --preserve-root   do not remove '/' (default)
+    -r, -R, --recursive   remove directories and their contents recursively
+    -d, --dir             remove empty directories
+    -v, --verbose         explain what is being done
+        --help     display this help and exit
+        --version  output version information and exit
+  By default, rm does not remove directories.  Use the --recursive (-r or   -R)
+  option to remove each listed directory, too, along with all of its   contents.
+  To remove a file whose name starts with a '-', for example '-foo',
+  use one of these commands:
+    rm -- -foo
+    rm ./-foo
+  Note that if you use rm to remove a file, it might be possible to recover
+  some of its contents, given sufficient expertise and/or time.  For   greater
+  assurance that the contents are truly unrecoverable, consider using   shred.
+  GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+  Full documentation at: <http://www.gnu.org/software/coreutils/rm>
+  or available locally via: info '(coreutils) rm invocation'
+  The command "rm --help" exited with 0.
+
+cp
+---------------------------------------------------------------------
+
+::
+
+  $ cp --help
+  Usage: cp [OPTION]... [-T] SOURCE DEST
+    or:  cp [OPTION]... SOURCE... DIRECTORY
+    or:  cp [OPTION]... -t DIRECTORY SOURCE...
+  Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+  Mandatory arguments to long options are mandatory for short options too.
+    -a, --archive                same as -dR --preserve=all
+        --attributes-only        don't copy the file data, just the attributes
+        --backup[=CONTROL]       make a backup of each existing destination file
+    -b                           like --backup but does not accept an argument
+        --copy-contents          copy contents of special files when recursive
+    -d                           same as --no-dereference --preserve=links
+    -f, --force                  if an existing destination file cannot be
+                                   opened, remove it and try again (this option
+                                   is ignored when the -n option is also used)
+    -i, --interactive            prompt before overwrite (overrides a previous -n
+                                    option)
+    -H                           follow command-line symbolic links in SOURCE
+    -l, --link                   hard link files instead of copying
+    -L, --dereference            always follow symbolic links in SOURCE
+    -n, --no-clobber             do not overwrite an existing file (overrides
+                                   a previous -i option)
+    -P, --no-dereference         never follow symbolic links in SOURCE
+    -p                           same as --preserve=mode,ownership,timestamps
+        --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                   mode,ownership,timestamps), if possible
+                                   additional attributes: context, links, xattr,
+                                   all
+        --no-preserve=ATTR_LIST  don't preserve the specified attributes
+        --parents                use full source file name under DIRECTORY
+    -R, -r, --recursive          copy directories recursively
+        --reflink[=WHEN]         control clone/CoW copies. See below
+        --remove-destination     remove each existing destination file before
+                                   attempting to open it (contrast with --force)
+        --sparse=WHEN            control creation of sparse files. See below
+        --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                   argument
+    -s, --symbolic-link          make symbolic links instead of copying
+    -S, --suffix=SUFFIX          override the usual backup suffix
+    -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+    -T, --no-target-directory    treat DEST as a normal file
+    -u, --update                 copy only when the SOURCE file is newer
+                                   than the destination file or when the
+                                   destination file is missing
+    -v, --verbose                explain what is being done
+    -x, --one-file-system        stay on this file system
+    -Z                           set SELinux security context of destination
+                                   file to default type
+        --context[=CTX]          like -Z, or if CTX is specified then set the
+                                   SELinux or SMACK security context to CTX
+        --help     display this help and exit
+        --version  output version information and exit
+  By default, sparse SOURCE files are detected by a crude heuristic and the
+  corresponding DEST file is made sparse as well.  That is the behavior
+  selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+  file whenever the SOURCE file contains a long enough sequence of zero bytes.
+  Use --sparse=never to inhibit creation of sparse files.
+  When --reflink[=always] is specified, perform a lightweight copy, where the
+  data blocks are copied only when modified.  If this is not possible the copy
+  fails, or if --reflink=auto is specified, fall back to a standard copy.
+  The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+  The version control method may be selected via the --backup option or through
+  the VERSION_CONTROL environment variable.  Here are the values:
+    none, off       never make backups (even if --backup is given)
+    numbered, t     make numbered backups
+    existing, nil   numbered if numbered backups exist, simple otherwise
+    simple, never   always make simple backups
+  As a special case, cp makes a backup of SOURCE when the force and backup
+  options are given and SOURCE and DEST are the same name for an existing,
+  regular file.
+  GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+  Full documentation at: <http://www.gnu.org/software/coreutils/cp>
+  or available locally via: info '(coreutils) cp invocation'
+  The command "cp --help" exited with 0.
+  0.01s$ \cp -RT $TRAVIS_BUILD_DIR/output/sphinx/build-memo/* /tmp/klgit/gp-memo
+  cp: extra operand '/home/travis/build/kevinluolog/kdoc/output/sphinx/build-memo/002plan'
+  Try 'cp --help' for more information.
+  The command "\cp -RT $TRAVIS_BUILD_DIR/output/sphinx/build-memo/* /tmp/klgit/gp-memo" exited with 1.
+  0.00s$ pwd
+  /tmp/klgit/gp-memo
+
+  上面cp命令,错在： 
+  - 不能用大写T, 这是表示 DEST是文件，不是目录，报错的原因
+  更正：
+  cp -rt /tmp/klgit/gp-memo $TRAVIS_BUILD_DIR/output/sphinx/build-memo/* 
+  注意： -rt指定目标目录时要紧跟，所以如果参数写在前面，则目标目录也到前面了。
+  source目录后面带星通配和-r配合使用，则表示只copy文件和子目录。
+
+
+touch
+---------------------------------------------------------------------
+
+::
+
+  0.02s$ touch --help
+  Usage: touch [OPTION]... FILE...
+  Update the access and modification times of each FILE to the current time.
+  A FILE argument that does not exist is created empty, unless -c or -h
+  is supplied.
+  A FILE argument string of - is handled specially and causes touch to
+  change the times of the file associated with standard output.
+  Mandatory arguments to long options are mandatory for short options too.
+    -a                     change only the access time
+    -c, --no-create        do not create any files
+    -d, --date=STRING      parse STRING and use it instead of current time
+    -f                     (ignored)
+    -h, --no-dereference   affect each symbolic link instead of any   referenced
+                           file (useful only on systems that can change the
+                           timestamps of a symlink)
+    -m                     change only the modification time
+    -r, --reference=FILE   use this file's times instead of current time
+    -t STAMP               use [[CC]YY]MMDDhhmm[.ss] instead of current time
+        --time=WORD        change the specified time:
+                             WORD is access, atime, or use: equivalent to -a
+                             WORD is modify or mtime: equivalent to -m
+        --help     display this help and exit
+        --version  output version information and exit
+  Note that the -d and -t options accept different time-date formats.
+  GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+  Full documentation at: <http://www.gnu.org/software/coreutils/touch>
+  or available locally via: info '(coreutils) touch invocation'
+  The command "touch --help" exited with 0.
+
+ls
+---------------------------------------------------------------------
+
+::
+
+  $ ls --help
+  Usage: ls [OPTION]... [FILE]...
+  List information about the FILEs (the current directory by default).
+  Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+  Mandatory arguments to long options are mandatory for short options too.
+    -a, --all                  do not ignore entries starting with .
+    -A, --almost-all           do not list implied . and ..
+        --author               with -l, print the author of each file
+    -b, --escape               print C-style escapes for nongraphic   characters
+        --block-size=SIZE      scale sizes by SIZE before printing them;   e.g.,
+                                 '--block-size=M' prints sizes in units of
+                                 1,048,576 bytes; see SIZE format below
+    -B, --ignore-backups       do not list implied entries ending with ~
+    -c                         with -lt: sort by, and show, ctime (time of   last
+                                 modification of file status information);
+                                 with -l: show ctime and sort by name;
+                                 otherwise: sort by ctime, newest first
+    -C                         list entries by columns
+        --color[=WHEN]         colorize the output; WHEN can be 'always' (  default
+                                 if omitted), 'auto', or 'never'; more info   below
+    -d, --directory            list directories themselves, not their   contents
+    -D, --dired                generate output designed for Emacs' dired   mode
+    -f                         do not sort, enable -aU, disable -ls --color
+    -F, --classify             append indicator (one of */=>@|) to entries
+        --file-type            likewise, except do not append '*'
+        --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                                 single-column -1, verbose -l, vertical -C
+        --full-time            like -l --time-style=full-iso
+    -g                         like -l, but do not list owner
+        --group-directories-first
+                               group directories before files;
+                                 can be augmented with a --sort option, but   any
+                                 use of --sort=none (-U) disables grouping
+    -G, --no-group             in a long listing, don't print group names
+    -h, --human-readable       with -l and/or -s, print human readable sizes
+                                 (e.g., 1K 234M 2G)
+        --si                   likewise, but use powers of 1000 not 1024
+    -H, --dereference-command-line
+                               follow symbolic links listed on the command   line
+        --dereference-command-line-symlink-to-dir
+                               follow each command line symbolic link
+                                 that points to a directory
+        --hide=PATTERN         do not list implied entries matching shell   PATTERN
+                                 (overridden by -a or -A)
+        --indicator-style=WORD  append indicator with style WORD to entry   names:
+                                 none (default), slash (-p),
+                                 file-type (--file-type), classify (-F)
+    -i, --inode                print the index number of each file
+    -I, --ignore=PATTERN       do not list implied entries matching shell   PATTERN
+    -k, --kibibytes            default to 1024-byte blocks for disk usage
+    -l                         use a long listing format
+    -L, --dereference          when showing file information for a symbolic
+                                 link, show information for the file the   link
+                                 references rather than for the link itself
+    -m                         fill width with a comma separated list of   entries
+    -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+    -N, --literal              print raw entry names (don't treat e.g.   control
+                                 characters specially)
+    -o                         like -l, but do not list group information
+    -p, --indicator-style=slash
+                               append / indicator to directories
+    -q, --hide-control-chars   print ? instead of nongraphic characters
+        --show-control-chars   show nongraphic characters as-is (the   default,
+                                 unless program is 'ls' and output is a   terminal)
+    -Q, --quote-name           enclose entry names in double quotes
+        --quoting-style=WORD   use quoting style WORD for entry names:
+                                 literal, locale, shell, shell-always,
+                                 shell-escape, shell-escape-always, c,   escape
+    -r, --reverse              reverse order while sorting
+    -R, --recursive            list subdirectories recursively
+    -s, --size                 print the allocated size of each file, in   blocks
+    -S                         sort by file size, largest first
+        --sort=WORD            sort by WORD instead of name: none (-U),   size (-S),
+                                 time (-t), version (-v), extension (-X)
+        --time=WORD            with -l, show time as WORD instead of default
+                                 modification time: atime or access or use   (-u);
+                                 ctime or status (-c); also use specified   time
+                                 as sort key if --sort=time (newest first)
+        --time-style=STYLE     with -l, show times using style STYLE:
+                                 full-iso, long-iso, iso, locale, or   +FORMAT;
+                                 FORMAT is interpreted like in 'date'; if   FORMAT
+                                 is FORMAT1<newline>FORMAT2, then FORMAT1   applies
+                                 to non-recent files and FORMAT2 to recent   files;
+                                 if STYLE is prefixed with 'posix-', STYLE
+                                 takes effect only outside the POSIX locale
+    -t                         sort by modification time, newest first
+    -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+    -u                         with -lt: sort by, and show, access time;
+                                 with -l: show access time and sort by name;
+                                 otherwise: sort by access time, newest   first
+    -U                         do not sort; list entries in directory order
+    -v                         natural sort of (version) numbers within text
+    -w, --width=COLS           set output width to COLS.  0 means no limit
+    -x                         list entries by lines instead of by columns
+    -X                         sort alphabetically by entry extension
+    -Z, --context              print any security context of each file
+    -1                         list one file per line.  Avoid '\n' with -q   or -b
+        --help     display this help and exit
+        --version  output version information and exit
+  The SIZE argument is an integer and optional unit (example: 10K is 10*  1024).
+  Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+  Using color to distinguish file types is disabled both by default and
+  with --color=never.  With --color=auto, ls emits color codes only when
+  standard output is connected to a terminal.  The LS_COLORS environment
+  variable can change the settings.  Use the dircolors command to set it.
+  Exit status:
+   0  if OK,
+   1  if minor problems (e.g., cannot access subdirectory),
+   2  if serious trouble (e.g., cannot access command-line argument).
+  GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+  Full documentation at: <http://www.gnu.org/software/coreutils/ls>
+  or available locally via: info '(coreutils) ls invocation'
+  The command "ls --help" exited with 0.
+
+
+
+find
+---------------------------------------------------------------------
+
+::
+
+  0.01s$ find --help
+  Usage: find [-H] [-L] [-P] [-Olevel] [-D   help|tree|search|stat|rates|opt|exec|time] [path...] [expression]
+  default path is the current directory; default expression is -print
+  expression may consist of: operators, options, tests, and actions:
+  operators (decreasing precedence; -and is implicit where no others are   given):
+        ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
+        EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
+  positional options (always true): -daystart -follow -regextype
+  normal options (always true, specified before other expressions):
+        -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf
+        --version -xdev -ignore_readdir_race -noignore_readdir_race
+  tests (N can be +N or -N or N): -amin N -anewer FILE -atime N -cmin N
+        -cnewer FILE -ctime N -empty -false -fstype TYPE -gid N -group NAME
+        -ilname PATTERN -iname PATTERN -inum N -iwholename PATTERN -iregex   PATTERN
+        -links N -lname PATTERN -mmin N -mtime N -name PATTERN -newer FILE
+        -nouser -nogroup -path PATTERN -perm [-/]MODE -regex PATTERN
+        -readable -writable -executable
+        -wholename PATTERN -size N[bcwkMG] -true -type [bcdpflsD] -uid N
+        -used N -user NAME -xtype [bcdpfls]
+        -context CONTEXT
+  actions: -delete -print0 -printf FORMAT -fprintf FILE FORMAT -print 
+        -fprint0 FILE -fprint FILE -ls -fls FILE -prune -quit
+        -exec COMMAND ; -exec COMMAND {} + -ok COMMAND ;
+        -execdir COMMAND ; -execdir COMMAND {} + -okdir COMMAND ;
+  Please see also the documentation at http://www.gnu.org/software/  findutils/.
+  You can report (and track progress on fixing) bugs in the "find"
+  program via the GNU findutils bug-reporting page at
+  https://savannah.gnu.org/bugs/?group=findutils or, if
+  you have no web access, by sending email to <bug-findutils@gnu.org>.
+  The command "find --help" exited with 0.
+
+
+sed
+---------------------------------------------------------------------
+
+::
+
+  0.01s$ sed --help
+  Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+    -n, --quiet, --silent
+                   suppress automatic printing of pattern space
+    -e script, --expression=script
+                   add the script to the commands to be executed
+    -f script-file, --file=script-file
+                   add the contents of script-file to the commands to be executed
+    --follow-symlinks
+                   follow symlinks when processing in place
+    -i[SUFFIX], --in-place[=SUFFIX]
+                   edit files in place (makes backup if SUFFIX supplied)
+    -l N, --line-length=N
+                   specify the desired line-wrap length for the `l' command
+    --posix
+                   disable all GNU extensions.
+    -r, --regexp-extended
+                   use extended regular expressions in the script.
+    -s, --separate
+                   consider files as separate rather than as a single continuous
+                   long stream.
+    -u, --unbuffered
+                   load minimal amounts of data from the input files and flush
+                   the output buffers more often
+    -z, --null-data
+                   separate lines by NUL characters
+        --help     display this help and exit
+        --version  output version information and exit
+  If no -e, --expression, -f, or --file option is given, then the first
+  non-option argument is taken as the sed script to interpret.  All
+  remaining arguments are names of input files; if no input files are
+  specified, then the standard input is read.
+  GNU sed home page: <http://www.gnu.org/software/sed/>.
+  General help using GNU software: <http://www.gnu.org/gethelp/>.
+  E-mail bug reports to: <bug-sed@gnu.org>.
+  Be sure to include the word ``sed'' somewhere in the ``Subject:'' field.
+  The command "sed --help" exited with 0.
+
+
+
+gawk
+---------------------------------------------------------------------
+
+::
+
+  0.01s$ gawk --help
+  Usage: gawk [POSIX or GNU style options] -f progfile [--] file ...
+  Usage: gawk [POSIX or GNU style options] [--] 'program' file ...
+  POSIX options:    GNU long options: (standard)
+    -f progfile   --file=progfile
+    -F fs     --field-separator=fs
+    -v var=val    --assign=var=val
+  Short options:    GNU long options: (extensions)
+    -b      --characters-as-bytes
+    -c      --traditional
+    -C      --copyright
+    -d[file]    --dump-variables[=file]
+    -D[file]    --debug[=file]
+    -e 'program-text' --source='program-text'
+    -E file     --exec=file
+    -g      --gen-pot
+    -h      --help
+    -i includefile    --include=includefile
+    -l library    --load=library
+    -L[fatal|invalid] --lint[=fatal|invalid]
+    -M      --bignum
+    -N      --use-lc-numeric
+    -n      --non-decimal-data
+    -o[file]    --pretty-print[=file]
+    -O      --optimize
+    -p[file]    --profile[=file]
+    -P      --posix
+    -r      --re-interval
+    -S      --sandbox
+    -t      --lint-old
+    -V      --version
+  To report bugs, see node `Bugs' in `gawk.info', which is
+  section `Reporting Problems and Bugs' in the printed version.
+  gawk is a pattern scanning and processing language.
+  By default it reads standard input and writes standard output.
+  Examples:
+    gawk '{ sum += $1 }; END { print sum }' file
+    gawk -F: '{ print $1 }' /etc/passwd
+  The command "gawk --help" exited with 0.
+
+
+
+awk
+---------------------------------------------------------------------
+
+::
+
+  $ awk --help
+  Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+  Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+  POSIX options:    GNU long options: (standard)
+    -f progfile   --file=progfile
+    -F fs     --field-separator=fs
+    -v var=val    --assign=var=val
+  Short options:    GNU long options: (extensions)
+    -b      --characters-as-bytes
+    -c      --traditional
+    -C      --copyright
+    -d[file]    --dump-variables[=file]
+    -D[file]    --debug[=file]
+    -e 'program-text' --source='program-text'
+    -E file     --exec=file
+    -g      --gen-pot
+    -h      --help
+    -i includefile    --include=includefile
+    -l library    --load=library
+    -L[fatal|invalid] --lint[=fatal|invalid]
+    -M      --bignum
+    -N      --use-lc-numeric
+    -n      --non-decimal-data
+    -o[file]    --pretty-print[=file]
+    -O      --optimize
+    -p[file]    --profile[=file]
+    -P      --posix
+    -r      --re-interval
+    -S      --sandbox
+    -t      --lint-old
+    -V      --version
+  To report bugs, see node `Bugs' in `gawk.info', which is
+  section `Reporting Problems and Bugs' in the printed version.
+  gawk is a pattern scanning and processing language.
+  By default it reads standard input and writes standard output.
+  Examples:
+    gawk '{ sum += $1 }; END { print sum }' file
+    gawk -F: '{ print $1 }' /etc/passwd
+  The command "awk --help" exited with 0.
+
+
 Linux命令
 =============
 
@@ -515,19 +1025,19 @@ Linux-cp命令详解
 
 ::
 
-  cp -R Pictures Pictures_backup
+  cp -R 源目录 目标目录
 
-要仅复制文件和子目录，而不复制目标目录，请使用以下 -T 选项：
+要仅复制文件和子目录，而不复制目标目录，请使用以下 -t 选项 (原版有错，不能用-T)：
 
 ::
 
-  cp -RT Pictures Pictures_backup
+  cp -Rt 目标目录 源目录
 
 另一种只复制目录内容而不是目录本身的方法是使用通配符 (*) 。以下命令的缺点是它不会复制隐藏文件和目录(以点 . 开头的文件和目录) ：
 
 ::
 
-  cp -RT Pictures/* Pictures_backup/
+  cp -Rt 目标目录 源目录/*
 
 
 
