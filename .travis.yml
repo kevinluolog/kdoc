@@ -110,7 +110,7 @@ script:
 #  - find -type d
 
 
-#d1 学习memo笔记：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
+#d1 学习memo笔记 => kevinluolog/gp-memo[branch:gh-pages]：sphinx build-memo, 网页kevinluolog.github.io/gp-memo
 #deploy:
   - mkdir -p /tmp/klgit
   - cd /tmp/klgit
@@ -173,6 +173,49 @@ script:
   - cd $TRAVIS_BUILD_DIR
   - pwd
 
+#d2 博客post文章 => kevinluolog/gp-post[branch:gh-pages]：sphinx build-post, 网页kevinluolog.github.io/gp-post
+#deploy:
+#  - mkdir -p /tmp/klgit
+  - cd /tmp/klgit
+  - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-post.git
+  - cd gp-post
+  - cp -v -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-post/*
+  - touch .nojekyll
+  - ls
+  - git add -A
+  - git commit -m "kl+travis+"
+  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-post.git
+  - cd $TRAVIS_BUILD_DIR
+  - pwd
+
+#d3 博客post文章2hexo
+# master
+# hexo-next-Gemini
+# hexo-next-muse
+# hexo-next-Pisces
+# hexo-next-hexo-maup
+#d3.1 博客post文章+学习memo笔记 => [branch:master]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/master
+#deploy:
+#  - mkdir -p /tmp/klgit
+  - cd /tmp/klgit
+  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+  - cd hexo-klblog-src-master
+#  - rm -rv ./hexo-klblog-src-master/source/_posts/kl_notes/002memo
+# copy 002 memo目录+文件 2 source/_posts/kl_notes
+  - cp -v -f -rt ./hexo-klblog-src-master/source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+#  - rm -rv ./hexo-klblog-src-master/source/_posts/kl_post/003post
+# copy 003post 目录+文件 2 source/_posts/kl_notes
+  - cp -v -f -rt ./hexo-klblog-src-master/source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - touch .nojekyll
+  - ls
+  - git add -A
+  - git commit -m "kl+travis+"
+  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+  - cd $TRAVIS_BUILD_DIR
+  - pwd
+
+
+
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
 #  - git config user.name "kevinluolog"
@@ -180,13 +223,6 @@ after_script:
   # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
 #  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
 #  - hexo deploy
-
-#d2 博客post文章：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
-#deploy:
-
-#d3 博客post文章：sphinx build-memo 2 kevinluolog/gp-memo/gh-pages, 网页kevinluolog.github.io/gp-memo
-#deploy:
-
 
 #所有输出： ./output 2 kevinluolog/travisci_out_kdoc, all output can gitclone on kevinluolog/travisci_out_kdoc
 deploy:
