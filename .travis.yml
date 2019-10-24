@@ -158,7 +158,7 @@ script:
 # 注意: 新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。
 # --allow-empty
 # Usually recording a commit that has the exact same tree as its sole parent commit is a mistake, and the command prevents you from making such a commit. This option bypasses the safety, and is primarily for use by foreign SCM interface scripts.
-  - git commit -m --allow-empty "kl+travis+"
+  - git commit --allow-empty -m "kl+travis+"
 # git push的一般形式为 git push <远程主机名> <本地分支名> <远程分支名> ，例如 git push origin master：refs/for/master ，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名。第一个master是本地分支名，第二个master是远程分支名。
 # git push origin master
 # 如果远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
@@ -185,7 +185,7 @@ script:
   - touch .nojekyll
   - ls
   - git add -A
-  - git commit -m --allow-empty "kl+travis+"
+  - git commit --allow-empty -m "kl+travis+"
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-post.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
@@ -212,7 +212,7 @@ script:
   - touch .nojekyll
   - ls
   - git add -A
-  - git commit -m --allow-empty "kl+travis+"
+  - git commit --allow-empty -m "kl+travis+"
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
