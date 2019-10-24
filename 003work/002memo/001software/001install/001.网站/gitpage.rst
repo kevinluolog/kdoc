@@ -48,7 +48,7 @@ hexo-klblog-src
 | hexo-next-Gemini
 | hexo-next-muse
 | hexo-next-Pisces
-| hexo-next-hexo-maup
+| hexo-maup
 
 +------+-------------------------------------+-----------+------------------------------+
 | 序号 | 触发仓@分支                         | 源仓@分支 | 输出仓@分支 gitpage          |
@@ -61,7 +61,7 @@ hexo-klblog-src
 +------+-------------------------------------+-----------+------------------------------+
 | 04   | hexo-klblog-src@hexo-next-Pisces    | ~         | hexo-next-Pisces@gh-pages    |
 +------+-------------------------------------+-----------+------------------------------+
-| 05   | hexo-klblog-src@hexo-next-hexo-maup | ~         | hexo-hexo-maup@gh-pages      |
+| 05   | hexo-klblog-src@hexo-maup | ~         | hexo-maup@gh-pages      |
 +------+-------------------------------------+-----------+------------------------------+
 
 
