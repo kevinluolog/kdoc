@@ -115,8 +115,8 @@ script:
   - mkdir -p /tmp/klgit
   - cd /tmp/klgit
   
-  # 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
-  #- git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
+# 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+# <directory>The name of a new directory to clone into. The "humanish" part of the source repository is used if no directory is explicitly given (repo for /path/to/repo.git and foo for host.xz:foo/.git). Cloning into an existing directory is only allowed if the directory is empty  #- git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
   - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git
   - ls --help
   - find --help
@@ -156,7 +156,9 @@ script:
 # git commit -am ‘message’ -am等同于-a -m
 # -a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区，
 # 注意: 新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。
-  - git commit -m "kl+travis+"
+# --allow-empty
+# Usually recording a commit that has the exact same tree as its sole parent commit is a mistake, and the command prevents you from making such a commit. This option bypasses the safety, and is primarily for use by foreign SCM interface scripts.
+  - git commit -m --allow-empty "kl+travis+"
 # git push的一般形式为 git push <远程主机名> <本地分支名> <远程分支名> ，例如 git push origin master：refs/for/master ，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名。第一个master是本地分支名，第二个master是远程分支名。
 # git push origin master
 # 如果远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
@@ -183,7 +185,7 @@ script:
   - touch .nojekyll
   - ls
   - git add -A
-  - git commit -m "kl+travis+"
+  - git commit -m --allow-empty "kl+travis+"
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-post.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
@@ -198,7 +200,8 @@ script:
 #deploy:
 #  - mkdir -p /tmp/klgit
   - cd /tmp/klgit
-  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git ./hexo-klblog-src-master
+# 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
+  - git clone -b master https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git ./hexo-klblog-src-master/hexo-klblog-src
   - cd hexo-klblog-src-master/hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-master/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
@@ -209,7 +212,7 @@ script:
   - touch .nojekyll
   - ls
   - git add -A
-  - git commit -m "kl+travis+"
+  - git commit -m --allow-empty "kl+travis+"
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
