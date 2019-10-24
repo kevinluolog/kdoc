@@ -45,9 +45,9 @@ hexo-klblog-src
 ~：表示和前面的 触发仓@分支 一样
 
 | master
-| hexo-next-Gemini
+| hexo-next-Gemini :注意大写，linux下大小写敏感
 | hexo-next-muse
-| hexo-next-Pisces
+| hexo-next-Pisces :注意大写，linux下大小写敏感
 | hexo-maup
 
 +------+-------------------------------------+-----------+------------------------------+
@@ -55,7 +55,7 @@ hexo-klblog-src
 +======+=====================================+===========+==============================+
 | 01   | hexo-klblog-src@master              | ~         | kevinluolog.github.io@master |
 +------+-------------------------------------+-----------+------------------------------+
-| 02   | hexo-klblog-src@hexo-next-Gemini    | ~         | hexo-next-Gemini@gh-pages    |
+| 02   | hexo-klblog-src@hexo-next-Gemini    | ~         | hexo-next-gemini@gh-pages    |
 +------+-------------------------------------+-----------+------------------------------+
 | 03   | hexo-klblog-src@hexo-next-muse      | ~         | hexo-next-muse@gh-pages      |
 +------+-------------------------------------+-----------+------------------------------+

@@ -118,11 +118,11 @@ script:
 # 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
 # <directory>The name of a new directory to clone into. The "humanish" part of the source repository is used if no directory is explicitly given (repo for /path/to/repo.git and foo for host.xz:foo/.git). Cloning into an existing directory is only allowed if the directory is empty  #- git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git /tmp/klgit/gp-memo
   - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git
-  - ls --help
-  - find --help
-  - sed --help
-  - gawk --help
-  - awk --help
+#  - ls --help
+#  - find --help
+#  - sed --help
+#  - gawk --help
+#  - awk --help
 #  - pwd
 #  - ls
 #  - find -type d
@@ -141,7 +141,8 @@ script:
 #  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
 #  -T, --no-target-directory    treat DEST as a normal file
 #  -u, --update                 copy only when the SOURCE file is newer
-  - cp -v -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-memo/*
+#  -v, --verbose         explain what is being done
+  - cp -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-memo/*
   - touch .nojekyll
   - pwd
   - ls
@@ -181,7 +182,7 @@ script:
   - cd /tmp/klgit
   - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-post.git
   - cd gp-post
-  - cp -v -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-post/*
+  - cp -f -rt . $TRAVIS_BUILD_DIR/output/sphinx/build-post/*
   - touch .nojekyll
   - ls
   - git add -A
@@ -205,11 +206,11 @@ script:
   - cd hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
 #  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
-  - cp -v -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
@@ -218,20 +219,20 @@ script:
   - cd $TRAVIS_BUILD_DIR
   - pwd
 
-#d3.2 博客post文章+学习memo笔记 => [branch:hexo-next-Gemini]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-Gemini
+#d3.2 博客post文章+学习memo笔记 => [branch:hexo-next-Gemini]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/hexo-next-gemini
 #deploy:
-  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-Gemini
-  - cd /tmp/klgit/hexo-klblog-src-hexo-next-Gemini
+  - mkdir -p /tmp/klgit/hexo-klblog-src-hexo-next-gemini
+  - cd /tmp/klgit/hexo-klblog-src-hexo-next-gemini
 # 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;如果省略,则会自动创建repo名的目录，然后clone进这个目录
   - git clone -b hexo-next-Gemini https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
   - cd hexo-klblog-src
-#  - rm -rv ./hexo-klblog-src-hexo-next-Gemini/hexo-klblog-src/source/_posts/kl_notes/002memo
+#  - rm -rv ./hexo-klblog-src-hexo-next-gemini/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-hexo-next-Gemini/hexo-klblog-src/source/_posts/kl_post/003post
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+#  - rm -rv ./hexo-klblog-src-hexo-next-gemini/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
-  - cp -v -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
@@ -249,11 +250,11 @@ script:
   - cd hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-hexo-next-muse/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
 #  - rm -rv ./hexo-klblog-src-hexo-next-muse/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
-  - cp -v -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
@@ -271,11 +272,11 @@ script:
   - cd hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-hexo-next-Pisces/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
 #  - rm -rv ./hexo-klblog-src-hexo-next-Pisces/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
-  - cp -v -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
@@ -293,11 +294,11 @@ script:
   - cd hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-hexo-maup/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+  - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
 #  - rm -rv ./hexo-klblog-src-hexo-maup/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
-  - cp -v -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
