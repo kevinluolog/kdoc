@@ -205,10 +205,10 @@ script:
   - cd hexo-klblog-src-master/hexo-klblog-src
 #  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
+  - cp -v -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
 #  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
-  - cp -v -f -rt ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
+  - cp -v -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
   - touch .nojekyll
   - ls
   - git add -A
