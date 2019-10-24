@@ -192,7 +192,7 @@ script:
   - cd $TRAVIS_BUILD_DIR
   - pwd
 
-#d3. 博客post+学习笔记 2 hexo+
+#d3. 博客post+学习笔记 2 hexo+1
 # master
 # hexo-next-Gemini
 # hexo-next-muse
