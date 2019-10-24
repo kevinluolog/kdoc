@@ -214,7 +214,7 @@ script:
   - touch .nojekyll
   - ls
   - git add -A
-  - git commit --allow-empty -m "kl+travis+"
+  - git commit --allow-empty -m "kl+travis++"
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
   - cd $TRAVIS_BUILD_DIR
   - pwd
