@@ -108,15 +108,15 @@ ifeq ($(ADD_HEXO_HEAD),TRUE)
 	@echo start hexo head output...
 ifdef ADD_HEXO_TAG_FROM_DIR
 ifdef CTL_TOC
-	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),TRUE))
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),TRUE))
 else
-	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),FALSE))
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),FALSE))
 endif
 else
 ifdef CTL_TOC
-	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),TRUE))
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),TRUE))
 else
-	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),FALSE))
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),FALSE))
 endif
 endif
 

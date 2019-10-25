@@ -273,6 +273,7 @@ script:
 
 #workOnB5. hexo-maup       
   - git checkout hexo-maup
+# 完全以kdoc中source文件为标准，因为hexo klblog, 还会保有在kdoc中的删除的文件和目录，光cp不能清除同步  - rm -rv ./source/_posts/kl_notes/002memo
   - rm -rv ./source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
