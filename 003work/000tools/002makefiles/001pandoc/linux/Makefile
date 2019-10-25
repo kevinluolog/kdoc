@@ -50,7 +50,10 @@ OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)/,,$(SRC_PATH_MDS))
 #【参数1:title =没有后缀的光文件名 】
 #【参数2:tag =技术...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
 #【参数3:categories =最后目录名】
+# --- 前后加入空行：为了解决写进文件时，会自动在前后加入一个空格，会导致hexo解析frontmatter时出错。以为没有信息。
+# 现在还不知道导致前面多写空格符问题的原因，先walkaround过去。
 define def_hexo_md_head
+
 ---
 title: $(1)
 tag: 
@@ -61,6 +64,7 @@ categories:
 - 自动生成
 toc: TRUE
 ---
+
 endef
 
 $(OBJ_PATH_DIR):

@@ -112,6 +112,7 @@ OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)\,,$(SRC_PATH_MDS))
 #【参数2:tag =技术...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
 #【参数3:categories =最后目录名】
 define def_hexo_md_head
+
 ---
 title: $(1)
 tag: 
@@ -122,6 +123,7 @@ categories:
 - 自动生成
 toc: TRUE
 ---
+
 endef
 
 $(OBJ_PATH_DIR):
