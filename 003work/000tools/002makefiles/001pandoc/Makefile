@@ -1,3 +1,5 @@
+# windows专用
+
 # 检测是什么操作系统
 ifeq ($(OS),Windows_NT)
 uname_S := Windows
@@ -111,8 +113,14 @@ OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)\,,$(SRC_PATH_MDS))
 #【参数1:title =没有后缀的光文件名 】
 #【参数2:tag =技术...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
 #【参数3:categories =最后目录名】
+# --- 前后加入空行：为了解决写进文件时，会自动在前后加入一个空格，会导致hexo解析frontmatter时出错。以为没有信息。
+# 现在还不知道导致前面多写空格符问题的原因，先walkaround过去。
+# 上面walkaround方法不行，因为hexo编译器，要求前面---必须放在文件的开头，空行也不行。
+# 找到原因了。请参考下面spec. 原因是续行符backslash,\，被转为了一个空格。
+# gnu_make.pdf p24/220 3.1.1 Splitting Long Lines
+# Outside of recipe lines, backslash/newlines are converted into a single space character.
+# 解决方法：删除$(file,)中的所有续行符“\”
 define def_hexo_md_head
-
 ---
 title: $(1)
 tag: 
@@ -123,7 +131,6 @@ categories:
 - 自动生成
 toc: TRUE
 ---
-
 endef
 
 $(OBJ_PATH_DIR):
@@ -153,20 +160,9 @@ ifeq ($(SUFFIX_TO),.md)
 ifeq ($(ADD_HEXO_HEAD),TRUE)
 	@echo start hexo head output...
 ifdef ADD_HEXO_TAG_FROM_DIR
-	$$(file >$$@.tmp,\
-$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1)))\
-,$(ADD_HEXO_TAG_FROM_DIR)\
-,$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))\
-)\
-)
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))))
 else
-	$$(file >$$@.tmp,
-$$(call def_hexo_md_head\
-,$(subst $(SUFFIX_TO),,$(notdir $(1)))\
-,$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))\
-,$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))\
-)\
-)
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1))))))
 endif
 #	@echo $$(TBFILENAME)+2
 #	@echo $(subst $(SUFFIX_TO),,$(notdir $(1)))+1#直接函数填入才能取到。
@@ -233,12 +229,17 @@ $(foreach temp,$(OBJ_PATH_MDS),$(eval $(call PROGRAM_template,$(temp))))
 
 ###---伪目标
 all: startconv
-.phony: all startconv
+.phony: all startconv clean
 # OBJ_PATH_DIR保证目录存在，OBJ_PATH_MDS转换文件
+
 startconv: $(OBJ_PATH_DIR) $(OBJ_PATH_MDS)
 #	@echo 转换 $(DIR_BASE_SRC)\$(SUFFIX_FROM) 到 $(DIR_BASE_OBJ)\$(SUFFIX_TO)
 	@echo is updated.
 	
+clean: $(OBJ_PATH_MDS)
+	delete $(OBJ_PATH_MDS) 
+	@echo all file is deleted.
+
 #	@move xxx xxx ## MOVE [/Y | /-Y] [drive:][path]filename1[,...] destination
 
 ###---help
