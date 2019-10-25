@@ -261,6 +261,8 @@ script:
   - ls
   - git add -A
   - git commit --allow-empty -m "kl+travis+hexo-next-Pisces"
+  - git branch -vv
+  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
 
 #workOnB5. hexo-maup       
   - git checkout hexo-maup
@@ -275,6 +277,8 @@ script:
   - ls
   - git add -A
   - git commit --allow-empty -m "kl+travis+hexo-maup"
+  - git branch -vv
+  - git branch -r
 
 # 统一push, totally
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
