@@ -199,6 +199,7 @@ script:
 # hexo-next-Pisces
 # hexo-maup
 
+# total统一clone，分别 cp,add,commit,push
 #d3.0 博客post文章+学习memo笔记 => [branch:上面5个分支一起]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/master
 #deploy:
   - mkdir -p /tmp/klgit/hexo-klblog-src-total
@@ -220,6 +221,8 @@ script:
   - ls
   - git add -A
   - git commit --allow-empty -m "kl+travis+master+"
+  - git branch -vv
+  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
 
 #workOnB2. hexo-next-Gemini
   - git checkout hexo-next-Gemini
@@ -233,6 +236,8 @@ script:
   - touch .nojekyll
   - git add -A
   - git commit --allow-empty -m "kl+travis+hexo-next-Gemini"
+  - git branch -vv
+  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
 
 #workOnB3. hexo-next-muse  
   - git checkout hexo-next-muse
@@ -247,6 +252,8 @@ script:
   - ls
   - git add -A
   - git commit --allow-empty -m "kl+travis+hexo-next-muse"
+  - git branch -vv
+  - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
 
 #workOnB4. hexo-next-Pisces
   - git checkout hexo-next-Pisces
@@ -279,13 +286,12 @@ script:
   - git commit --allow-empty -m "kl+travis+hexo-maup"
   - git branch -vv
   - git branch -r
-
-# 统一push, totally
   - git push https://$GH_TOKEN_FULL@github.com/kevinluolog/hexo-klblog-src.git
+
   - cd $TRAVIS_BUILD_DIR
   - pwd
 
-
+###下面代码是，分别clone，分别cp/add/commit/push。 比上面多了clone环节浪费时间，去掉两个#就可以正常使用
 ###d3.1 博客post文章+学习memo笔记 => [branch:master]kevinluolog/hexo-klblog-src：sphinx build-post, 网页kevinluolog.github.io/master
 ###deploy:
 ##  - mkdir -p /tmp/klgit/hexo-klblog-src-master

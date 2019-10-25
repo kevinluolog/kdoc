@@ -10,7 +10,7 @@ sphinx is great
 .. section-numbering::
 
 
-sphinx install+2
+sphinx install+3
 =====================================================
 
 `sphinx install 官方spec <http://www.sphinx-doc.org/en/master/usage/installation.html#linux>`__
