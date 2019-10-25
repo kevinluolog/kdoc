@@ -57,7 +57,7 @@ script:
 # ADD_HEXO_TAG_FROM_DIR=技术+
 #  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/copy2 SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=技术+
 # ADD_HEXO_TAG_FROM_DIR=
-  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=笔记 CTL_TOC=TRUE
 
 #1.1.2 .rst转换成 格式.html
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html 
@@ -86,7 +86,7 @@ script:
 # ADD_HEXO_TAG_FROM_DIR=post+
 #  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+
 # ADD_HEXO_TAG_FROM_DIR= ,置空表示取文件路径的最后目录作为hexo tag
-  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post CTL_TOC=TRUE
 
 #2.1.2 .rst转换成 格式.html
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
@@ -210,10 +210,10 @@ script:
 
 #workOnB1. master
   - git checkout master
-#  - rm -rv ./hexo-klblog-src-master/hexo-klblog-src/source/_posts/kl_notes/002memo
+  - rm -r ./source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+  - rm -r ./source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
@@ -226,10 +226,10 @@ script:
 
 #workOnB2. hexo-next-Gemini
   - git checkout hexo-next-Gemini
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+  - rm -r ./source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+  - rm -r ./source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
@@ -241,10 +241,10 @@ script:
 
 #workOnB3. hexo-next-muse  
   - git checkout hexo-next-muse
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+  - rm -r ./source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+  - rm -r ./source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
@@ -257,10 +257,10 @@ script:
 
 #workOnB4. hexo-next-Pisces
   - git checkout hexo-next-Pisces
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+  - rm -r ./source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+  - rm -r ./source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
@@ -273,10 +273,10 @@ script:
 
 #workOnB5. hexo-maup       
   - git checkout hexo-maup
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_notes/002memo
+  - rm -rv ./source/_posts/kl_notes/002memo
 # copy 002 memo目录+文件 2 source/_posts/kl_notes
   - cp -f -rt ./source/_posts/kl_notes $TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo
-#  - rm -rv ./hexo-klblog-src-total/hexo-klblog-src/source/_posts/kl_post/003post
+  - rm -rv ./source/_posts/kl_post/003post
 # copy 003post 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_post
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post

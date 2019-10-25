@@ -18,8 +18,11 @@ SUFFIX_TO := .md
 # 控制是否加入hexo需要的frontmatter meta数据,只在rst2md的模式中用到，其它可以任意值
 ADD_HEXO_HEAD := TRUE
 # 控制输入TAG的模式: =,空表示自动从所在最后一级目录来 =xxx,非空值则直接填入这个值
-ADD_HEXO_TAG_FROM_DIR := 技术
+ADD_HEXO_TAG_FROM_DIR := 笔记
 #ADD_HEXO_TAG_FROM_DIR :=
+#控制hexo是否加入toc， TRUE：加入 FALSE:不加入，判断时有定义就是true,空时就是false
+CTL_TOC:= TRUE
+
 ###---生成变量
 
 # 获得源$(SUFFIX_FROM)路径名。
@@ -50,8 +53,9 @@ OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)/,,$(SRC_PATH_MDS))
 ###---生成目标
 
 #【参数1:title =没有后缀的光文件名 】
-#【参数2:tag =技术...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
+#【参数2:tag =笔记...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
 #【参数3:categories =最后目录名】
+#【参数4:toc =CTL_TOC: TRUE or FALSE】
 # --- 前后加入空行：为了解决写进文件时，会自动在前后加入一个空格，会导致hexo解析frontmatter时出错。以为没有信息。
 # 现在还不知道导致前面多写空格符问题的原因，先walkaround过去。
 # 上面walkaround方法不行，因为hexo编译器，要求前面---必须放在文件的开头，空行也不行。
@@ -64,11 +68,9 @@ define def_hexo_md_head
 title: $(1)
 tag: 
 - $(2)
-- 笔记
 categories:
 - $(3)
-- 自动生成
-toc: TRUE
+toc: $(4)
 ---
 endef
 
@@ -105,10 +107,19 @@ ifeq ($(SUFFIX_TO),.md)
 ifeq ($(ADD_HEXO_HEAD),TRUE)
 	@echo start hexo head output...
 ifdef ADD_HEXO_TAG_FROM_DIR
-	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1))))))
-else #ADD_HEXO_TAG_FROM_DIR
-	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1)))),$(word $(words $(subst /, ,$(dir $(1)))),$(subst /, ,$(dir $(1))))))
+ifdef CTL_TOC
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),TRUE))
+else
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(ADD_HEXO_TAG_FROM_DIR),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),FALSE))
 endif
+else
+ifdef CTL_TOC
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),TRUE))
+else
+	$$(file >$$@.tmp,$$(call def_hexo_md_head,$(subst $(SUFFIX_TO),,$(notdir $(1))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),$(word $(words $(subst \, ,$(dir $(1)))),$(subst \, ,$(dir $(1)))),FALSE))
+endif
+endif
+
 #	@echo $$(TBFILENAME)+2
 #	@echo $(subst $(SUFFIX_TO),,$(notdir $(1)))+1#直接函数填入才能取到。
 #	@echo convert to utf8
