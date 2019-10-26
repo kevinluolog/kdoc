@@ -145,7 +145,7 @@ endif
 #	touch --reference=$$< $$@
 #	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\") -m $$@
 	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\")" -m $$@
-#
+# 
 	ls -l $$<
 	ls -l $$@
 else #ADD_HEXO_HEAD
