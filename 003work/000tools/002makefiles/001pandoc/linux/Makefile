@@ -134,12 +134,14 @@ endif
 #用cp来替代iconv，以为linux下，gnumake的file命令输出的是UTF8文件类型。
 	@cp $$@.tmp $$@
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
+	ls -l $$<
+	stat $$<
 	pandoc $$< -o - >>$$@
 #	@echo delete .tmp file...
 	rm $$@.tmp
 # 恢复原先的文件时间信息
 	ls -l $$<
-	ls -l $$@
+	stat $$<
 	touch --reference=$$< $$@
 	ls -l $$<
 	ls -l $$@
