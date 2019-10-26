@@ -146,7 +146,7 @@ endif
 #	touch --reference=$$< $$@
 #	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\")" -m $$@
 	@echo $$(strtime)
-	touch --date=$$(strtime) -m $$@
+	touch --date="$$(strtime)" -m $$@
 
 # 
 	ls -l $$<
