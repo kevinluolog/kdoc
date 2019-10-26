@@ -138,7 +138,11 @@ endif
 #	@echo delete .tmp file...
 	rm $$@.tmp
 # 恢复原先的文件时间信息
+	ls -a $$<
+	ls -a $$@
 	touch --reference=$$< $$@
+	ls -a $$<
+	ls -a $$@
 else #ADD_HEXO_HEAD
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o $$@
