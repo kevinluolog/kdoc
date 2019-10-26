@@ -143,7 +143,8 @@ endif
 	ls -l $$<
 	stat $$<
 #	touch --reference=$$< $$@
-	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\") -m $$@
+#	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\") -m $$@
+	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\")" -m $$@
 #
 	ls -l $$<
 	ls -l $$@
