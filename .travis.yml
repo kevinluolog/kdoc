@@ -43,7 +43,8 @@ install:
 
 # 
 script:
-  - git ls-files | xargs -I{} bash -c 'touch "{}" --date=@$(git log -n1 --pretty=format:%ct -- "{}")'
+  - git ls-files | xargs -I{} bash -c 'touch "{}" --date=$(git log -n1 --pretty=format:%ct -- "{}")'
+#  - git ls-files | xargs -I{} bash -c 'touch "{}" --date=@$(git log -n1 --pretty=format:%ct -- "{}")'
 #  - git checkout dev -f --with-timestamps
 #  - echo $TRAVIS_BUILD_DIR
   - echo $T_DIR_BASE_SRC
