@@ -142,7 +142,9 @@ endif
 # 恢复原先的文件时间信息
 	ls -l $$<
 	stat $$<
-	touch --reference=$$< $$@
+#	touch --reference=$$< $$@
+	touch --date="$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$@\") -m $$@
+#
 	ls -l $$<
 	ls -l $$@
 else #ADD_HEXO_HEAD
