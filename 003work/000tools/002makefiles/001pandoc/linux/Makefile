@@ -104,6 +104,7 @@ define PROGRAM_template
 #$(1): $(DIR_BASE_SRC)$$(DIR_STEM)$(SUFFIX_FROM)
 #dep := $(patsubst %$(SUFFIX_TO),%$(SUFFIX_FROM),$(subst $(DIR_BASE_OBJ),$(DIR_BASE_SRC),$(1)))
 dep := $(basename $(subst $(DIR_BASE_OBJ),$(DIR_BASE_SRC),$(1)))$(SUFFIX_FROM)
+strtime=$(shell git log -1 --date=iso --format="%ad" -- "$$(dep)")
 $(1): $$(dep)
 ## rst2md: with hexo head and deploy copy
 ifeq ($(SUFFIX_FROM),.rst)
@@ -143,8 +144,10 @@ endif
 	ls -l $$<
 	stat $$<
 #	touch --reference=$$< $$@
-#	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\") -m $$@
-	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\")" -m $$@
+#	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\")" -m $$@
+	@echo $$strtime
+	touch --date=$$strtime -m $$@
+
 # 
 	ls -l $$<
 	ls -l $$@
