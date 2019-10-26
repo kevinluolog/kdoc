@@ -43,6 +43,7 @@ install:
 
 # 
 script:
+  - git checkout dev -f --with-timestamps
 #  - echo $TRAVIS_BUILD_DIR
   - echo $T_DIR_BASE_SRC
 #  - mkdir -p output/002memo
