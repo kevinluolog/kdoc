@@ -17,6 +17,7 @@ branches:
   only:
     - dev 
 
+# 一行一个build,一个build中的环境变量要写在一行，一个意思。
 env:
   - T_DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo T_DIR_TEMPLATE=$TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/templates
 
@@ -86,7 +87,7 @@ script:
 # ADD_HEXO_TAG_FROM_DIR=post+
 #  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+
 # ADD_HEXO_TAG_FROM_DIR= ,置空表示取文件路径的最后目录作为hexo tag
-  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post CTL_TOC=TRUE
+  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+ CTL_TOC=TRUE
 
 #2.1.2 .rst转换成 格式.html
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=

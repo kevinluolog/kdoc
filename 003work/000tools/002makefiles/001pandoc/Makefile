@@ -182,10 +182,12 @@ endif
 	pandoc $$< -o - >>$$@
 	@echo delete .tmp file...
 	del $$@.tmp
-else
+# 恢复原先的文件时间信息
+	touch --reference=$$< $$@
+else #ADD_HEXO_HEAD
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o $$@
-endif
+endif #ADD_HEXO_HEAD
 ifdef DIR_BASE_COPYTO
 	@echo copy $(SUFFIX_TO) file to 【hexo post】$(DIR_BASE_COPYTO) ...
 	xcopy $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) /y

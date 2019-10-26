@@ -56,6 +56,7 @@ OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)/,,$(SRC_PATH_MDS))
 #【参数2:tag =笔记...(ifdef ADD_HEXO_TAG_FROM_DIR) =最后目录名(ifudef ADD_HEXO_TAG_FROM_DIR)】 
 #【参数3:categories =最后目录名】
 #【参数4:toc =CTL_TOC: TRUE or FALSE】
+
 # --- 前后加入空行：为了解决写进文件时，会自动在前后加入一个空格，会导致hexo解析frontmatter时出错。以为没有信息。
 # 现在还不知道导致前面多写空格符问题的原因，先walkaround过去。
 # 上面walkaround方法不行，因为hexo编译器，要求前面---必须放在文件的开头，空行也不行。
@@ -63,10 +64,13 @@ OBJ_REL_PATH_MDS := $(subst $(DIR_BASE_SRC)/,,$(SRC_PATH_MDS))
 # gnu_make.pdf p24/220 3.1.1 Splitting Long Lines
 # Outside of recipe lines, backslash/newlines are converted into a single space character.
 # 解决方法：删除$(file,)中的所有续行符“\”
+
+# 取文件目录和文件名字的时候注意，不能有英文“,”号， 有英文“,”号会在分割参数时错位。案例，文件名“Hi,P01散文”被认为是两个参数。
 define def_hexo_md_head
 ---
 title: $(1)
 tag: 
+- 自动生成
 - $(2)
 categories:
 - $(3)
@@ -133,10 +137,13 @@ endif
 	pandoc $$< -o - >>$$@
 #	@echo delete .tmp file...
 	rm $$@.tmp
+# 恢复原先的文件时间信息
+	touch --reference=$$< $$@
 else #ADD_HEXO_HEAD
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o $$@
 endif #ADD_HEXO_HEAD
+
 ifdef DIR_BASE_COPYTO
 #	@echo copy $(SUFFIX_TO) file to {hexo post}$(DIR_BASE_COPYTO) ...
 #	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
