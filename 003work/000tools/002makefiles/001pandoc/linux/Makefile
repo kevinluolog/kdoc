@@ -104,8 +104,8 @@ define PROGRAM_template
 #$(1): $(DIR_BASE_SRC)$$(DIR_STEM)$(SUFFIX_FROM)
 #dep := $(patsubst %$(SUFFIX_TO),%$(SUFFIX_FROM),$(subst $(DIR_BASE_OBJ),$(DIR_BASE_SRC),$(1)))
 dep := $(basename $(subst $(DIR_BASE_OBJ),$(DIR_BASE_SRC),$(1)))$(SUFFIX_FROM)
-#这个touch的机制可以工作，但由于前面一样的机制会永远是最后一个时间，从git log 获得最后一次commit的时间。但是由于push up上去时其实是不带文件时间的。所以没用，要在hexo g，时改动才会在hexo的静态网站中体现出来。
-#同时注意在这个地方只要用一个$就可以取到
+#这个touch的机制可以工作，从git log 获得最后一次commit的时间。但是由于push up上去时其实是不带文件时间的。所以没用，要在hexo g，时改动才会在hexo的静态网站中体现出来。
+#同时注意在这个地方要用两个$$,函数和变量都是。只用一个会永远是最后一个文件的时间，因为第一次展开就被执行了。
 strtime := $$(shell git log -1 --date=iso --format="%ad" -- "$$(dep)")
 $(1): $$(dep)
 ## rst2md: with hexo head and deploy copy
