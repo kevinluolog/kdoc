@@ -616,6 +616,8 @@ hexo高级教程
 
 `hexo脚本编写指南（一） <https://www.jianshu.com/p/26b5a0b59cdd>`__
 
+`Hexo Docs（三）- 高级进阶 <https://www.jianshu.com/p/12279cabca81>`__
+
 `脚本需要掌握hexo api <https://hexo.io/zh-cn/api/>`__
 
 `nodejs doc-en <https://nodejs.org/en/docs/>`__
@@ -731,6 +733,22 @@ Hexo博客从搭建部署到SEO优化等详细教程_
 很好的主题开发文章
 
 `Hexo主题开发经验杂谈org <https://molunerfinn.com/make-a-hexo-theme/#%E5%89%8D%E8%A8%80>`__
+
+参考hexo渲染的事件，可以找到generateBefore这个钩子hook，只要在这个钩子触发的时候，判断一下存不存在data files里的配置文件_data\/next.yml，存在的话就把这个配置文件替换或者合并主题本身的配置文件。Next主题采用的是覆盖，melody主题采用的是替换。各有各的好处，并不是绝对的。
+
+写法是就是在我们的temp主题目录下的scripts文件夹里（没有就创建一个），写一个js文件，内容如下：
+
+::
+
+  /**
+   * Note: configs in _data/temp.yml will replace configs in   hexo.theme.config.
+   */
+  hexo.on('generateBefore', function () {
+    if (hexo.locals.get) {
+      var data = hexo.locals.get('data') // 获取_data文件夹下的内容
+      data && data.temp && (hexo.theme.config = data.temp) // 如果temp.yml   存在，就把内容替换掉主题的config
+    }
+  })
 
 `Hexo主题开发经验杂谈 <https://juejin.im/entry/59ba97216fb9a00a6b6e50bf>`__
 

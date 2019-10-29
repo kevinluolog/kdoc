@@ -13,6 +13,14 @@ gramma and template
 `Linux命令大全 <https://man.linuxde.net/>`__
 
 
+`在Linux下查看文件三种时间 <http://www.sohu.com/a/328510629_120149005>`__
+
+`Linux系统下date常用命令的参数以及获取时间戳的方法 <https://blog.csdn.net/weixin_36194037/article/details/82343367>`__
+
+`如何使用Linux sed命令进行字符串替换 <https://baijiahao.baidu.com/s?id=1588552298343207312&wfr=spider&for=pc>`__
+
+`Linux xargs 命令www.runoob.com <https://www.runoob.com/linux/linux-comm-xargs.html>`__
+
 Linux命令--help
 ===========================================================
 
@@ -523,6 +531,572 @@ awk
   The command "awk --help" exited with 0.
 
 
+grep
+---------------------------------------------------------------------
+
+::
+
+
+   $ grep --help
+   Usage: grep [OPTION]... PATTERN [FILE]...
+   Search for PATTERN in each FILE or standard input.
+   PATTERN is, by default, a basic regular expression (BRE).
+   Example: grep -i 'hello world' menu.h main.c
+   Regexp selection and interpretation:
+     -E, --extended-regexp     PATTERN is an extended regular expression (   ERE)
+     -F, --fixed-strings       PATTERN is a set of newline-separated strings
+     -G, --basic-regexp        PATTERN is a basic regular expression (BRE)
+     -P, --perl-regexp         PATTERN is a Perl regular expression
+     -e, --regexp=PATTERN      use PATTERN for matching
+     -f, --file=FILE           obtain PATTERN from FILE
+     -i, --ignore-case         ignore case distinctions
+     -w, --word-regexp         force PATTERN to match only whole words
+     -x, --line-regexp         force PATTERN to match only whole lines
+     -z, --null-data           a data line ends in 0 byte, not newline
+   Miscellaneous:
+     -s, --no-messages         suppress error messages
+     -v, --invert-match        select non-matching lines
+     -V, --version             display version information and exit
+         --help                display this help text and exit
+   Output control:
+     -m, --max-count=NUM       stop after NUM matches
+     -b, --byte-offset         print the byte offset with output lines
+     -n, --line-number         print line number with output lines
+         --line-buffered       flush output on every line
+     -H, --with-filename       print the file name for each match
+     -h, --no-filename         suppress the file name prefix on output
+         --label=LABEL         use LABEL as the standard input file name    prefix
+     -o, --only-matching       show only the part of a line matching PATTERN
+     -q, --quiet, --silent     suppress all normal output
+         --binary-files=TYPE   assume that binary files are TYPE;
+                               TYPE is 'binary', 'text', or 'without-match'
+     -a, --text                equivalent to --binary-files=text
+     -I                        equivalent to --binary-files=without-match
+     -d, --directories=ACTION  how to handle directories;
+                               ACTION is 'read', 'recurse', or 'skip'
+     -D, --devices=ACTION      how to handle devices, FIFOs and sockets;
+                               ACTION is 'read' or 'skip'
+     -r, --recursive           like --directories=recurse
+     -R, --dereference-recursive  likewise, but follow all symlinks
+         --include=FILE_PATTERN  search only files that match FILE_PATTERN
+         --exclude=FILE_PATTERN  skip files and directories matching    FILE_PATTERN
+         --exclude-from=FILE   skip files matching any file pattern from    FILE
+         --exclude-dir=PATTERN  directories that match PATTERN will be    skipped.
+     -L, --files-without-match  print only names of FILEs containing no    match
+     -l, --files-with-matches  print only names of FILEs containing matches
+     -c, --count               print only a count of matching lines per FILE
+     -T, --initial-tab         make tabs line up (if needed)
+     -Z, --null                print 0 byte after FILE name
+   Context control:
+     -B, --before-context=NUM  print NUM lines of leading context
+     -A, --after-context=NUM   print NUM lines of trailing context
+     -C, --context=NUM         print NUM lines of output context
+     -NUM                      same as --context=NUM
+         --color[=WHEN],
+         --colour[=WHEN]       use markers to highlight the matching    strings;
+                               WHEN is 'always', 'never', or 'auto'
+     -U, --binary              do not strip CR characters at EOL (MSDOS/   Windows)
+     -u, --unix-byte-offsets   report offsets as if CRs were not there
+                               (MSDOS/Windows)
+   'egrep' means 'grep -E'.  'fgrep' means 'grep -F'.
+   Direct invocation as either 'egrep' or 'fgrep' is deprecated.
+   When FILE is -, read standard input.  With no FILE, read . if a    command-line
+   -r is given, - otherwise.  If fewer than two FILEs are given, assume -h.
+   Exit status is 0 if any line is selected, 1 otherwise;
+   if any error occurs and -q is not given, the exit status is 2.
+   Report bugs to: bug-grep@gnu.org
+   GNU grep home page: <http://www.gnu.org/software/grep/>
+   General help using GNU software: <http://www.gnu.org/gethelp/>
+   The command "grep --help" exited with 0.
+
+
+date
+---------------------------------------------------------------------
+
+::
+
+   0.02s$ date --help
+   Usage: date [OPTION]... [+FORMAT]
+     or:  date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+   Display the current time in the given FORMAT, or set the system date.
+   Mandatory arguments to long options are mandatory for short options too.
+     -d, --date=STRING          display time described by STRING, not 'now'
+     -f, --file=DATEFILE        like --date; once for each line of DATEFILE
+     -I[FMT], --iso-8601[=FMT]  output date/time in ISO 8601 format.
+                                  FMT='date' for date only (the default),
+                                  'hours', 'minutes', 'seconds', or 'ns'
+                                  for date and time to the indicated precision.
+                                  Example: 2006-08-14T02:34:56-0600
+     -R, --rfc-2822             output date and time in RFC 2822 format.
+                                  Example: Mon, 14 Aug 2006 02:34:56 -0600
+         --rfc-3339=FMT         output date/time in RFC 3339 format.
+                                  FMT='date', 'seconds', or 'ns'
+                                  for date and time to the indicated precision.
+                                  Example: 2006-08-14 02:34:56-06:00
+     -r, --reference=FILE       display the last modification time of FILE
+     -s, --set=STRING           set time described by STRING
+     -u, --utc, --universal     print or set Coordinated Universal Time (UTC)
+         --help     display this help and exit
+         --version  output version information and exit
+   FORMAT controls the output.  Interpreted sequences are:
+     %%   a literal %
+     %a   locale's abbreviated weekday name (e.g., Sun)
+     %A   locale's full weekday name (e.g., Sunday)
+     %b   locale's abbreviated month name (e.g., Jan)
+     %B   locale's full month name (e.g., January)
+     %c   locale's date and time (e.g., Thu Mar  3 23:05:25 2005)
+     %d   day of month (e.g., 01)
+     %D   date; same as %m/%d/%y
+     %e   day of month, space padded; same as %_d
+     %F   full date; same as %Y-%m-%d
+     %g   last two digits of year of ISO week number (see %G)
+     %G   year of ISO week number (see %V); normally useful only with %V
+     %h   same as %b
+     %H   hour (00..23)
+     %I   hour (01..12)
+     %j   day of year (001..366)
+     %k   hour, space padded ( 0..23); same as %_H
+     %l   hour, space padded ( 1..12); same as %_I
+     %m   month (01..12)
+     %M   minute (00..59)
+     %n   a newline
+     %N   nanoseconds (000000000..999999999)
+     %p   locale's equivalent of either AM or PM; blank if not known
+     %P   like %p, but lower case
+     %r   locale's 12-hour clock time (e.g., 11:11:04 PM)
+     %R   24-hour hour and minute; same as %H:%M
+     %s   seconds since 1970-01-01 00:00:00 UTC
+     %S   second (00..60)
+     %t   a tab
+     %T   time; same as %H:%M:%S
+     %u   day of week (1..7); 1 is Monday
+     %U   week number of year, with Sunday as first day of week (00..53)
+     %V   ISO week number, with Monday as first day of week (01..53)
+     %w   day of week (0..6); 0 is Sunday
+     %W   week number of year, with Monday as first day of week (00..53)
+     %x   locale's date representation (e.g., 12/31/99)
+     %X   locale's time representation (e.g., 23:13:48)
+     %y   last two digits of year (00..99)
+     %Y   year
+     %z   +hhmm numeric time zone (e.g., -0400)
+     %:z  +hh:mm numeric time zone (e.g., -04:00)
+     %::z  +hh:mm:ss numeric time zone (e.g., -04:00:00)
+     %:::z  numeric time zone with : to necessary precision (e.g., -04, +05:30)
+     %Z   alphabetic time zone abbreviation (e.g., EDT)
+   By default, date pads numeric fields with zeroes.
+   The following optional flags may follow '%':
+     -  (hyphen) do not pad the field
+     _  (underscore) pad with spaces
+     0  (zero) pad with zeros
+     ^  use upper case if possible
+     #  use opposite case if possible
+   After any flags comes an optional field width, as a decimal number;
+   then an optional modifier, which is either
+   E to use the locale's alternate representations if available, or
+   O to use the locale's alternate numeric symbols if available.
+   Examples:
+   Convert seconds since the epoch (1970-01-01 UTC) to a date
+     $ date --date='@2147483647'
+   Show the time on the west coast of the US (use tzselect(1) to find TZ)
+     $ TZ='America/Los_Angeles' date
+   Show the local time for 9AM next Friday on the west coast of the US
+     $ date --date='TZ="America/Los_Angeles" 09:00 next Fri'
+   GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+   Full documentation at: <http://www.gnu.org/software/coreutils/date>
+   or available locally via: info '(coreutils) date invocation'
+   The command "date --help" exited with 0.
+
+
+stat
+---------------------------------------------------------------------
+
+::
+
+   0.02s$ stat --help
+   Usage: stat [OPTION]... FILE...
+   Display file or file system status.
+   Mandatory arguments to long options are mandatory for short options too.
+     -L, --dereference     follow links
+     -f, --file-system     display file system status instead of file status
+     -c  --format=FORMAT   use the specified FORMAT instead of the default;
+                             output a newline after each use of FORMAT
+         --printf=FORMAT   like --format, but interpret backslash escapes,
+                             and do not output a mandatory trailing newline;
+                             if you want a newline, include \n in FORMAT
+     -t, --terse           print the information in terse form
+         --help     display this help and exit
+         --version  output version information and exit
+   The valid format sequences for files (without --file-system):
+     %a   access rights in octal (note '#' and '0' printf flags)
+     %A   access rights in human readable form
+     %b   number of blocks allocated (see %B)
+     %B   the size in bytes of each block reported by %b
+     %C   SELinux security context string
+     %d   device number in decimal
+     %D   device number in hex
+     %f   raw mode in hex
+     %F   file type
+     %g   group ID of owner
+     %G   group name of owner
+     %h   number of hard links
+     %i   inode number
+     %m   mount point
+     %n   file name
+     %N   quoted file name with dereference if symbolic link
+     %o   optimal I/O transfer size hint
+     %s   total size, in bytes
+     %t   major device type in hex, for character/block device special files
+     %T   minor device type in hex, for character/block device special files
+     %u   user ID of owner
+     %U   user name of owner
+     %w   time of file birth, human-readable; - if unknown
+     %W   time of file birth, seconds since Epoch; 0 if unknown
+     %x   time of last access, human-readable
+     %X   time of last access, seconds since Epoch
+     %y   time of last data modification, human-readable
+     %Y   time of last data modification, seconds since Epoch
+     %z   time of last status change, human-readable
+     %Z   time of last status change, seconds since Epoch
+   Valid format sequences for file systems:
+     %a   free blocks available to non-superuser
+     %b   total data blocks in file system
+     %c   total file nodes in file system
+     %d   free file nodes in file system
+     %f   free blocks in file system
+     %i   file system ID in hex
+     %l   maximum length of filenames
+     %n   file name
+     %s   block size (for faster transfers)
+     %S   fundamental block size (for block counts)
+     %t   file system type in hex
+     %T   file system type in human readable form
+   NOTE: your shell may have its own version of stat, which usually supersedes
+   the version described here.  Please refer to your shell's documentation
+   for details about the options it supports.
+   GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+   Full documentation at: <http://www.gnu.org/software/coreutils/stat>
+   or available locally via: info '(coreutils) stat invocation'
+   The command "stat --help" exited with 0.
+
+
+---------------------------------------------------------------------
+
+::
+
+   0.03s$ bash --help
+   GNU bash, version 4.3.48(1)-release-(x86_64-pc-linux-gnu)
+   Usage: bash [GNU long option] [option] ...
+    bash [GNU long option] [option] script-file ...
+   GNU long options:
+    --debug
+    --debugger
+    --dump-po-strings
+    --dump-strings
+    --help
+    --init-file
+    --login
+    --noediting
+    --noprofile
+    --norc
+    --posix
+    --rcfile
+    --restricted
+    --verbose
+    --version
+   Shell options:
+    -ilrsD or -c command or -O shopt_option   (invocation only)
+    -abefhkmnptuvxBCHP or -o option
+   Type `bash -c "help set"' for more information about shell options.
+   Type `bash -c help' for more information about shell builtin commands.
+   Use the `bashbug' command to report bugs.
+   The command "bash --help" exited with 0.
+
+bash -c "help set"
+---------------------------------------------------------------------
+
+::
+
+   $ bash -c "help set"
+   set: set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
+       Set or unset values of shell options and positional parameters.
+       
+       Change the value of shell attributes and positional parameters, or
+       display the names and values of shell variables.
+       
+       Options:
+         -a  Mark variables which are modified or created for export.
+         -b  Notify of job termination immediately.
+         -e  Exit immediately if a command exits with a non-zero status.
+         -f  Disable file name generation (globbing).
+         -h  Remember the location of commands as they are looked up.
+         -k  All assignment arguments are placed in the environment for a
+             command, not just those that precede the command name.
+         -m  Job control is enabled.
+         -n  Read commands but do not execute them.
+         -o option-name
+             Set the variable corresponding to option-name:
+                 allexport    same as -a
+                 braceexpand  same as -B
+                 emacs        use an emacs-style line editing interface
+                 errexit      same as -e
+                 errtrace     same as -E
+                 functrace    same as -T
+                 hashall      same as -h
+                 histexpand   same as -H
+                 history      enable command history
+                 ignoreeof    the shell will not exit upon reading EOF
+                 interactive-comments
+                              allow comments to appear in interactive commands
+                 keyword      same as -k
+                 monitor      same as -m
+                 noclobber    same as -C
+                 noexec       same as -n
+                 noglob       same as -f
+                 nolog        currently accepted but ignored
+                 notify       same as -b
+                 nounset      same as -u
+                 onecmd       same as -t
+                 physical     same as -P
+                 pipefail     the return value of a pipeline is the status of
+                              the last command to exit with a non-zero status,
+                              or zero if no command exited with a non-zero status
+                 posix        change the behavior of bash where the default
+                              operation differs from the Posix standard to
+                              match the standard
+                 privileged   same as -p
+                 verbose      same as -v
+                 vi           use a vi-style line editing interface
+                 xtrace       same as -x
+         -p  Turned on whenever the real and effective user ids do not match.
+             Disables processing of the $ENV file and importing of shell
+             functions.  Turning this option off causes the effective uid and
+             gid to be set to the real uid and gid.
+         -t  Exit after reading and executing one command.
+         -u  Treat unset variables as an error when substituting.
+         -v  Print shell input lines as they are read.
+         -x  Print commands and their arguments as they are executed.
+         -B  the shell will perform brace expansion
+         -C  If set, disallow existing regular files to be overwritten
+             by redirection of output.
+         -E  If set, the ERR trap is inherited by shell functions.
+         -H  Enable ! style history substitution.  This flag is on
+             by default when the shell is interactive.
+         -P  If set, do not resolve symbolic links when executing commands
+             such as cd which change the current directory.
+         -T  If set, the DEBUG trap is inherited by shell functions.
+         --  Assign any remaining arguments to the positional parameters.
+             If there are no remaining arguments, the positional parameters
+             are unset.
+         -   Assign any remaining arguments to the positional parameters.
+             The -x and -v options are turned off.
+       
+       Using + rather than - causes these flags to be turned off.  The
+       flags can also be used upon invocation of the shell.  The current
+       set of flags may be found in $-.  The remaining n ARGs are positional
+       parameters and are assigned, in order, to $1, $2, .. $n.  If no
+       ARGs are given, all shell variables are printed.
+       
+       Exit Status:
+       Returns success unless an invalid option is given.
+   The command "bash -c "help set"" exited with 0.
+
+bash -c help
+---------------------------------------------------------------------
+
+::
+
+   0.01s$ bash -c help
+   GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)
+   These shell commands are defined internally.  Type `help' to see this list.
+   Type `help name' to find out more about the function `name'.
+   Use `info bash' to find out more about the shell in general.
+   Use `man -k' or `info' to find out more about commands not in this list.
+   A star (*) next to a name means that the command is disabled.
+    job_spec [&]                            history [-c] [-d offset] [n] or hist>
+    (( expression ))                        if COMMANDS; then COMMANDS; [ elif C>
+    . filename [arguments]                  jobs [-lnprs] [jobspec ...] or jobs >
+    :                                       kill [-s sigspec | -n signum | -sigs>
+    [ arg... ]                              let arg [arg ...]
+    [[ expression ]]                        local [option] name[=value] ...
+    alias [-p] [name[=value] ... ]          logout [n]
+    bg [job_spec ...]                       mapfile [-n count] [-O origin] [-s c>
+    bind [-lpsvPSVX] [-m keymap] [-f file>  popd [-n] [+N | -N]
+    break [n]                               printf [-v var] format [arguments]
+    builtin [shell-builtin [arg ...]]       pushd [-n] [+N | -N | dir]
+    caller [expr]                           pwd [-LP]
+    case WORD in [PATTERN [| PATTERN]...)>  read [-ers] [-a array] [-d delim] [->
+    cd [-L|[-P [-e]] [-@]] [dir]            readarray [-n count] [-O origin] [-s>
+    command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ...] o>
+    compgen [-abcdefgjksuv] [-o option]  >  return [n]
+    complete [-abcdefgjksuv] [-pr] [-DE] >  select NAME [in WORDS ... ;] do COMM>
+    compopt [-o|+o option] [-DE] [name ..>  set [-abefhkmnptuvxBCHP] [-o option->
+    continue [n]                            shift [n]
+    coproc [NAME] command [redirections]    shopt [-pqsu] [-o] [optname ...]
+    declare [-aAfFgilnrtux] [-p] [name[=v>  source filename [arguments]
+    dirs [-clpv] [+N] [-N]                  suspend [-f]
+    disown [-h] [-ar] [jobspec ...]         test [expr]
+    echo [-neE] [arg ...]                   time [-p] pipeline
+    enable [-a] [-dnps] [-f filename] [na>  times
+    eval [arg ...]                          trap [-lp] [[arg] signal_spec ...]
+    exec [-cl] [-a name] [command [argume>  true
+    exit [n]                                type [-afptP] name [name ...]
+    export [-fn] [name[=value] ...] or ex>  typeset [-aAfFgilrtux] [-p] name[=va>
+    false                                   ulimit [-SHabcdefilmnpqrstuvxT] [lim>
+    fc [-e ename] [-lnr] [first] [last] o>  umask [-p] [-S] [mode]
+    fg [job_spec]                           unalias [-a] name [name ...]
+    for NAME [in WORDS ... ] ; do COMMAND>  unset [-f] [-v] [-n] [name ...]
+    for (( exp1; exp2; exp3 )); do COMMAN>  until COMMANDS; do COMMANDS; done
+    function name { COMMANDS ; } or name >  variables - Names and meanings of so>
+    getopts optstring name [arg]            wait [-n] [id ...]
+    hash [-lr] [-p pathname] [-dt] [name >  while COMMANDS; do COMMANDS; done
+    help [-dms] [pattern ...]               { COMMANDS ; }
+   The command "bash -c help" exited with 0.
+
+
+xargs
+---------------------------------------------------------------------
+
+::
+
+   0.03s$ xargs --help
+   Usage: xargs [OPTION]... COMMAND [INITIAL-ARGS]...
+   Run COMMAND with arguments INITIAL-ARGS and more arguments read from input.
+   Mandatory and optional arguments to long options are also
+   mandatory or optional for the corresponding short option.
+     -0, --null                   items are separated by a null, not whitespace;
+                                    disables quote and backslash processing and
+                                    logical EOF processing
+     -a, --arg-file=FILE          read arguments from FILE, not standard input
+     -d, --delimiter=CHARACTER    items in input stream are separated by CHARACTER,
+                                    not by whitespace; disables quote and backslash
+                                    processing and logical EOF processing
+     -E END                       set logical EOF string; if END occurs as a line
+                                    of input, the rest of the input is ignored
+                                    (ignored if -0 or -d was specified)
+     -e, --eof[=END]              equivalent to -E END if END is specified;
+                                    otherwise, there is no end-of-file string
+     -I R                         same as --replace=R
+     -i, --replace[=R]            replace R in INITIAL-ARGS with names read
+                                    from standard input; if R is unspecified,
+                                    assume {}
+     -L, --max-lines=MAX-LINES    use at most MAX-LINES non-blank input lines per
+                                    command line
+     -l[MAX-LINES]                similar to -L but defaults to at most one non-
+                                    blank input line if MAX-LINES is not specified
+     -n, --max-args=MAX-ARGS      use at most MAX-ARGS arguments per command line
+     -P, --max-procs=MAX-PROCS    run at most MAX-PROCS processes at a time
+     -p, --interactive            prompt before running commands
+         --process-slot-var=VAR   set environment variable VAR in child processes
+     -r, --no-run-if-empty        if there are no arguments, then do not run COMMAND;
+                                    if this option is not given, COMMAND will be
+                                    run at least once
+     -s, --max-chars=MAX-CHARS    limit length of command line to MAX-CHARS
+         --show-limits            show limits on command-line length
+     -t, --verbose                print commands before executing them
+     -x, --exit                   exit if the size (see -s) is exceeded
+         --help                   display this help and exit
+         --version                output version information and exit
+   Please see also the documentation at http://www.gnu.org/software/findutils/.
+   You can report (and track progress on fixing) bugs in the "xargs"
+   program via the GNU findutils bug-reporting page at
+   https://savannah.gnu.org/bugs/?group=findutils or, if
+   you have no web access, by sending email to <bug-findutils@gnu.org>.
+   trThe command "xargs --help" exited with 0.
+
+
+
+Linux常用命令大全
+=====================
+
+`Linux基础知识——Linux常用命令大全 <https://yq.aliyun.com/articles/681643>`__
+
+
+创建目录 mkdir
+------------------
+   
+::
+   
+   作用：在当前目录下创建下一级目录，无法跨级创建
+   
+   常用参数
+   -p 创建多级目录（跨级创建）
+   -v 查看目录创建的过程（创建目录可视化）
+   
+   
+删除文件 rmdir
+------------------
+   
+::
+   
+   仅可以删除空白目录（不可以删除包含内容的目录）
+   
+创建文件 touch
+------------------
+   
+::
+   
+   作用：创建空白文件
+   
+删除文件或目录 rm
+------------------
+   
+::
+   
+   1、删除文件
+   rm 文件名（删除时会询问是否删除）
+   rm -f 文件名（强制删除）
+   rm -v 文件名（可视化删除）
+   
+   2、删除目录
+   rm -r 目录名（删除时会询问是否删除）
+   rm -rf 目录名（强制删除，若目录不存在，此命令依旧可以执行，不报错）
+   rm -rv 目录名（可视化强制）
+   删除目录和文件时，先删除文件在删除目录
+
+   rm的用法如下：
+   1、删除文件夹以及文件夹中的所有文件命令：
+   rm -rf 目录名字
+   其中：
+   -r：向下递归删除
+   -f：直接强行删除，且没有任何提示
+   2、删除文件命令
+   rm -f 文件名
+   将会强行删除文件，且无提示
+   注意：
+   使用rm -rf要格外注意，linux中没有回收站，慎重删除
+   
+   如果空目录就可以用rmdir
+   如果是有文件的目录就用 rm -f
+   一般文件用 rm
+
+   
+复制文件或目录（可以对目标文件或目录重命名） cp
+---------------------------------------------------
+   
+::
+   
+   源文件始终不变，仅仅是对目标文件进行改变。
+   
+   1、复制文件
+   格式：cp 源文件 目标文件
+   
+   2、拷贝目录（目录需要加/）注意区分绝对路径和相对路径
+   格式：cp -r 源目录 目标目录
+   
+移动（类似于Windows中的剪切）mv
+---------------------------------------
+   
+::
+   
+   注意与复制命令cp的区别。mv命令使源文件的状态发生改变。
+   
+   1、移动目录时：
+   若果目录存在，则会将原目录移动到目标目录下；如果目录不存在，则相当于移动并重命名
+   
+查看文件内容cat tac more less head tail
+--------------------------------------------
+
+
 Linux命令
 =============
 
@@ -901,103 +1475,239 @@ exec中使用grep命令
    find . -name "*.log" -exec cp {} test3 \;
 
 
+linux-xargs-命令
+---------------------------------------------------------------------
 
-Linux常用命令大全
-=====================
+xargs
+是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。
 
-`Linux基础知识——Linux常用命令大全 <https://yq.aliyun.com/articles/681643>`__
+xargs
+可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据。
+
+xargs
+也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。
+
+xargs 默认的命令是 echo，这意味着通过管道传递给 xargs
+的输入将会包含换行和空白，不过通过 xargs
+的处理，换行和空白将被空格取代。
+
+xargs
+是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令。
+
+之所以能用到这个命令，关键是由于很多命令不支持|管道来传递参数，而日常工作中有有这个必要，所以就有了
+
+xargs 命令，例如：
+
+::
+
+   find /sbin -perm +700 |ls -l       #这个命令是错误的
+   find /sbin -perm +700 |xargs ls -l   #这样才是正确的
+
+xargs 一般是和管道一起使用。
+
+**命令格式：**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+   somecommand |xargs -item  command
+
+**参数：**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  -a file 从文件中读入作为sdtin
+-  -e flag
+   ，注意有的时候可能会是-E，flag必须是一个以空格分隔的标志，当xargs分析到含有flag这个标志的时候就停止。
+-  -p 当每次执行一个argument的时候询问一次用户。
+-  -n num
+   后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的。
+-  -t 表示先打印命令，然后再执行。
+-  -i
+   或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给
+   {}，可以用 {} 代替。
+-  -r no-run-if-empty
+   当xargs的输入为空的时候则停止xargs，不用再去执行了。
+-  -s num 命令行的最大字符数，指的是 xargs
+   后面那个命令的最大命令行字符数。
+-  -L num 从标准输入一次读取 num 行送给 command 命令。
+-  -l 同 -L。
+-  -d delim
+   分隔符，默认的xargs分隔符是回车，argument的分隔符是空格，这里修改的是xargs的分隔符。
+-  -x exit的意思，主要是配合-s使用。。
+-  -P 修改最大的进程数，默认是1，为0时候为as many as
+   it can ，这个例子我没有想到，应该平时都用不到的吧。
+
+实例
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xargs 用作替换工具，读取输入数据重新格式化后输出。
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+定义一个测试文件，内有多行文本数据：
+
+::
+
+   # cat test.txt
+
+   a b c d e f g
+   h i j k l m n
+   o p q
+   r s t
+   u v w x y z
+
+多行输入单行输出：
+
+::
+
+   # cat test.txt | xargs
+   a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+-n 选项多行输出：
+
+::
+
+   # cat test.txt | xargs -n3
+
+   a b c
+   d e f
+   g h i
+   j k l
+   m n o
+   p q r
+   s t u
+   v w x
+   y z
+
+-d 选项可以自定义一个定界符：
+
+::
+
+   # echo "nameXnameXnameXname" | xargs -dX
+
+   name name name name
+
+结合 -n 选项使用：
+
+::
+
+   # echo "nameXnameXnameXname" | xargs -dX -n2
+
+   name name
+   name name
+
+读取 stdin，将格式化后的参数传递给命令
+
+假设一个命令为 sk.sh 和一个保存参数的文件 arg.txt：
+
+::
+
+   #!/bin/bash
+   #sk.sh命令内容，打印出所有参数。
+
+   echo $*
+
+arg.txt文件内容：
+
+::
+
+   # cat arg.txt
+
+   aaa
+   bbb
+   ccc
+
+xargs 的一个选项 -I {}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+xargs 的一个选项 -I，使用 -I 指定一个替换字符串
+{}，这个字符串在 xargs 扩展时会被替换掉，当 -I 与
+xargs 结合使用，每一个参数命令都会被执行一次：
+
+::
+
+   # cat arg.txt | xargs -I {} ./sk.sh -p {} -l
+
+   -p aaa -l
+   -p bbb -l
+   -p ccc -l
+
+复制所有图片文件到 /data/images 目录下：
+
+::
+
+   ls *.jpg | xargs -n1 -I {} cp {} /data/images
+
+xargs 结合 find 使用
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+用 rm
+删除太多的文件时候，可能得到一个错误信息：\ **/bin/rm
+Argument list too long.** 用 xargs 去避免这个问题：
+
+::
+
+   find . -type f -name "*.log" -print0 | xargs -0 rm -f
+
+xargs -0 将 \\0 作为定界符。
+
+统计一个源代码目录中所有 php 文件的行数：
+
+::
+
+   find . -type f -name "*.php" -print0 | xargs -0 wc -l
+
+查找所有的 jpg 文件，并且压缩它们：
+
+::
+
+   find . -type f -name "*.jpg" -print | xargs tar -czvf images.tar.gz
+
+xargs 其他应用
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+假如你有一个文件包含了很多你希望下载的 URL，你能够使用
+xargs下载所有链接：
+
+::
+
+   # cat url-list.txt | xargs wget -c
 
 
-创建目录 mkdir
-------------------
-   
-::
-   
-   作用：在当前目录下创建下一级目录，无法跨级创建
-   
-   常用参数
-   -p 创建多级目录（跨级创建）
-   -v 查看目录创建的过程（创建目录可视化）
-   
-   
-删除文件 rmdir
-------------------
-   
-::
-   
-   仅可以删除空白目录（不可以删除包含内容的目录）
-   
-创建文件 touch
-------------------
-   
-::
-   
-   作用：创建空白文件
-   
-删除文件或目录 rm
-------------------
-   
-::
-   
-   1、删除文件
-   rm 文件名（删除时会询问是否删除）
-   rm -f 文件名（强制删除）
-   rm -v 文件名（可视化删除）
-   
-   2、删除目录
-   rm -r 目录名（删除时会询问是否删除）
-   rm -rf 目录名（强制删除，若目录不存在，此命令依旧可以执行，不报错）
-   rm -rv 目录名（可视化强制）
-   删除目录和文件时，先删除文件在删除目录
 
-   rm的用法如下：
-   1、删除文件夹以及文件夹中的所有文件命令：
-   rm -rf 目录名字
-   其中：
-   -r：向下递归删除
-   -f：直接强行删除，且没有任何提示
-   2、删除文件命令
-   rm -f 文件名
-   将会强行删除文件，且无提示
-   注意：
-   使用rm -rf要格外注意，linux中没有回收站，慎重删除
-   
-   如果空目录就可以用rmdir
-   如果是有文件的目录就用 rm -f
-   一般文件用 rm
+Linux系统下date常用命令的参数以及获取时间戳的方法
+---------------------------------------------------------------------
 
-   
-复制文件或目录（可以对目标文件或目录重命名） cp
----------------------------------------------------
-   
+date:用于显示/设置系统的时间或者日期：date 选项 +指定的格式：
+
 ::
-   
-   源文件始终不变，仅仅是对目标文件进行改变。
-   
-   1、复制文件
-   格式：cp 源文件 目标文件
-   
-   2、拷贝目录（目录需要加/）注意区分绝对路径和相对路径
-   格式：cp -r 源目录 目标目录
-   
-移动（类似于Windows中的剪切）mv
----------------------------------------
-   
-::
-   
-   注意与复制命令cp的区别。mv命令使源文件的状态发生改变。
-   
-   1、移动目录时：
-   若果目录存在，则会将原目录移动到目标目录下；如果目录不存在，则相当于移动并重命名
-   
-查看文件内容cat tac more less head tail
+
+  +：进行格式化输出
+  %Y:表示年份
+  %m:表示月份
+  %d:表示第几天
+  %H:表示小时
+  %M:表示分钟
+  %S:表示秒钟
+  查看当前的系统时间：date
+  设置系统时间为:date -s “20180316 16:53:10”
+  查看本地系统时间：date “+%Z”
+  查看星期几：date “+%A”
+  输入当前是上午还是下午：date “+%p”
+  判断今天是一年中的第几天：date “+%j”
+  ctrl+l:清屏操作，相当于clear
+  等价一：date + %Y-%m-%d=date + %F
+  等价二：date + %H :%M :%S=date + %T
+  等价三：date + “%F %T”=date + ‘%F %T’(注意：有空格需要用到双引号或单引号)
+  
+  时间戳：时间戳是指格林威治时间自1970年1月1日（00:00:00   GMT）至当前时间的总秒数。它也被称为Unix时间戳（Unix Timestamp）。通俗的讲，时间  戳是一份能够表示一份数据在一个特定时间点已经存在的完整的可验证的数据。
+  
+  时间->时间戳： date +%s
+  时间戳->时间： date +%Y:%m:%d -d @1425384141
+  Unix时间戳（英文为Unix epoch, Unix time, POSIXme 或 Unix   timestamp）是从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数，不考虑闰秒。
+  misc
+
+cp命令详解
 --------------------------------------------
-
-misc
-------------
-
-Linux-cp命令详解
-^^^^^^^^^^^^^^^^^^^^^
 
 `Linux-cp命令详解 <https://www.linuxidc.com/Linux/2019-08/159913.htm>`__
 
@@ -1042,14 +1752,14 @@ Linux-cp命令详解
 
 
 拷贝命令比较，XCOPY(win) VS cp(linux)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 windows下XCOPY命令，目标目录的父目录可以不存在，命令自己会创建
 
 Linux下cp不会自动创建目标目录的父目录，如果目标目录不在在会直接报错。
 
 gnumake-wildcard(win) VS cp(linux)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 windows 下gnumake命令wildcard返回匹配文件名带目录（待确认）
 
@@ -1058,7 +1768,9 @@ Linux 下gnumake命令wildcard返回匹配文件名带目录（已确认）
 
 
 touch命令直接创建空白文件
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
+
+`Linux Touch命令的8种常见使用方法 <https://www.linuxidc.com/Linux/2018-10/155077.htm>`__
 
 touch test.txt
 
@@ -1080,6 +1792,86 @@ touch test.txt
                           WORD is modify or mtime: equivalent to -m
       --help  显示此帮助信息并退出
       --version  显示版本信息并退出
+
+
+Linux文件三种时间属性atime/mtime/ctime：
+--------------------------------------------------------
+
+atime(access time):最近访问文件内容时间（Last Access Time）。
+
+mtime(modify time):最近修改文件内容时间（Last Modification Time）。
+
+ctime(change time):最近更改文件属性（Inode内容更改）的时间，包括文件名、大小、内容、权限、属主、属组等（Last Change Time）。
+
+1. 输入“touch filetime.txt”创建新文件，输入“stat filetime.txt”即可查看文件filetime.txt的时间属性。
+
+   备注：新创建文件的三种时间抓取当前时间，本例中为2019-01-05 19:42:36。
+
+   Birth时间为空，Linux需要内核提供xstat()接口才可获取Birth时间。
+
+2. 使用cat，less，more等命令查看文件后atime已更新（2019-01-05 19:44:13）。
+
+   备注：ls，stat命令不会修改atime。
+
+3. 输入“echo "add test">>filetime.txt”给文件增加内容“add test”后，输入“stat filetime.txt”查看时间属性，发现mtime和ctime均已更新（2019-01-05 19:55:05）。
+
+4. 输入“mv filetime.txt new.txt”修改文件名为new.txt，输入“stat new.txt”查看时间属性，发现只有ctime更新（2019-01-05 19:57:05）。
+
+   备注：chown和chmod命令均修改ctime，ln（不包括ln -s）亦修改ctime。
+
+5. 输入“ls -lc new.txt”可查看文件new.txt的ctime。
+
+6. 输入“ls -lu new.txt”可查看文件new.txt的atime。
+
+7. 输入“ls -l new.txt”可查看文件new.txt的mtime。
+
+利用date 时间戳<->时间
+--------------------------------------------------------
+
+时间戳：时间戳是指格林威治时间自1970年1月1日（00:00:00 GMT）至当前时间的总秒数。它也被称为Unix时间戳（Unix Timestamp）。通俗的讲，时间戳是一份能够表示一份数据在一个特定时间点已经存在的完整的可验证的数据。
+
+时间->时间戳： date +%s
+
+时间戳->时间： date +%Y:%m:%d -d @1425384141
+
+Unix时间戳（英文为Unix epoch, Unix time, POSIXme 或 Unix timestamp）是从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数，不考虑闰秒。
+
+
+sed命令功能强大替换
+--------------------------------------------------------
+
+一、基本的替换
+::
+
+  命令格式1：sed 's/原字符串/新字符串/' 文件
+  命令格式2：sed 's/原字符串/新字符串/g' 文件
+
+这两种命令格式的区别在于是否有个“g”。没有“g”表示只替换第一个匹配到的字符串，有“g”表示替换所有能匹配到的字符串
+
+二、替换某行内容
+::
+
+  命令格式1：sed '行号c 新字符串' 文件
+  命令格式2：sed '起始行号，终止行号c 新字符串' 文件
+
+第一个命令表示用新的字符串替换指定这一行的内容， 第二个命令表示用新字符串替换指定几行的内容。如下图，第一个命令将第2行内容替换成了“new test!”，第二个命令将第2到6行替换成了“new test!”。
+
+三、多条件替换
+
+::
+
+  命令格式：sed -e 命令1 -e 命令2 -e 命令3
+
+有些时候有多个替换条件，那就可以使用“-e”参数将这些替换条件连接起来，一次性完成所有的替换操作。例如，可以将上述的两种命令连接起来：“sed -e 's/原字符串/新字符串/' '行号c 新字符串' 文件”。如下图，不仅将小写“a”替换成了大写“A"，还将第2行内容替换成了“new test!”。
+
+四、保存替换结果到文件中
+
+::
+
+  命令格式：sed -i 命令
+
+上述这些命令都只是将替换结果打印到屏幕上，如果想保存结果到文件中，就需要加上“-i”参数。
+
 
 ` <>`__
 
