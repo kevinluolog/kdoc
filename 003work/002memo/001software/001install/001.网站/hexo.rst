@@ -1020,9 +1020,9 @@ fontawesome是什么？
    
    ::
 
-       \themes\next\source\js\
-       hanzi.js 
-       clicklove.js
+      /themes/next/source/js/
+      hanzi.js 
+      clicklove.js
 
 
 2. 页面文件
