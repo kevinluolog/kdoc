@@ -1029,6 +1029,7 @@ fontawesome是什么？
    
    ::
 
+      KL+TEST
       {%- if theme.kl_click_hanzi %}
             <script src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script>
             <!-- 页面点击汉字 -->

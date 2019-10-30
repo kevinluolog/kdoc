@@ -316,8 +316,8 @@ hexo-klblog-src发布 网站地址：
    
    参考 `kdoc发布 网站地址：`_ sphinx
 
-   参考 `hexo-klblog-src发布 网站地址：`_ hexo
+   参考 `hexo-klblog-src发布 网站地址：`_  hexo
 
 6. 生成输出 repo地址
    
-   `kdoc的output输出仓库网址 travisci_out_kdoc<https://github.com/travisci_out_kdoc/>`__
+   `kdoc的output输出仓库网址 travisci_out_kdoc <https://github.com/travisci_out_kdoc/>`__
