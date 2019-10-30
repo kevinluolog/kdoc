@@ -88,8 +88,8 @@ author date (format respects --date= option)
 --date=iso (or --date=iso8601) shows timestamps in a ISO 8601-like format. The differences to the strict ISO 8601 format are:
 
 ?????
-#For TravisCI users, simply add a config to .travis.yml so it clones the full repository history:
-# `MestreLion/git-tools <https://github.com/MestreLion/git-tools#install>`__
+For TravisCI users, simply add a config to .travis.yml so it clones the full repository history:
+`MestreLion/git-tools <https://github.com/MestreLion/git-tools#install>`__
 
 
 可以解决拉取全部历史原数据到本地的问题，不加在clone时，只是本分支的历史。这样git log 能拿到文件所有commit的时间
