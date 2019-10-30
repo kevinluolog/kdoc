@@ -28,9 +28,9 @@ install:
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）
 # 使用xelatex这个引擎为Pandoc提供pdf转换中文支持，Ubuntu12.04.5LTS需要 texlive-xetex texlive-latex-extra 这两个包，安装这两个包需要添加 texlive-backports/ppa 这个库。
 #  - sudo apt-get install python-software-properties #这个在Travis下是不需要的
-#  - sudo add-apt-repository ppa:texlive-backports/ppa -y
+  - sudo add-apt-repository ppa:texlive-backports/ppa -y
 #  - sudo apt-get update -y
-#  - sudo apt-get install texlive-xetex texlive-latex-extra -y
+  - sudo apt-get install texlive-xetex texlive-latex-extra -y
 
 # install sphinx
 #  - apt-get install python3-sphinx
@@ -56,24 +56,23 @@ script:
 
 #1.1 pandoc:
 
-#1.1.1 .rst转换成hexo 格式.md
+#1.1.1 .rst转换成hexo 格式.md 002memo pandoc
 #  - pandoc ./003work/002memo/001software/001install/sublime.rst -o index.html
 # ADD_HEXO_TAG_FROM_DIR=技术+
 #  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/copy2 SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=技术+
 # ADD_HEXO_TAG_FROM_DIR=
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=笔记 CTL_TOC=TRUE
 
-#1.1.2 .rst转换成 格式.html
+#1.1.2 .rst转换成 格式.html 002memo pandoc
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$T_DIR_BASE_SRC DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html 
 #DIR_TEMPLATE=$T_DIR_TEMPLATE \
 #ADD_HEXO_TAG_FROM_DIR=\
 
-#1.1.3 .rst转换成 格式.pdf 002memo
-#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+#1.1.3 .rst转换成 格式.pdf 002memo pandoc
 
 #1.2 sphinx:
 
-#1.2.1 sphinx: .rst转换成 格式.html
+#1.2.1 sphinx: .rst转换成 格式.html 002memo sphinx
 # sphinx-build -b html sourcedir builddir
 #  - mkdir -p $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo
 #  - sphinx-build --version
@@ -82,6 +81,8 @@ script:
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.nojekyll
 
+#1.2.2 .rst转换成 格式.pdf 002memo sphinx
+#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 
 #2 博客post文章： kdoc/003work/003post
 
@@ -93,8 +94,7 @@ script:
 # ADD_HEXO_TAG_FROM_DIR= ,置空表示取文件路径的最后目录作为hexo tag
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+ CTL_TOC=TRUE
 
-#2.1.2 .rst转换成 格式.html
-  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
+#2.1.3 .rst转换成 格式.pdf 003post pandoc
 
 #2.2 sphinx:
 
@@ -107,7 +107,7 @@ script:
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.nojekyll
 
-#2.1.3 .rst转换成 格式.pdf 003post
+#2.1.2 .rst转换成 格式.pdf 003post sphinx
 #  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
 
 #  - cp index.html ./output/
@@ -299,11 +299,11 @@ script:
   - pwd
 
 #放到最后，生成pdf,这个费时间，这样可以先deploy网站
-#1.1.3 .rst转换成 格式.pdf 002memo
-#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+#1.2.3 .rst转换成 格式.pdf 002memo sphinx
+  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 
-#2.1.3 .rst转换成 格式.pdf 003post
-#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
+#2.2.3 .rst转换成 格式.pdf 003post sphinx
+  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
 
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
