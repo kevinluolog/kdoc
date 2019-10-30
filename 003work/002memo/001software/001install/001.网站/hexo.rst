@@ -1034,12 +1034,10 @@ fontawesome是什么？
             <!-- 页面点击汉字 -->
             <script type="text/javascript" src="/js/hanzi.js"></script>
       {%- endif %}
-
       {%- if theme.kl_click_love %}
             <!-- 页面点击小红心 -->
             <script type="text/javascript" src="/js/clicklove.js"></script>
       {%- endif %}
-
       </body>
 
    next 中应该用root相对路径，当root在子目录中，这样JS也可以引用到, ``\klBlog\themes\next\layout\_layout.swig``
@@ -1051,12 +1049,10 @@ fontawesome是什么？
             <!-- 页面点击汉字 -->
             {{- next_js('hanzi.js') }}
       {%- endif %}
-    
       {%- if theme.kl_click_love %}
             <!-- 页面点击小红心 -->
             {{- next_js('clicklove.js') }}
       {%- endif %}
-
 
 国内Jquery CDN 有哪些？
 ---------------------------
