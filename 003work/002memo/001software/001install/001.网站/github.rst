@@ -267,13 +267,13 @@ git log -1 --date=iso --format="%ad" -- "$filename" 文件提交时间
 ::
 
   显示各纯文件名：
-  - git ls-files -z --eol | sed -e "s/i\/lf[ \t]*w\/lf[ \t]*attr\/[ \t]*/\n/  g"
+  git ls-files -z --eol | sed -e "s/i\/lf[ \t]*w\/lf[ \t]*attr\/[ \t]*/\n/  g"
   
   显示各文件首次COMMIT时间,注意linux下是lf,not crlr：
-  - git ls-files -z --eol | sed -e "s/i\/lf[ \t]*w\/lf[ \t]*attr\/[ \t]*/\n/  g" | while read filename; do git log --date=iso --format="%ad" --   "$TRAVIS_BUILD_DIR/source/_posts/$filename" | tail -1; done
+  git ls-files -z --eol | sed -e "s/i\/lf[ \t]*w\/lf[ \t]*attr\/[ \t]*/\n/  g" | while read filename; do git log --date=iso --format="%ad" --   "$TRAVIS_BUILD_DIR/source/_posts/$filename" | tail -1; done
   输出格式：可以直接被 touch 参数 --date ""识别
   2019-09-26 15:09:54 +0800
-
+  
   # touch 回创建时间  
   # 下面去掉bash -c 就能工作了。 xargs可以直接传参数给touch使用的。
   # 整个过程就是用git ls-files取到文件名，再用sed取出真正的文件名，再用git   log取到全部的commit历史时间，tail   -1取到创建commit时间，利用xargs把时间作为参数送到touch -data=""更新时间。
@@ -288,9 +288,9 @@ git log -1 --date=iso --format="%ad" -- "$filename" 文件提交时间
 ::
 
   #？？echo "touch --date=\"$(git log -1 --date=iso --format="%ad" --   "$filename")\" -m $filename" 
-
+  
   #??git ls-files | xargs -I{} bash -c 'touch "{}" --date=@$(git log -n1 --pretty=format:%ct -- "{}")'
-
+  
   #??xargs -I{} bash -c 'touch $filename --date="{}"'
 
 
@@ -423,7 +423,7 @@ git.exe pull --progress -v --no-rebase "origin" hexo-next-Pisces
 ::
   
   git.exe pull --progress -v --no-rebase "origin" hexo-next-Pisces
-
+  
   From github.com:kevinluolog/hexo-klblog-src
   * branch            hexo-next-Pisces -> FETCH_HEAD
   = [up to date]      hexo-next-Pisces -> origin/hexo-next-Pisces
