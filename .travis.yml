@@ -25,12 +25,16 @@ before_install:
 
 # Start: Build Lifecycle
 install:
+#
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）
 # 使用xelatex这个引擎为Pandoc提供pdf转换中文支持，Ubuntu12.04.5LTS需要 texlive-xetex texlive-latex-extra 这两个包，安装这两个包需要添加 texlive-backports/ppa 这个库。
 #  - sudo apt-get install python-software-properties #这个在Travis下是不需要的
   - sudo add-apt-repository ppa:texlive-backports/ppa -y
 #  - sudo apt-get update -y
-  - sudo apt-get install texlive-xetex texlive-latex-extra -y
+  - sudo apt-get install texlive-xetex texlive-latex-extra latexmk -y
+
+#  - sudo add-apt-repository ppa:jonathonf/texlive-2019/ppa -y
+#  - sudo apt-get update -y
 
 # install sphinx
 #  - apt-get install python3-sphinx
@@ -301,6 +305,7 @@ script:
 #放到最后，生成pdf,这个费时间，这样可以先deploy网站
 #`sphinx-build.html <https://www.sphinx-doc.org/en/master/man/sphinx-build.html>`__
 #1.2.3 .rst转换成 格式.pdf 002memo sphinx
+
 #-b 只认latex目标。生成LaTeX sources that can be compiled to a PDF document using pdflatex.
 #-M buildername
 #Alternative to -b. Uses the Sphinx make_mode module, which provides the same build functionality as a default Makefile or Make.bat. In addition to all Sphinx Builders, the following build pipelines are available:
@@ -310,12 +315,13 @@ script:
 #   Build Texinfo files and run them through makeinfo.
 #Important
 #   Sphinx only recognizes the -M option if it is placed first.
+
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
-#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
-  - sphinx-build -M latexpdf /home/travis/build/kevinluolog/kdoc/003work/003post /home/travis/build/kevinluolog/kdoc/output/sphinx/pdf/build-post
+  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
+#  - sphinx-build -M latexpdf /home/travis/build/kevinluolog/kdoc/003work/003post /home/travis/build/kevinluolog/kdoc/output/sphinx/pdf/build-post
 
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
