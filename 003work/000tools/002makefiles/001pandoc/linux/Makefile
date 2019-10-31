@@ -209,7 +209,7 @@ endif
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.pdf)
 	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-    pandoc $$< -o $$@ --metadata-file $(DIR_TEMPLATE)/metadata.yaml --pdf-engine=xelatex -s -N --toc --toc-depth=6 --data-dir=$(DIR_TEMPLATE)
+    pandoc $$< -o $$@ --metadata-file $$(DIR_TEMPLATE)/metadata.yaml --pdf-engine=xelatex -s -N --toc --toc-depth=6 --data-dir=$$(DIR_TEMPLATE)
 ifdef DIR_BASE_COPYTO
 #	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
 	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
