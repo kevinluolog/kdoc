@@ -315,6 +315,8 @@ script:
 # (1.002memo|2.003post).(1.pandoc|2.sphinx).(1..rst2html|2..rst2hexomd|3..rst2pdf)
 #1.1.3 .rst转换成 格式.pdf 002memo pandoc
   - echo here,kl+1
+  - pandoc --help
+  - xelatex --help
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/pdf/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.pdf DIR_TEMPLATE=$T_DIR_TEMPLATE
   - echo here,kl+2
 #2.1.3 .rst转换成 格式.pdf 003post pandoc
