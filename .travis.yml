@@ -36,7 +36,7 @@ install:
 
 # `ppa源:texlive-2019:sudo add-apt-repository ppa:jonathonf/texlive-2019/ppa -y  <https://launchpad.net/~jonathonf/+archive/ubuntu/texlive-2019>`__
   - sudo add-apt-repository ppa:jonathonf/texlive-2019 -y
-  - sudo apt-get update -y
+#  - sudo apt-get update -y
   - sudo apt-get install texlive-base texlive-bin texlive-extra texlive-lang -y
 
 # install sphinx
