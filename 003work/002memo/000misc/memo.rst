@@ -132,13 +132,18 @@ find . -name “*” -exec touch ‘{}’ \;
 
 `ubuntu下通过PPA源安装texlive2012 <http://luly.lamost.org/oldtown/?p=385>`__
 
-` <>`__
+`Latex中文支持Ubuntu <https://www.cnblogs.com/ccoming/p/7810861.html>`__
 
-` <>`__
+可以使用fc-list :lang=zh-cn查看所有中文字体
+详细设置可以看这个: ubuntu下latex终极安装方案的字体部分=D
 
-` <>`__
 
-` <>`__
+
+`ubuntu下latex终极安装方案的字体部分 <http://segmentfault.com/a/1190000004059490>`__
+
+`Ubuntu 14.04 下 TexLive2014 完美安装攻略 <https://segmentfault.com/a/1190000004059490>`__
+
+`如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
 
 ` <>`__
 

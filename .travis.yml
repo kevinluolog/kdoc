@@ -25,12 +25,8 @@ before_install:
 
 # Start: Build Lifecycle
 install:
-  - fc-list :lang=zh-cn
 #
   - sudo apt-get install texlive-full
-
-  - fc-list :lang=zh-cn
-
 
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）
 # 使用xelatex这个引擎为Pandoc提供pdf转换中文支持，Ubuntu12.04.5LTS需要 texlive-xetex texlive-latex-extra 这两个包，安装这两个包需要添加 texlive-backports/ppa 这个库。
@@ -59,6 +55,8 @@ install:
 
 
 script:
+  - fc-list :lang=zh-cn
+
 #   - git ls-files | xargs -I{} bash -c 'touch "{}" --date=$(git log -n1 --pretty=format:%ct -- "{}")'
 #  - git ls-files | xargs -I{} bash -c 'touch "{}" --date=@$(git log -n1 --pretty=format:%ct -- "{}")'
 #  - git checkout dev -f --with-timestamps
