@@ -355,10 +355,10 @@ script:
 #Important
 #   Sphinx only recognizes the -M option if it is placed first.
 
-  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo /y
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
-  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
+#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post /y
 
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署

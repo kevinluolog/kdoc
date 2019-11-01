@@ -419,7 +419,7 @@ To produce a PDF slide show using beamer, type
 
       .. raw:: latex
 
-         \documentclass[UTF8,a4paper,15pt,titlepage,oneside]{ctexbook}'
+         \\documentclass[UTF8,a4paper,15pt,titlepage,oneside]{ctexbook}'
 
 拼接PDF
 -------
@@ -430,14 +430,14 @@ texlive就已经有了. 代码:
 
 ::
 
-   \documentclass[a4paper]{article}
-   \usepackage{pdfpages}
-   \begin{document}
-   \includepdfmerge{1.pdf,1-3}
-   \includepdfmerge{2.pdf,5-13}
-   \end{document}
-   其中命令\includepdfmerge{1.pdf,1-3}就是导入1.pdf的1至3页.
-   命令\includepdfmerge{2.pdf,5-13}就是导入2.pdf的5至13页.
+   \\documentclass[a4paper]{article}
+   \\usepackage{pdfpages}
+   \\begin{document}
+   \\includepdfmerge{1.pdf,1-3}
+   \\includepdfmerge{2.pdf,5-13}
+   \\end{document}
+   其中命令\\includepdfmerge{1.pdf,1-3}就是导入1.pdf的1至3页.
+   命令\\includepdfmerge{2.pdf,5-13}就是导入2.pdf的5至13页.
 
 md-pdfbook时，怎么添加章节号？ markdown语法解决
 -----------------------------------------------
