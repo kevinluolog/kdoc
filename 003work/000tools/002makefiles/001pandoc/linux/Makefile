@@ -9,7 +9,7 @@ DIR_BASE_OBJ := /H/tmp_H/001.work/004.env/01prjsp/04make/01rst2md/tmp
 DIR_BASE_COPYTO :=
 
 # template directory for xelatext to create PDF, 
-DIR_TEMPLATE := /H/tmp_H/001.work/002git/kdoc/003work/000tools/002makefiles/001pandoc/templates
+DIR_TEMPLATE := /H/tmp_H/001.work/002git/kdoc/003work/000tools/002makefiles/001pandoc/linux/templates
 
 # 后缀名，文件类型
 SUFFIX_FROM := .rst

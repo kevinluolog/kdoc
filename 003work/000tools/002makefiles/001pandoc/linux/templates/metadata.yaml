@@ -14,7 +14,7 @@ author:
 #
 #    有两段内容
 
-CJKmainfont: "wqy-microhei"
+CJKmainfont: "WenQuanYi Micro Hei"
 #FontType
 #fc-list -f "%{family}\n" :lang=zh > zhfont.txt
 #Microsoft YaHei,微软雅黑
