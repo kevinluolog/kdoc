@@ -158,9 +158,20 @@ sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
 `免费中文字体wiki.ubuntu.org.cn <https://wiki.ubuntu.org.cn/%E5%85%8D%E8%B4%B9%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93>`__
 
-` <>`__
+`ubuntu添加中文字体ucloud <https://www.ucloud.cn/yun/23516.html>`__
+ubuntu添加中文字体ubuntu
+查看系统类型
+cat /proc/version
 
-` <>`__
+查看中文字体
+fc-list :lang=zh-cn
+
+安装字体
+apt-get install -y --force-yes --no-install-recommends fonts-wqy-microhei
+
+apt-get install -y --force-yes --no-install-recommends ttf-wqy-zenhei
+
+`Ubuntu 安装 Courier New字体和雅黑consolas字体 <https://www.cnblogs.com/jpfss/p/7895773.html>`__
 
 ` <>`__
 

@@ -27,6 +27,8 @@ before_install:
 install:
 #
   - sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
+  - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
+  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
   - sudo cat /etc/fonts/fonts.conf
   - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
   - cat zhfont.txt
@@ -43,7 +45,8 @@ install:
 #  - sudo apt-get clean
 #  - sudo apt-get update -y
 #  - sudo apt-get install texlive-math-extra texlive-science texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-metapost texlive-pictures texlive-xetex texlive-latex-extra latexmk fonts-sil-gentiumplus texlive-lang-all texlive-lang-cjk  lmodern jadetex -y
-  - sudo apt-get install texlive-math-extra texlive-science texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-metapost texlive-pictures texlive-xetex texlive-latex-extra latexmk fonts-sil-gentiumplus texlive-lang-all texlive-lang-cjk  lmodern jadetex -y  - sudo cat /etc/fonts/fonts.conf
+  - sudo apt-get install texlive-math-extra texlive-science texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-metapost texlive-pictures texlive-xetex texlive-latex-extra latexmk fonts-sil-gentiumplus texlive-lang-all texlive-lang-cjk  lmodern jadetex -y
+  - sudo cat /etc/fonts/fonts.conf
   - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
   - cat zhfont.txt
 
