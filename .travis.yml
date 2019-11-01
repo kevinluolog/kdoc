@@ -28,6 +28,8 @@ install:
 #
   - sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
   - sudo cat /etc/fonts/fonts.conf
+  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+  - cat zhfont.txt
 #  - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
 #  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
@@ -41,7 +43,10 @@ install:
 #  - sudo apt-get clean
 #  - sudo apt-get update -y
   - sudo apt-get install texlive-math-extra texlive-science texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-metapost texlive-pictures texlive-xetex texlive-latex-extra latexmk fonts-sil-gentiumplus texlive-lang-all texlive-lang-cjk  lmodern jadetex -y
+
   - sudo cat /etc/fonts/fonts.conf
+  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+  - cat zhfont.txt
 
 # `ppa源:texlive-2019:sudo add-apt-repository ppa:jonathonf/texlive-2019/ppa -y  <https://launchpad.net/~jonathonf/+archive/ubuntu/texlive-2019>`__
 #  - sudo add-apt-repository ppa:jonathonf/texlive-2019 -y
@@ -62,7 +67,8 @@ install:
 
 script:
   - fc-list :lang=zh-cn
-
+  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+  - cat zhfont.txt
 #   - git ls-files | xargs -I{} bash -c 'touch "{}" --date=$(git log -n1 --pretty=format:%ct -- "{}")'
 #  - git ls-files | xargs -I{} bash -c 'touch "{}" --date=@$(git log -n1 --pretty=format:%ct -- "{}")'
 #  - git checkout dev -f --with-timestamps
