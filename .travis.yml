@@ -25,9 +25,6 @@ before_install:
 
 # Start: Build Lifecycle
 install:
-  - xelatex --version
-  - xelatex --help
-
   - sudo apt-get --help
 #
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）
