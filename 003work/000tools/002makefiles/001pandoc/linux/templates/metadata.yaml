@@ -1,0 +1,68 @@
+﻿---
+#title: slidy test
+author:
+- kevinluo
+#date: 20190815
+
+#subtitle: subtitle 副标题
+#keywords: keywords 关键词
+#abstract: abstract 摘要
+#subject: subjects内容
+#category: category内容
+#description: |
+#    this is long description 描述
+#
+#    有两段内容
+
+CJKmainfont: "SimSun"
+#FontType
+#fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+#Microsoft YaHei,微软雅黑
+#FangSong,仿宋
+#Microsoft JhengHei,微軟正黑體
+#SimHei,黑体
+#NSimSun,新宋体
+#SimSun,宋体
+#KaiTi,楷体
+
+# article book report memoir
+documentclass: article
+classoption:
+- oneside
+- titlepage
+#- landscape
+#- abstract
+#- subject
+#- keyword
+#- twocolumn
+#- description=true
+#- chapterprefix=true
+#-
+
+#Links
+#colorlinks:
+#toccolor: blue
+#klbordercolorlink: blue
+#links-as-notes:
+
+#Front matter
+#lof:
+#lot:
+#toc:
+#toc-depth: 3
+
+#headings
+#pagestyle: headings 
+#A4 letter landscape 
+#papersize: A4
+#secnumdepth: 3
+
+#thanks: thank to myself
+
+#geometry:
+#- top=30mm
+#- left=10mm
+#- heightrounded
+
+---
+
