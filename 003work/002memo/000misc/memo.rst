@@ -145,11 +145,18 @@ find . -name “*” -exec touch ‘{}’ \;
 
 `如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
 
-` <>`__
+`Ubuntu系统中添加中文字体和修改默认中文字体 <https://blog.csdn.net/gengyuchao/article/details/101215243>`__
 
-` <>`__
+`字体- Ubuntu中文wiki.ubuntu.org.cn <https://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93>`__
 
-` <>`__
+获取字体
+中文
+主条目：免费中文字体
+sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
+sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
+sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
+
+`免费中文字体wiki.ubuntu.org.cn <https://wiki.ubuntu.org.cn/%E5%85%8D%E8%B4%B9%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93>`__
 
 ` <>`__
 
