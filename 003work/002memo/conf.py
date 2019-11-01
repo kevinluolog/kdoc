@@ -112,4 +112,37 @@ latex_engine='xelatex'
 # 'lualatex' – LuaLaTeX
 # 'platex' – pLaTeX (default if language is 'ja')
 
+#fix issue of "! LaTeX Error: Too deeply nested."
+latex_additional_files = ["fix-deeplynested.tex"]
 
+latex_elements = {
+# Additional stuff for the LaTeX preamble.
+'preamble': r'\input{fix-deeplynested.tex}',
+}
+
+#参考1：`latex-elements：preamble <https://www.sphinx-doc.org/en/master/latex.html#latex-elements-confval>`__
+#'preamble'
+#Additional preamble content, default empty. One may move all needed macros into some file mystyle.tex.txt of the project source repertory, and get LaTeX to import it at run time:
+#
+#'preamble': r'\input{mystyle.tex.txt}',
+## or, if the \ProvidesPackage LaTeX macro is used in a file mystyle.sty
+#'preamble': r'\usepackage{mystyle}',
+#It is then needed to set appropriately latex_additional_files, for example:
+#
+#latex_additional_files = ["mystyle.sty"]
+
+#参考2：`如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
+#I solved the problem by adding some latex statements to the sphinx preamble. Accordingly, I created a new latex_preamble.tex file in my sphinx source folder. It contains only the following two commands:
+#
+#\usepackage{enumitem}
+#\setlistdepth{99}
+#Moreover, In the conf.py file, also within my source folder, I changed the following (you can lookout for the latex_elements variable in the conf.py file, it is usually commented out):
+#
+#fh = open('latex_preamble.tex', 'r+')
+#PREAMBLE = fh.read()
+#fh.close()
+#
+#latex_elements = {
+## Additional stuff for the LaTeX preamble.
+#'preamble': PREAMBLE,
+#}
