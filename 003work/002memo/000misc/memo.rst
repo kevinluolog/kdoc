@@ -173,7 +173,10 @@ apt-get install -y --force-yes --no-install-recommends ttf-wqy-zenhei
 
 `Ubuntu 安装 Courier New字体和雅黑consolas字体 <https://www.cnblogs.com/jpfss/p/7895773.html>`__
 
-` <>`__
+`网站链接-免费中文字体整理zenozeng.github.io/Free-Chinese-Fonts <http://zenozeng.github.io/Free-Chinese-Fonts/>`__
+
+`网站源码-免费中文字体整理zenozeng.github.io/Free-Chinese-Fonts <https://github.com/zenozeng/Free-Chinese-Fonts>`__
+
 
 ` <>`__
 

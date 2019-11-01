@@ -14,9 +14,28 @@ author:
 #
 #    有两段内容
 
-CJKmainfont: "WenQuanYi Micro Hei"
+CJKmainfont: "WenQuanYi Zen Hei"
 #FontType
 #fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+
+#linux
+#  - sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
+#  - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
+#  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
+#`免费中文字体wiki.ubuntu.org.cn <https://wiki.ubuntu.org.cn/%E5%85%8D%E8%B4%B9%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93>`__
+#$ fc-list :lang=zh-cn
+#/usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑:style=Regular
+#/usr/share/fonts/X11/misc/wenquanyi_13px.pcf: WenQuanYi Bitmap Song:style=Regular
+#/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑:style=Regular
+#/usr/share/fonts/X11/misc/wenquanyi_12pt.pcf: WenQuanYi Bitmap Song:style=Regular
+#/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正黑,文泉驿点阵正黑:style=Regular
+#/usr/share/fonts/X11/misc/wenquanyi_10pt.pcf: WenQuanYi Bitmap Song:style=Regular
+#/usr/share/fonts/X11/misc/wenquanyi_9pt.pcf: WenQuanYi Bitmap Song:style=Regular
+#/usr/share/fonts/X11/misc/wenquanyi_11pt.pcf: WenQuanYi Bitmap Song:style=Regular
+#/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑:style=Regular
+
+
+#windows
 #Microsoft YaHei,微软雅黑
 #FangSong,仿宋
 #Microsoft JhengHei,微軟正黑體

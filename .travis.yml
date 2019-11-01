@@ -28,10 +28,10 @@ install:
 #
   - sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
   - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
-  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
-  - sudo cat /etc/fonts/fonts.conf
-  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
-  - cat zhfont.txt
+#  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
+#  - sudo cat /etc/fonts/fonts.conf
+#  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+#  - cat zhfont.txt
 #  - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
 #  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
@@ -46,15 +46,12 @@ install:
 #  - sudo apt-get update -y
 #  - sudo apt-get install texlive-math-extra texlive-science texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-metapost texlive-pictures texlive-xetex texlive-latex-extra latexmk fonts-sil-gentiumplus texlive-lang-all texlive-lang-cjk  lmodern jadetex -y
 #  - sudo apt-get install texlive-math-extra texlive-science texlive-bibtex-extra texlive-fonts-extra texlive-fonts-recommended texlive-metapost texlive-pictures texlive-xetex texlive-latex-extra latexmk fonts-sil-gentiumplus texlive-lang-all texlive-lang-cjk  lmodern jadetex -y
-  - sudo cat /etc/fonts/fonts.conf
-  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
-  - cat zhfont.txt
 
 # `ppa源:texlive-2019:sudo add-apt-repository ppa:jonathonf/texlive-2019/ppa -y  <https://launchpad.net/~jonathonf/+archive/ubuntu/texlive-2019>`__
 #  - sudo add-apt-repository ppa:jonathonf/texlive-2019 -y
 #  - sudo apt-get clean
 #  - sudo apt-get update -y
-#  - sudo apt-get install texlive-base texlive-bin texlive-extra texlive-lang -y
+#  - sudo apt-get install texlive-full -y
 
 # install sphinx
 #  - apt-get install python3-sphinx
@@ -68,6 +65,7 @@ install:
 
 
 script:
+  - sudo cat /etc/fonts/fonts.conf
   - fc-list :lang=zh-cn
   - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
   - cat zhfont.txt
@@ -329,19 +327,22 @@ script:
 
 #生成pdf,放到最后，这个费时间，这样可以先触发kevinluolog/hexo-klblog-src，先deploy网站。
 
+#with pandoc
 # x.x.x的数字编号含义如下：
 # (1.002memo|2.003post).(1.pandoc|2.sphinx).(1..rst2html|2..rst2hexomd|3..rst2pdf)
 #1.1.3 .rst转换成 格式.pdf 002memo pandoc
   - echo here,kl+1
   - pandoc --version
-  - pandoc --help
+#  - pandoc --help
   - xelatex --version
-  - xelatex --help
+#  - xelatex --help
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/pdf/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.pdf DIR_TEMPLATE=$T_DIR_TEMPLATE
   - echo here,kl+2
 #2.1.3 .rst转换成 格式.pdf 003post pandoc
   - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/pdf/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.pdf DIR_TEMPLATE=$T_DIR_TEMPLATE
   - echo here,kl+3
+
+#with sphinx
 #`sphinx-build.html <https://www.sphinx-doc.org/en/master/man/sphinx-build.html>`__
 #1.2.3 .rst转换成 格式.pdf 002memo sphinx
 
@@ -355,10 +356,10 @@ script:
 #Important
 #   Sphinx only recognizes the -M option if it is placed first.
 
-#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo /y
+  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo /y
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
-#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post /y
+  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post /y
 
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
