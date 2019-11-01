@@ -143,7 +143,14 @@ find . -name “*” -exec touch ‘{}’ \;
 
 `Ubuntu 14.04 下 TexLive2014 完美安装攻略 <https://segmentfault.com/a/1190000004059490>`__
 
-`如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
+`间接链接：如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
+
+`直接链接：如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <https://www.xszz.org/faq-1/question-2018083122086.html
+>`__
+
+
+`latex-elements：preamble <https://www.sphinx-doc.org/en/master/latex.html#latex-elements-confval>`__
+
 
 `Ubuntu系统中添加中文字体和修改默认中文字体 <https://blog.csdn.net/gengyuchao/article/details/101215243>`__
 
@@ -175,12 +182,9 @@ apt-get install -y --force-yes --no-install-recommends ttf-wqy-zenhei
 
 `网站链接-免费中文字体整理zenozeng.github.io/Free-Chinese-Fonts <http://zenozeng.github.io/Free-Chinese-Fonts/>`__
 
-`网站源码-免费中文字体整理zenozeng.github.io/Free-Chinese-Fonts <https://github.com/zenozeng/Free-Chinese-Fonts>`__
+`网站源码-免费中文字体整理github.com/zenozeng/Free-Chinese-Fonts <https://github.com/zenozeng/Free-Chinese-Fonts>`__
 
-
-` <>`__
-
-` <>`__
+`[转载]latex】itemize, enumerate枚举，编号使用及编号样式设计 <http://blog.sciencenet.cn/blog-597740-1077676.html>`__
 
 ` <>`__
 

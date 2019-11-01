@@ -187,7 +187,7 @@ endif
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.html)
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-	pandoc $$< -o $$@
+	pandoc $$< -o $$@ -s -N --toc
 ifdef DIR_BASE_COPYTO
 #	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
 	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
