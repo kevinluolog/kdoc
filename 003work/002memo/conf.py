@@ -126,13 +126,13 @@ latex_engine='xelatex'
 ###}
 ###
 
-latex_additional_files = ["mystyle.sty"]
+#latex_additional_files = ["mystyle.sty"]
 #latex_additional_files = ["fix-deeplynested.sty"]
 
 latex_elements = {
     # Additional stuff for the LaTeX preamble.
     #'preamble': r'\input{fix-deeplynested.sty}',
-    'preamble': r'\usepackage{mystyle}',
+    #'preamble': r'\usepackage{mystyle}',
 
     # The paper size ('letterpaper' or 'a4paper').
     #
@@ -140,12 +140,14 @@ latex_elements = {
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    'pointsize': '28pt',
+    'pointsize': '18pt',
 
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
-
+    'preamble': r'''
+\usepackage{enumitem}
+\setlistdepth{99}
+''',
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',

@@ -104,10 +104,10 @@ script:
 #  - sphinx-build --version
 #  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo
-  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -maxdepth 1 -type d | grep "[\.]*doctrees$"
+#  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -maxdepth 1 -type d | grep "[\.]*doctrees$"
   - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -maxdepth 1 -type d | grep "[\.]*doctrees$" | xargs rm -rfv  
 # rm .buildinfo
-  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -maxdepth 1 -type f -name '\.buildinfo'
+#  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -maxdepth 1 -type f -name '\.buildinfo'
   - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -maxdepth 1 -type f -name '\.buildinfo' -exec  rm -fv {} \;
   
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
@@ -140,11 +140,11 @@ script:
 #  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/html/build-post
 # rm .doctrees
-  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -maxdepth 1 -type d | grep "[\.]*doctrees$"
+#  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -maxdepth 1 -type d | grep "[\.]*doctrees$"
   - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -maxdepth 1 -type d | grep "[\.]*doctrees$" | xargs rm -rfv  
 # rm .buildinfo
-  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/latex -maxdepth 1 -type f -name '\.buildinfo'
-  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/latex -maxdepth 1 -type f -name '\.buildinfo' -exec rm -fv {} \;
+#  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -maxdepth 1 -type f -name '\.buildinfo'
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -maxdepth 1 -type f -name '\.buildinfo' -exec rm -fv {} \;
   
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.nojekyll
@@ -384,8 +384,8 @@ script:
   - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo {} \;
 #  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/doctrees
 # rm doctrees目录
-#  -type d：表示目录， -maxdepth 1 表示只找一级， "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
-  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -maxdepth 1 -type d 
+#  -type d：表示目录， -maxdepth 1 表示只找一级,必须放在-type之前， "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
+  #- find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -maxdepth 1 -type d 
   - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -maxdepth 1 -type d | grep "doctrees|latex" | xargs rm -rfv 
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
