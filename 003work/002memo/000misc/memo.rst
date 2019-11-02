@@ -299,7 +299,7 @@ cut用来从标准输入或文本文件中剪切列或域。剪切文本可以�
 
 `the-latex-elements-configuration-setting:'preamble': r'''\\usepackage''', <https://www.sphinx-doc.org/en/master/latex.html#the-latex-elements-configuration-setting>`__
 
-` <>`__
+`latex-project.org documentation <https://www.latex-project.org/help/documentation/>`__
 
 ` <>`__
 
