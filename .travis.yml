@@ -104,8 +104,12 @@ script:
 #  - sphinx-build --version
 #  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo
-  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.doctrees
-  - rm $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.buildinfo
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -type d -maxdepth 1 | grep "[\.]{0,1}doctrees$"
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo -type d -maxdepth 1 | grep "[\.]{0,1}doctrees$" | xargs rm -rfv  
+# rm .buildinfo
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/latex -maxdepth 1 -type f -name '\.buildinfo'
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/latex -maxdepth 1 -type f -name '\.buildinfo' -exec  rm -fv {} \;
+  
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.nojekyll
 
@@ -135,9 +139,13 @@ script:
 #  - sphinx-build --version
 #  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/html/build-post
-  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.doctrees
-  - rm $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.buildinfo
-
+# rm .doctrees
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -type d -maxdepth 1 | grep "[\.]{0,1}doctrees$"
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post -type d -maxdepth 1 | grep "[\.]{0,1}doctrees$" | xargs rm -rfv  
+# rm .buildinfo
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/latex -maxdepth 1 -type f -name '\.buildinfo'
+  - find $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/latex -maxdepth 1 -type f -name '\.buildinfo' -exec rm -fv {} \;
+  
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.nojekyll
 
@@ -372,10 +380,13 @@ script:
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
 #  (3) " -type f "查找的类型为文件
 #  (4) -exec rm -rf {} \; 执行命令，别忘记最后的 \;有空格的。
+#  *.pdf移动到根目录
   - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo {} \;
 #  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/doctrees
+# rm doctrees目录
 #  -type d：表示目录， -maxdepth 1 表示只找一级， "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
-  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -type d -maxdepth 1 | grep "doctrees|latex" | xargs rmdir 
+  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -type d -maxdepth 1 
+  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -type d -maxdepth 1 | grep "doctrees|latex" | xargs rm -rfv 
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
@@ -384,10 +395,12 @@ script:
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
 #  (3) " -type f "查找的类型为文件
 #  (4) -exec rm -rf {} \; 执行命令，别忘记最后的 \;有空格的。
+#  *.pdf移动到根目录
   - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post {} \;
 #  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post/doctrees
 #  -type d：表示目录， -maxdepth 1 表示只找一级， "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
-  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post -type d -maxdepth 1 | grep "doctrees|latex" | xargs rmdir 
+# rm doctrees目录
+  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post -type d -maxdepth 1 | grep "doctrees|latex" | xargs rm -rfv 
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:

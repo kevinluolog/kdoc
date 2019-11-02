@@ -199,63 +199,8 @@ TiKZ绘图
 
 #. `LaTex中使用循环连续绘图的例子 <https://blog.csdn.net/rumswell/article/details/37962003>`__
 
-::
-
-    %%====================================================
-    \begin{frame}[fragile]
-        由 $3$ 个人群可以构成$2^3 = 8$张 \remph{人际关系图},只需分析如下 \remph{$4$}张图即可:\\[12pt] %
-        \setcounter{maincounter}{0}%设置计数器的值
-        %每次增加一个值用\stepcounter{maincounter}
-        \begin{tikzpicture}[line width = 1.0pt]
-        \pgfmathsetmacro{\h}{1.4}   %两点的水平间距
-        \pgfmathsetmacro{\v}{1.4}   %两点的垂直间距
-        % %------------------------------------------------------
-        \foreach \r/\c in {0/0,2/0,4/0,6/0}  
-        {    
-            \stepcounter{maincounter} %增加计数器的值
-            \setcounter{secondcounter}{0}%设置计数器的值
-            %定义原点坐标
-            \coordinate  (P0) at (\r,\c);    
-            
-            \path (P0)  node[circle,fill=red,inner sep=2pt](a){$a$};  
-            \path (a)+(\h,0 )  node[circle,fill=red,inner sep=2pt](b){$b$}; 
-            \path ($ (a)!0.5! (b) $)+(0,\v)   node[circle,fill=red,inner sep=2pt](c){$c$}; 
-            \path ($ (a)!0.5! (b) $)+(0,-0.5)   node (T){ $\left( \themaincounter \right) $}; 
-            %画直线  
-            \foreach \from/\to in {a/b,a/c,b/c}  
-            {
-                \stepcounter{secondcounter} %增加计数器的值
-                \ifthenelse{\value{secondcounter}<\value{maincounter}}{\draw[dashed] (\from) -- (\to)  ;}{\draw[blue] (\from) -- (\to)  ;}
-            }
-            
-        }
-        \end{tikzpicture}
-    \end{frame}
-
 
 3. `ifthen宏包使用——条件判断与循环语句 <https://blog.csdn.net/lishoubox/article/details/7316224>`__
-
-    \ifthenelse{判断条件}{肯定结构}{否定结构}
-    \whiledo{判断条件}{while语句}
-
-::
-
-    \documentclass{article}
-    \usepackage{ifthen}
-    \begin{document}
-
-    \newcommand{\oddeven}[1]{Number #1 is %
-    \ifthenelse{\isodd{#1}}{odd}{even}  }
-    \oddeven{4}.\\ \oddeven{5}
-
-    \newcounter{MYctr}
-    \whiledo{\value{MYctr}<5}%
-    {你会喜欢用~LaTeX~的。%
-    \stepcounter{MYctr}}
-
-    \end{document}
-
-
 
 pgfplots绘图包
 --------------
