@@ -115,21 +115,23 @@ latex_engine='xelatex'
 
 #fix issue of "! LaTeX Error: Too deeply nested."
 
-fh = open('fix-deeplynested.tex', 'r+')
-TMPPREAMBLE = fh.read()
-fh.close()
-
-# Additional stuff for the LaTeX preamble.
-latex_elements = {
-'preamble': 'TMPPREAMBLE',
-}
-
-###latex_additional_files = ["fix-deeplynested.tex"]
+###fh = open('fix-deeplynested.sty', 'r+')
+###TMPPREAMBLE = fh.read()
+###fh.close()
 ###
-###latex_elements = {
 #### Additional stuff for the LaTeX preamble.
-###'preamble': r'\input{fix-deeplynested.tex}',
+###latex_elements = {
+###'preamble': TMPPREAMBLE,
 ###}
+###
+
+#latex_additional_files = ["mystyle.sty"]
+
+latex_elements = {
+# Additional stuff for the LaTeX preamble.
+'preamble': r'\input{fix-deeplynested.sty}',
+#'preamble': r'\usepackage{mystyle}',
+}
 
 #参考1：`latex-elements：preamble <https://www.sphinx-doc.org/en/master/latex.html#latex-elements-confval>`__
 #'preamble'
