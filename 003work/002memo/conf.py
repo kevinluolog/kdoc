@@ -116,12 +116,12 @@ latex_engine='xelatex'
 #fix issue of "! LaTeX Error: Too deeply nested."
 
 fh = open('fix-deeplynested.tex', 'r+')
-PREAMBLE = fh.read()
+TMPPREAMBLE = fh.read()
 fh.close()
 
 # Additional stuff for the LaTeX preamble.
 latex_elements = {
-'preamble': PREAMBLE,
+'preamble': 'TMPPREAMBLE',
 }
 
 ###latex_additional_files = ["fix-deeplynested.tex"]
