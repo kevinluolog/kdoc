@@ -277,6 +277,82 @@ cut用来从标准输入或文本文件中剪切列或域。剪切文本可以�
 
 `黄正华老师 LaTeX 教学首页 <http://aff.whu.edu.cn/huangzh/>`__
 
+`UK TeX FAQ-这是非常完整的TeX常见问题，推荐多多阅读 <http://www.tex.ac.uk/index.html>`__
+
+
+`linux 命令 find与rm实现查找并删除目录或文件 <https://www.cnblogs.com/xingchong/p/9961368.html>`__
+
+`https://www.jb51.net/article/99315.htm <https://www.jb51.net/article/99315.htm>`__
+
+
+`linux下find查找文件后使用xargs和exec进行删除、压缩处理。 <https://blog.51cto.com/13528748/2119490>`__
+
+`linux中find与rm实现查找并删除目录或文件 <https://www.cnblogs.com/langzou/p/5959940.html>`__
+
+`grep正则超详细-linux中grep命令的用法 <https://www.cnblogs.com/flyor/p/6411140.html>`__
+
+`ctan: The Not So Short Introduction to LaTeX, 2015 <https://ctan.org/tex-archive/info/lshort/english/>`__
+
+`lshort中文版: The Not So Short Introduction to LaTeX, 2015 <http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf>`__
+
+`latex_additional_files of Example of configuration file of latex_elements  <https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-c-domain>`__
+
+`the-latex-elements-configuration-setting:'preamble': r'''\\usepackage''', <https://www.sphinx-doc.org/en/master/latex.html#the-latex-elements-configuration-setting>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
 ` <>`__
 
 ` <>`__
