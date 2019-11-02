@@ -273,9 +273,9 @@ cut用来从标准输入或文本文件中剪切列或域。剪切文本可以�
 
 `LaTeX 科技排版--华东师范大学数学系 LaTeX 教学课程网页 <http://math.ecnu.edu.cn/~latex/>`__
 
-` <>`__
+`潘建瑜老师 LaTeX 科技排版 <http://math.ecnu.edu.cn/~jypan/Teaching/Latex/>`__
 
-` <>`__
+`黄正华老师 LaTeX 教学首页 <http://aff.whu.edu.cn/huangzh/>`__
 
 ` <>`__
 
