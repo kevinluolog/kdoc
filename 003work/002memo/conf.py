@@ -146,7 +146,7 @@ latex_elements = {
     #
     'preamble': r'''
 \usepackage{enumitem}
-\setlistdepth{9999}
+\setlistdepth{99}
 ''',
     # Latex figure (float) alignment
     #
