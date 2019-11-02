@@ -263,15 +263,15 @@ cut用来从标准输入或文本文件中剪切列或域。剪切文本可以�
 170ecb8475ca6e384dbd74c17e165c9e  kevin.sql
 
 
-` <>`__
+`耿老师详解 LaTeX 编译过程绘图源码 <https://www.latexstudio.net/archives/51759.html>`__
 
-` <>`__
+`LaTeX 工作室 <https://www.latexstudio.net>`__
 
-` <>`__
+`学习资源-LaTeX工作室 <https://www.latexstudio.net/page/tex-documents/>`__
 
-` <>`__
+`TeXDoc-在线的texdoc 应用站点可以看到 LaTeX 配套的文档和宏包。 <http://texdoc.net/>`__
 
-` <>`__
+`LaTeX 科技排版--华东师范大学数学系 LaTeX 教学课程网页 <http://math.ecnu.edu.cn/~latex/>`__
 
 ` <>`__
 

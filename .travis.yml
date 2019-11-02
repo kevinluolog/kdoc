@@ -104,6 +104,8 @@ script:
 #  - sphinx-build --version
 #  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo
+  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.doctrees
+  - rm $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.buildinfo
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-memo/.nojekyll
 
@@ -133,6 +135,9 @@ script:
 #  - sphinx-build --version
 #  - sphinx-build --help
   - sphinx-build -b html $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/html/build-post
+  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.doctrees
+  - rm $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.buildinfo
+
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.nojekyll
 
@@ -164,7 +169,7 @@ script:
 #  - cp --help
 #  - rm --help
 #  - touch --help
-#  - rm 
+  - mv --help
 
 # 进入到clone 创建的repo目录
   - cd gp-memo
@@ -359,11 +364,17 @@ script:
 #Important
 #   Sphinx only recognizes the -M option if it is placed first.
 
+#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo/001software/001install/001.网站 $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo/001software/001install/001.网站 $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/.doctrees
+  - mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post/latex/*.pdf
+  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/latex/.doctrees
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
   - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post
-
+  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post/.doctrees
+  - mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-post/latex/*.pdf
 
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:

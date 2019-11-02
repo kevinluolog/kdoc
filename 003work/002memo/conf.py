@@ -104,6 +104,7 @@ html_show_sourcelink=False
 html_show_sphinx=False
 # If true, “Created using Sphinx” is shown in the HTML footer. Default is True.
 
+# -- Options for latex output -------------------------------------------------
 
 latex_engine='xelatex'
 # The LaTeX engine to build the docs. The setting can have the following values:
