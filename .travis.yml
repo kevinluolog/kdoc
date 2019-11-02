@@ -372,9 +372,9 @@ script:
 #Important
 #   Sphinx only recognizes the -M option if it is placed first.
 
-#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo/001software/001install/001.网站 $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo/001software $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
-  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 #  find . -type f -name '*.pdf' -exec rm -rf {} \;
 #  (1) "." 表示从当前目录开始递归查找
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
