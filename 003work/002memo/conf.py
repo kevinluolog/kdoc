@@ -114,6 +114,7 @@ latex_engine='xelatex'
 # 'platex' – pLaTeX (default if language is 'ja')
 
 #fix issue of "! LaTeX Error: Too deeply nested."
+# KL+: 最后证实根据参考1和参考2，修改的这两个方案均不起作用。
 
 ###fh = open('fix-deeplynested.sty', 'r+')
 ###TMPPREAMBLE = fh.read()
@@ -125,13 +126,13 @@ latex_engine='xelatex'
 ###}
 ###
 
-#latex_additional_files = ["mystyle.sty"]
-latex_additional_files = ["fix-deeplynested.sty"]
+latex_additional_files = ["mystyle.sty"]
+#latex_additional_files = ["fix-deeplynested.sty"]
 
 latex_elements = {
     # Additional stuff for the LaTeX preamble.
-    'preamble': r'\input{fix-deeplynested.sty}',
-    #'preamble': r'\usepackage{mystyle}',
+    #'preamble': r'\input{fix-deeplynested.sty}',
+    'preamble': r'\usepackage{mystyle}',
 
     # The paper size ('letterpaper' or 'a4paper').
     #
