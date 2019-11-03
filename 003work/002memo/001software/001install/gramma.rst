@@ -4,6 +4,7 @@ gramma and template
 
 .. contents:: contents
 .. section-numbering::
+   :depth: 4
 
 *********************************************************************
 h1 

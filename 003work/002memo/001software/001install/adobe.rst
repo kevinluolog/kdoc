@@ -5,6 +5,7 @@ adobe software
 
 .. contents:: contents
 .. section-numbering::
+   :depth: 2
 
 help
 ================

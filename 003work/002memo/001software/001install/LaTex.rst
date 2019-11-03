@@ -4,6 +4,7 @@ memo of latex
 
 .. contents:: 目录
 .. section-numbering::
+   :depth: 2
 
 .. 
  #########
