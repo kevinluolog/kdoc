@@ -301,9 +301,31 @@ cut用来从标准输入或文本文件中剪切列或域。剪切文本可以�
 
 `latex-project.org documentation <https://www.latex-project.org/help/documentation/>`__
 
-` <>`__
+`Latex 控制目录显示的深度 <https://blog.csdn.net/jueshu/article/details/90267983>`__
 
-` <>`__
+以撰写 book 为例：
+
+book 的 latex 目录默认只显示深度只能到 subsection
+
+如果想要显示到 subsubsection 深度，就要设置目录显示的深度，在 
+
+::
+
+   \begin{document} 前添加：
+   \setcounter{tocdepth}{4}
+   \setcounter{secnumdepth}{3}
+   tocdepth：设置在目录的显示的章节深度
+   secnumdepth：设置章节的编号深度
+   两者可选的设置值如下：
+   -1 part
+   0 chapter
+   1 section
+   2 subsection
+   3 subsubsection
+   4 paragraph
+   5 subparagraph
+
+`LaTeX中设置目录显示深度的一次乌龙经历 <https://www.it610.com/article/5114750.htm>`__
 
 ` <>`__
 
