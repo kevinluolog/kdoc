@@ -377,14 +377,15 @@ script:
 #  尝试过，在conf.py中加入preamble, 增加enumitem}setlistdepth{99}。还以为是子目录001software中的conf.py和index.rst引起的。都不是。
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo/001software $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 #  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
-  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+#  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
+  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/002memo $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo
 #  find . -type f -name '*.pdf' -exec rm -rf {} \;
 #  (1) "." 表示从当前目录开始递归查找
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
 #  (3) " -type f "查找的类型为文件
 #  (4) -exec rm -rf {} \; 执行命令，别忘记最后的 \;有空格的。
 #  *.pdf移动到根目录
-#  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo {} \;
+  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo {} \;
 # rm doctrees目录
 #  -type d：表示目录， -maxdepth 1 表示只找一级,必须放在-type之前，grep -E:表示扩展正则，以支持| "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
   #- find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-memo -maxdepth 1 -type d 
