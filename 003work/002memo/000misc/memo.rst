@@ -333,17 +333,17 @@ book 的 latex 目录默认只显示深度只能到 subsection
 
 `LaTeX：XeLaTeX+xeCJK的初学习笔记(排版我的诗) <https://www.jianshu.com/p/2169a950368d>`__
 
-` <>`__
+`万泽:xelatex指南-在 Ubuntu 下排版专业的 pdf 文章 <https://www.latexstudio.net/archives/2249.html>`__
 
-` <>`__
+`万泽:xelatex指南 本站下载：xelatex-guide-book-master <http://static.latexstudio.net/wp-content/uploads/2014/09/xelatex-guide-book-master.zip>`__
 
-` <>`__
+`万泽:xelatex指南 github: https://github.com/a358003542/xelatex-guide-book <https://github.com/a358003542/xelatex-guide-book>`__
 
-` <>`__
+`万泽:github.com/a358003542 <https://github.com/a358003542>`__
 
-` <>`__
+`万泽:TIKZ制图简要教程tikz_gallery <https://github.com/a358003542/tikz_gallery>`__
 
-` <>`__
+`万泽:ximage tools <https://github.com/a358003542/ximage>`__
 
 ` <>`__
 
