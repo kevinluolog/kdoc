@@ -422,7 +422,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-  keep_history: true
+#  keep_history: true
+  keep_history: false
   local_dir: $TRAVIS_BUILD_DIR/output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
@@ -452,5 +453,14 @@ deploy:
 ##  target_branch: gh-pages
 ##  on:
 ##    branch: dev
+
+
+notifications:
+  email:
+    recipients:
+      - kevinluolog_72@163.com
+#    on_success: change
+    on_success: always
+    on_failure: always
 
 # End: Build LifeCycle

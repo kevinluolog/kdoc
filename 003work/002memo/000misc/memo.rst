@@ -327,11 +327,11 @@ book 的 latex 目录默认只显示深度只能到 subsection
 
 `LaTeX中设置目录显示深度的一次乌龙经历 <https://www.it610.com/article/5114750.htm>`__
 
-` <>`__
+`Linux expect 介绍和用法 <https://www.cnblogs.com/saneri/p/10819348.html>`__
 
-` <>`__
+`Linux expect的安装与使用 <https://blog.csdn.net/u013181216/article/details/83055909>`__
 
-` <>`__
+`LaTeX：XeLaTeX+xeCJK的初学习笔记(排版我的诗) <https://www.jianshu.com/p/2169a950368d>`__
 
 ` <>`__
 
