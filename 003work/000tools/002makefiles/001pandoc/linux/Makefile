@@ -142,16 +142,9 @@ endif
 	pandoc $$< -o - >>$$@
 #	@echo delete .tmp file...
 	rm $$@.tmp
-# 恢复原先的文件时间信息
+# 恢复原先的文件时间信息，不用在这里做了。移到hexo-klblog-src仓库中，代码请参考根目录tavis.yml中。
 #	ls -l $$<
 #	stat $$<
-#	touch --reference=$$< $$@
-#	touch --date="$$(shell git log -1 --date=iso --format=\"%ad\" -- \"$$<\")" -m $$@
-#	@echo $$(strtime)
-	touch --date="$$(strtime)" -m $$@
-# 
-#	ls -l $$<
-#	ls -l $$@
 else #ADD_HEXO_HEAD
 #	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
 	pandoc $$< -o $$@
@@ -166,23 +159,7 @@ ifdef DIR_BASE_COPYTO
 endif #DIR_BASE_COPYTO
 endif #SUFFIX_TO
 endif #SUFFIX_FROM
-## rst2pdf
-ifeq ($(SUFFIX_FROM),.rst)
-ifeq ($(SUFFIX_TO),.pdf)
-#	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-#	pandoc $$< -o - >>$$@
-ifdef DIR_TEMPLATE
-	pandoc $$< --metadata-file $(DIR_TEMPLATE)/metadata.yaml -o $$@ \
---pdf-engine=xelatex -s -N \
---toc --toc-depth=6 \
---template=$(DIR_TEMPLATE)/default.latex
-ifdef DIR_BASE_COPYTO
-#	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
-endif
-endif
-endif
-endif
+
 ## rst2html
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.html)
@@ -205,17 +182,25 @@ ifdef DIR_BASE_COPYTO
 endif
 endif
 endif
+
 ## rst2pdf
 ifeq ($(SUFFIX_FROM),.rst)
 ifeq ($(SUFFIX_TO),.pdf)
-	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
-	pandoc $$< -o $$@ --metadata-file $$(DIR_TEMPLATE)/metadata.yaml --pdf-engine=xelatex -s -N --toc --toc-depth=6 --data-dir=$$(DIR_TEMPLATE)
+#	@echo start pandoc $(SUFFIX_FROM)2$(SUFFIX_TO)...
+ifdef DIR_TEMPLATE
+#	pandoc $$< -o $$@ --metadata-file $$(DIR_TEMPLATE)/metadata.yaml --pdf-engine=xelatex -s -N --toc --toc-depth=6 --data-dir=$$(DIR_TEMPLATE)
+	pandoc $$< -o $$@ --metadata-file $$(DIR_TEMPLATE)/metadata.yaml \
+--pdf-engine=xelatex -s -N \
+--toc --toc-depth=6 \
+--template=$$(DIR_TEMPLATE)/default.latex
 ifdef DIR_BASE_COPYTO
 #	@echo copy $(SUFFIX_TO) file to $(DIR_BASE_COPYTO) ...
-	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1))) 
+	@cp $$@ $(dir $(subst $(DIR_BASE_OBJ),$(DIR_BASE_COPYTO),$(1)))
 endif
 endif
 endif
+endif
+
 	@echo $(SUFFIX_FROM)2$(SUFFIX_TO) finished!!!
 endef
 

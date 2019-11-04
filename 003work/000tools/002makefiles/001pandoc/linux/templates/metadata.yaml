@@ -59,8 +59,8 @@ classoption:
 #-
 
 #Links
-#colorlinks:
-#toccolor: blue
+colorlinks: blue
+toccolor: blue
 #klbordercolorlink: blue
 #links-as-notes:
 
@@ -79,14 +79,14 @@ papersize: A4
 #thanks: thank to myself
 
 geometry:
+- top=10mm
+- left=5mm
+- right=5mm
+- bottom=10mm
+#- heightrounded
 #- top=30mm
 #- left=10mm
 #- right=10mm
-#- heightrounded
-- top=20mm
-- left=10mm
-- right=10mm
-- bottom=20mm
 #- heightrounded
 
 fontsize: 12pt
