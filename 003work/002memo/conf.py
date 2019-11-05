@@ -149,7 +149,7 @@ latex_elements = {
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
-\setCJKmainfont{Adobe Song Std}
+\setCJKmainfont{FZYingBiXingShu-S16S}
 ''',
     # Latex figure (float) alignment
     #
