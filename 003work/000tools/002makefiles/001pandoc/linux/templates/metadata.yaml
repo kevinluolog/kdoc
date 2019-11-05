@@ -15,7 +15,7 @@ author:
 #    有两段内容
 
 #英文字体
-mainfont： "Times New Roman"
+mainfont: "Times New Roman"
 
 # linux下，自己安装的字体，英文
 # Times New Roman
