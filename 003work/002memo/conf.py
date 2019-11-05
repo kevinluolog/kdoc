@@ -149,7 +149,7 @@ latex_elements = {
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
-\setCJKmainfont{经典行书简}
+\setCJKmainfont{FZXingKai-S04T}
 ''',
     # Latex figure (float) alignment
     #

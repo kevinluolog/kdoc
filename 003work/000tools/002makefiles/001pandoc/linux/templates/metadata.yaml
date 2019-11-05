@@ -21,15 +21,19 @@ mainfont: "Times New Roman"
 # Times New Roman
 
 #中文字体
+#CJKmainfont: "Adobe Kaiti Std"
+#CJKmainfont: "Adobe Song Std"
 #CJKmainfont: "Adobe Fangsong Std"
 #CJKmainfont: "Microsoft YaHei"
 #CJKmainfont: "FZLiShu-S01S"
 #CJKmainfont: "FZLiShu-S01T"
-CJKmainfont: "经典行书简"
-#CJKmainfont: "书体坊米芾体"
-#CJKmainfont: "经典隶书简"
+#xxx CJKmainfont: "经典行书简"
+#xxx CJKmainfont: "书体坊米芾体"
+#xxx CJKmainfont: "经典隶书简"
 #CJKmainfont: "FZWeiBei-S03"
 #CJKmainfont: "FZShouJinShu-S10S"
+#CJKmainfont: "FZYingBiXingShu-S16S"
+CJKmainfont: "FZXingKai-S04T"
 #CJKmainfont: "WenQuanYi Zen Hei"
 #FontType
 #fc-list -f "%{family}\n" :lang=zh > zhfont.txt
