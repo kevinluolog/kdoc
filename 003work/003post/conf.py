@@ -134,7 +134,7 @@ latex_elements = {
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
-\setCJKmainfont{Microsoft YaHei}
+\setCJKmainfont{经典行书简}
 ''',
     # Latex figure (float) alignment
     #
