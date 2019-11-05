@@ -33,7 +33,7 @@ mainfont: "Times New Roman"
 #CJKmainfont: "FZWeiBei-S03"
 #CJKmainfont: "FZShouJinShu-S10S"
 #CJKmainfont: "FZYingBiXingShu-S16S"
-CJKmainfont: "FZXingKai-S04T"
+CJKmainfont: "Adobe Song Std"
 #CJKmainfont: "WenQuanYi Zen Hei"
 #FontType
 #fc-list -f "%{family}\n" :lang=zh > zhfont.txt
