@@ -345,13 +345,72 @@ book 的 latex 目录默认只显示深度只能到 subsection
 
 `万泽:ximage tools <https://github.com/a358003542/ximage>`__
 
-` <>`__
+`Ubantu安装ttf和otf类型的字体 <https://blog.csdn.net/wc996789331/article/details/89168155>`__
+
+`Ubuntu下安装字体 <https://blog.csdn.net/piscesyang87/article/details/80086780>`__
+
+ubuntu可以与windows通用ttf格式的字体文件。
+
+字体有.ttf格式（truetype font）和.otf格式（opentype font）字体，在Ubantu上安装相应的字体。
+
+Ubuntu系统中的字体文件存放在下面文件夹中
+
+::
+
+   /usr/share/fonts
+
+首先，需要将下载的ttf字体文件复制到该目录。
+
+注意操作该目录的文件需要sudo权限。
+
+为了方便区分各种字体的类型，可以自定义子文件夹。
+
+::
+
+   sudo mkdir /usr/share/fonts/windows
+   sudo cp /home/sample/*.ttf /usr/share/fonts
+
+安装mkfontscale和mkfontdir命令，fc-cache命令
+
+::
+
+   使mkfontscale和mkfontdir命令正常运行
+   sudo apt-get install ttf-mscorefonts-installer
+   使fc-cache命令正常运行
+   sudo apt-get install fontconfig
+
+然后重新建立字体索引文件。
+
+::
+
+   sudo mkfontscale
+   sudo mkfontdir
+
+最后更新字体缓存。
+
+::
+
+   sudo fc-cache
+
+这样就可以正常使用该字体了。
+
+合起来：
+
+::
+
+   sudo mkdir /usr/share/fonts/windows
+   sudo cp /home/sample/*.ttf /usr/share/fonts
+   sudo apt-get install ttf-mscorefonts-installer
+   sudo apt-get install fontconfig
+   sudo mkfontscale
+   sudo mkfontdir
+   sudo fc-cache
+
+
+`Linux(Ubuntu，Cent OS)环境安装mkfontscale mkfontdir命令以及中文字库 <https://blog.csdn.net/a8039974/article/details/89845944>`__
 
 ` <>`__
 
-` <>`__
-
-` <>`__
 
 ` <>`__
 
