@@ -35,7 +35,9 @@ install:
   - sudo git clone -b master https://github.com/kevinluolog/wf.git /tmp/wf
 
   - sudo mkdir -p /usr/share/fonts/windows
-  - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc" | exec cp -fv -t /usr/share/fonts/windows {} \;
+  - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc"
+  - sudo find /tmp/wf -type f -name "*.otf|*.ttf|*.TTF|*.ttc"
+  - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc" | xargs cp -fv -t /usr/share/fonts/windows 
 
 # 使mkfontscale和mkfontdir命令正常运行
   - sudo apt-get install ttf-mscorefonts-installer
