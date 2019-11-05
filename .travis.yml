@@ -62,6 +62,9 @@ install:
   - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
   - cat zhfont.txt
 
+  - fc-list > allfont.txt
+  - cat allfont.txt
+
   - sudo apt-get install texlive-full
 
 # texlive & texlive-xetex & texlive-xetex-extra（转换为pdf）

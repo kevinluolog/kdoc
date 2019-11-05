@@ -409,7 +409,7 @@ Ubuntu系统中的字体文件存放在下面文件夹中
 
 `Linux(Ubuntu，Cent OS)环境安装mkfontscale mkfontdir命令以及中文字库 <https://blog.csdn.net/a8039974/article/details/89845944>`__
 
-` <>`__
+` <http://manpages.ubuntu.com/manpages/trusty/en/man1/fc-list.1.html>`__
 
 
 ` <>`__
