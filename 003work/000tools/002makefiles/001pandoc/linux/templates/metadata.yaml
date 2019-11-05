@@ -21,7 +21,8 @@ mainfont: "Times New Roman"
 # Times New Roman
 
 #中文字体
-CJKmainfont: "FZLiShu-S01S"
+#CJKmainfont: "微软雅黑"
+CJKmainfont: "方正瘦金书_GBK"
 #CJKmainfont: "Microsoft YaHei"
 #CJKmainfont: "FZLiShu-S01S"
 #CJKmainfont: "FZLiShu-S01T"

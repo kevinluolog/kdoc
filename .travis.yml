@@ -451,8 +451,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN_FULL  # Set in the settings page of your repository,    as a secure variable
-#  keep_history: true
-  keep_history: false
+  keep_history: true
+#  keep_history: false
   local_dir: $TRAVIS_BUILD_DIR/output
   repo: kevinluolog/travisci_out_kdoc
   target_branch: output
