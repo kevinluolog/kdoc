@@ -14,7 +14,23 @@ author:
 #
 #    有两段内容
 
-CJKmainfont: "Adobe Fangsong Std"
+#英文字体
+mainfont： "Times New Roman"
+
+# linux下，自己安装的字体，英文
+# Times New Roman
+
+#中文字体
+CJKmainfont: "FZLiShu-S01S"
+#CJKmainfont: "Microsoft YaHei"
+#CJKmainfont: "FZLiShu-S01S"
+#CJKmainfont: "FZLiShu-S01T"
+#CJKmainfont: "经典行书简"
+#CJKmainfont: "书体坊米芾体"
+#CJKmainfont: "经典隶书简"
+#CJKmainfont: "FZWeiBei-S03"
+#CJKmainfont: "FZShouJinShu-S10S"
+#CJKmainfont: "Adobe Fangsong Std"
 #CJKmainfont: "WenQuanYi Zen Hei"
 #FontType
 #fc-list -f "%{family}\n" :lang=zh > zhfont.txt
@@ -35,6 +51,7 @@ CJKmainfont: "Adobe Fangsong Std"
 #/usr/share/fonts/X11/misc/wenquanyi_11pt.pcf: WenQuanYi Bitmap Song:style=Regular
 #/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑:style=Regular
 
+# linux下：自己安装的字体，中文
 # Adobe Fangsong Std,Adobe 仿宋 Std,Adobe Fangsong Std R,Adobe 仿宋 Std R
 # Adobe Heiti Std,Adobe 黑体 Std,Adobe Heiti Std R,Adobe 黑体 Std R
 # Adobe Kaiti Std,Adobe 楷体 Std,Adobe Kaiti Std R,Adobe 楷体 Std R
@@ -69,8 +86,7 @@ CJKmainfont: "Adobe Fangsong Std"
 # 经典隶书简
 # 书体坊米芾体
 
-
-#windows
+#windows下的引用名字
 #Microsoft YaHei,微软雅黑
 #FangSong,仿宋
 #Microsoft JhengHei,微軟正黑體

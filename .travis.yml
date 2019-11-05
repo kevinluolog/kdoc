@@ -36,7 +36,6 @@ install:
 
   - sudo mkdir -p /usr/share/fonts/windows
   - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc"
-  - sudo find /tmp/wf -type f -name "*.otf|*.ttf|*.TTF|*.ttc"
   - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc" | xargs sudo cp -fv -t /usr/share/fonts/windows 
 
 # 使mkfontscale和mkfontdir命令正常运行
@@ -62,8 +61,8 @@ install:
   - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
   - cat zhfont.txt
 
-  - fc-list > allfont.txt
-  - cat allfont.txt
+#  - fc-list > allfont.txt
+#  - cat allfont.txt
 
   - sudo apt-get install texlive-full
 
