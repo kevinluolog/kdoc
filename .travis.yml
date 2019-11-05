@@ -29,11 +29,22 @@ install:
   - sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
   - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
 #  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
-#  - sudo cat /etc/fonts/fonts.conf
-#  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
-#  - cat zhfont.txt
-#  - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
-#  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
+
+# 安装windows字体
+  - mkdir -p /tmp/wf
+  - sudo git clone -b master https://github.com/kevinluolog/wf.git /tmp/wf
+
+  - sudo mkdir -p /usr/share/fonts/windows
+  - cp -fv -rt /usr/share/fonts/windows /tmp/wf
+# 重新建立字体索引文件
+  - sudo mkfontscale
+  - sudo mkfontdir
+# 更新字体缓存
+  - sudo fc-cache
+
+  - sudo cat /etc/fonts/fonts.conf
+  - fc-list -f "%{family}\n" :lang=zh > zhfont.txt
+  - cat zhfont.txt
 
   - sudo apt-get install texlive-full
 
