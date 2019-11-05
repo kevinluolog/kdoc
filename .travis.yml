@@ -36,7 +36,7 @@ install:
 
   - sudo mkdir -p /usr/share/fonts/windows
   - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc"
-  - sudo find /tmp/wf -type f -name "*.ttf"
+  - sudo find /tmp/wf -type f -name "*.otf|*.ttf|*.TTF|*.ttc"
   - sudo find /tmp/wf -type f |grep -E "*.otf|*.ttf|*.TTF|*.ttc" | xargs sudo cp -fv -t /usr/share/fonts/windows 
 
 # 使mkfontscale和mkfontdir命令正常运行
@@ -46,7 +46,8 @@ install:
 
 # 修改字体文件的权限，使root用户以外的用户也可以使用
   - cd /usr/share/fonts
-  - sudo chmod -R windows 755
+  - sudo chmod --help
+#  - sudo chmod -R windows 755
   - cd $TRAVIS_BUILD_DIR
 
 # 重新建立字体索引文件
