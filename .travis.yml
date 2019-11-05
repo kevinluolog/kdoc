@@ -31,11 +31,11 @@ install:
 #  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
 # 安装windows字体
-  - mkdir -p /tmp/wf
+  - sudo mkdir -p /tmp/wf
   - sudo git clone -b master https://github.com/kevinluolog/wf.git /tmp/wf
 
   - sudo mkdir -p /usr/share/fonts/windows
-  - cp -fv -rt /usr/share/fonts/windows /tmp/wf
+  - sudo cp -fv -rt /usr/share/fonts/windows /tmp/wf
 # 重新建立字体索引文件
   - sudo mkfontscale
   - sudo mkfontdir
