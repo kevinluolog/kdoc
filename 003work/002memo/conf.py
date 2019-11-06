@@ -74,7 +74,7 @@ exclude_patterns = []
 # html_theme="agogo"
 # html_theme="basic"
 html_theme="bizstyle"
-#html_theme="classic"
+# html_theme="classic"
 # html_theme="default"
 # html_theme="epub"
 # html_theme="haiku"
@@ -83,7 +83,7 @@ html_theme="bizstyle"
 # html_theme="pyramid"
 # html_theme="scrolls"
 # html_theme="sphinxdoc"
-#html_theme="traditional"
+# html_theme="traditional"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -113,18 +113,17 @@ latex_engine='xelatex'
 # 'lualatex' – LuaLaTeX
 # 'platex' – pLaTeX (default if language is 'ja')
 
-#fix issue of "! LaTeX Error: Too deeply nested."
+# fix issue of "! LaTeX Error: Too deeply nested."
 # KL+: 最后证实根据参考1和参考2，修改的这两个方案均不起作用。
 
-###fh = open('fix-deeplynested.sty', 'r+')
-###TMPPREAMBLE = fh.read()
-###fh.close()
-###
-#### Additional stuff for the LaTeX preamble.
-###latex_elements = {
-###'preamble': TMPPREAMBLE,
-###}
-###
+### fh = open('fix-deeplynested.sty', 'r+')
+### TMPPREAMBLE = fh.read()
+### fh.close()
+### 
+### # Additional stuff for the LaTeX preamble.
+### latex_elements = {
+### 'preamble': TMPPREAMBLE,
+### }
 
 #latex_additional_files = ["mystyle.sty"]
 #latex_additional_files = ["fix-deeplynested.sty"]
@@ -145,74 +144,76 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     #
     'preamble': r'''
+%中文字体fontsize放大,kl+
+%\defaultCJKfontfeatures{Scale=2}
 \usepackage{enumitem}
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
-\setCJKmainfont{FZYingBiXingShu-S16S}
+%\setCJKmainfont{Adobe Song Std}
 ''',
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
 }
 
-#参考1：`latex-elements：preamble <https://www.sphinx-doc.org/en/master/latex.html#latex-elements-confval>`__
-#'preamble'
-#Additional preamble content, default empty. One may move all needed macros into some file mystyle.tex.txt of the project source repertory, and get LaTeX to import it at run time:
-#
-#'preamble': r'\input{mystyle.tex.txt}',
-## or, if the \ProvidesPackage LaTeX macro is used in a file mystyle.sty
-#'preamble': r'\usepackage{mystyle}',
-#It is then needed to set appropriately latex_additional_files, for example:
-#
-#latex_additional_files = ["mystyle.sty"]
+# 参考1：`latex-elements：preamble <https://www.sphinx-doc.org/en/master/latex.html#latex-elements-confval>`__
+# 'preamble'
+# Additional preamble content, default empty. One may move all needed macros into some file mystyle.tex.txt of the project source repertory, and get LaTeX to import it at run time:
+# 
+# 'preamble': r'\input{mystyle.tex.txt}',
+# # or, if the \ProvidesPackage LaTeX macro is used in a file mystyle.sty
+# 'preamble': r'\usepackage{mystyle}',
+# It is then needed to set appropriately latex_additional_files, for example:
+# 
+# latex_additional_files = ["mystyle.sty"]
+ 
+# 参考2：`如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
+# I solved the problem by adding some latex statements to the sphinx preamble. Accordingly, I created a new latex_preamble.tex file in my sphinx source folder. It contains only the following two commands:
+# 
+# \usepackage{enumitem}
+# \setlistdepth{99}
+# Moreover, In the conf.py file, also within my source folder, I changed the following (you can lookout for the latex_elements variable in the conf.py file, it is usually commented out):
+# 
+# fh = open('latex_preamble.tex', 'r+')
+# PREAMBLE = fh.read()
+# fh.close()
+# 
+# latex_elements = {
+# # Additional stuff for the LaTeX preamble.
+# 'preamble': PREAMBLE,
+# }
 
-#参考2：`如何避免“太深嵌套”使用Sphinx创建PDF时出错？(How to avoid the “too deeply nested error” when creating PDFs with Sphinx?) <http://www.it1352.com/650222.html>`__
-#I solved the problem by adding some latex statements to the sphinx preamble. Accordingly, I created a new latex_preamble.tex file in my sphinx source folder. It contains only the following two commands:
-#
-#\usepackage{enumitem}
-#\setlistdepth{99}
-#Moreover, In the conf.py file, also within my source folder, I changed the following (you can lookout for the latex_elements variable in the conf.py file, it is usually commented out):
-#
-#fh = open('latex_preamble.tex', 'r+')
-#PREAMBLE = fh.read()
-#fh.close()
-#
-#latex_elements = {
-## Additional stuff for the LaTeX preamble.
-#'preamble': PREAMBLE,
-#}
+# 中文字体
+# CJKmainfont: "FZShouJinShu-S10S"
+# CJKmainfont: "Microsoft YaHei"
+# CJKmainfont: "FZLiShu-S01S"
+# CJKmainfont: "FZLiShu-S01T"
+# CJKmainfont: "经典行书简"
+# CJKmainfont: "书体坊米芾体"
+# CJKmainfont: "经典隶书简"
+# CJKmainfont: "FZWeiBei-S03"
+# CJKmainfont: "FZShouJinShu-S10S"
+# CJKmainfont: "Adobe Fangsong Std"
+# CJKmainfont: "WenQuanYi Zen Hei"
+# FontType
+# fc-list -f "%{family}\n" :lang=zh > zhfont.txt
 
-#中文字体
-#CJKmainfont: "FZShouJinShu-S10S"
-#CJKmainfont: "Microsoft YaHei"
-#CJKmainfont: "FZLiShu-S01S"
-#CJKmainfont: "FZLiShu-S01T"
-#CJKmainfont: "经典行书简"
-#CJKmainfont: "书体坊米芾体"
-#CJKmainfont: "经典隶书简"
-#CJKmainfont: "FZWeiBei-S03"
-#CJKmainfont: "FZShouJinShu-S10S"
-#CJKmainfont: "Adobe Fangsong Std"
-#CJKmainfont: "WenQuanYi Zen Hei"
-#FontType
-#fc-list -f "%{family}\n" :lang=zh > zhfont.txt
-
-#linux
+# linux
 #  - sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
 #  - sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
 #  - sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
-#`免费中文字体wiki.ubuntu.org.cn <https://wiki.ubuntu.org.cn/%E5%85%8D%E8%B4%B9%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93>`__
-#$ fc-list :lang=zh-cn
-#/usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑:style=Regular
-#/usr/share/fonts/X11/misc/wenquanyi_13px.pcf: WenQuanYi Bitmap Song:style=Regular
-#/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑:style=Regular
-#/usr/share/fonts/X11/misc/wenquanyi_12pt.pcf: WenQuanYi Bitmap Song:style=Regular
-#/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正黑,文泉驿点阵正黑:style=Regular
-#/usr/share/fonts/X11/misc/wenquanyi_10pt.pcf: WenQuanYi Bitmap Song:style=Regular
-#/usr/share/fonts/X11/misc/wenquanyi_9pt.pcf: WenQuanYi Bitmap Song:style=Regular
-#/usr/share/fonts/X11/misc/wenquanyi_11pt.pcf: WenQuanYi Bitmap Song:style=Regular
-#/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑:style=Regular
+# `免费中文字体wiki.ubuntu.org.cn <https://wiki.ubuntu.org.cn/%E5%85%8D%E8%B4%B9%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93>`__
+# $ fc-list :lang=zh-cn
+# /usr/share/fonts/truetype/wqy/wqy-microhei.ttc: WenQuanYi Micro Hei,文泉驛微米黑,文泉驿微米黑:style=Regular
+# /usr/share/fonts/X11/misc/wenquanyi_13px.pcf: WenQuanYi Bitmap Song:style=Regular
+# /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei,文泉驛正黑,文泉驿正黑:style=Regular
+# /usr/share/fonts/X11/misc/wenquanyi_12pt.pcf: WenQuanYi Bitmap Song:style=Regular
+# /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Sharp,文泉驛點陣正黑,文泉驿点阵正黑:style=Regular
+# /usr/share/fonts/X11/misc/wenquanyi_10pt.pcf: WenQuanYi Bitmap Song:style=Regular
+# /usr/share/fonts/X11/misc/wenquanyi_9pt.pcf: WenQuanYi Bitmap Song:style=Regular
+# /usr/share/fonts/X11/misc/wenquanyi_11pt.pcf: WenQuanYi Bitmap Song:style=Regular
+# /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc: WenQuanYi Zen Hei Mono,文泉驛等寬正黑,文泉驿等宽正黑:style=Regular
 
 # linux下：自己安装的字体，中文
 # Adobe Fangsong Std,Adobe 仿宋 Std,Adobe Fangsong Std R,Adobe 仿宋 Std R
@@ -249,12 +250,11 @@ latex_elements = {
 # 经典隶书简
 # 书体坊米芾体
 
-#windows下的引用名字
-#Microsoft YaHei,微软雅黑
-#FangSong,仿宋
-#Microsoft JhengHei,微軟正黑體
-#SimHei,黑体
-#NSimSun,新宋体
-#SimSun,宋体
-#KaiTi,楷体
-
+# windows下的引用名字
+# Microsoft YaHei,微软雅黑
+# FangSong,仿宋
+# Microsoft JhengHei,微軟正黑體
+# SimHei,黑体
+# NSimSun,新宋体
+# SimSun,宋体
+# KaiTi,楷体

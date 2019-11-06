@@ -412,13 +412,29 @@ Ubuntu系统中的字体文件存放在下面文件夹中
 ` <http://manpages.ubuntu.com/manpages/trusty/en/man1/fc-list.1.html>`__
 
 
-` <>`__
+`为SublimeText3配置IDE(Anaconda虚拟环境) <https://www.jianshu.com/p/0ad5625e9717>`__
 
-` <>`__
+去掉代码边上的白框
 
-` <>`__
+::
 
-` <>`__
+   Sublime > Preferences > Package Settings > Anaconda > Settings User 
+   {"anaconda_linting": false}
+
+安装格式化插件Python PEP8 Autoformat，快捷键Ctrl+Shift+R。
+
+`conf.py of Sphinx doc <https://www.sphinx-doc.org/en/master/usage/configuration.html>`__
+
+latex_show_urls
+source_suffix
+
+`LaTeX customization of sphinx-doc <https://www.sphinx-doc.org/en/master/latex.html>`__
+
+latex_engine 
+latex_elements
+latex_show_urls 
+
+`Sphinx support markdown <https://www.sphinx-doc.org/en/master/usage/markdown.html>`__
 
 ` <>`__
 
