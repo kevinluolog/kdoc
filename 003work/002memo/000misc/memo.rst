@@ -436,9 +436,9 @@ latex_show_urls
 
 `Sphinx support markdown <https://www.sphinx-doc.org/en/master/usage/markdown.html>`__
 
-` <>`__
+`自定义：LaTeX字体设置（一） <https://www.jianshu.com/p/b1751078e28e>`__
 
-` <>`__
+`让pandoc输出pdf时支持中文 <https://www.cnblogs.com/liuyangnuts/archive/2013/04/23/3038354.html>`__
 
 ` <>`__
 
