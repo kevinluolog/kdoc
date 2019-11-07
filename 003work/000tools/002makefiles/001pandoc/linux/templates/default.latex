@@ -147,7 +147,7 @@ $if(CJKmainfont)$
     \usepackage{xeCJK}
     \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
     %中文字体fontsize放大，kl+
-    \defaultCJKfontfeatures{Scale=1.2}
+    \defaultCJKfontfeatures{Scale=1.5}
   \fi
 $endif$
 $if(luatexjapresetoptions)$

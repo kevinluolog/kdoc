@@ -129,13 +129,13 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     #
     'preamble': r'''
-%中文字体fontsize放大，kl+
-\defaultCJKfontfeatures{Scale=1.2}
 \usepackage{enumitem}
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
 \setCJKmainfont{FZWeiBei-S03}
+%中文字体fontsize放大，kl+
+\defaultCJKfontfeatures{Scale=1.5}
 ''',
     # Latex figure (float) alignment
     #

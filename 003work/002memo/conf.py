@@ -144,13 +144,13 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     #
     'preamble': r'''
-%中文字体fontsize放大,kl+
-%\defaultCJKfontfeatures{Scale=1.2}
 \usepackage{enumitem}
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
 %\setCJKmainfont{Adobe Song Std}
+%中文字体fontsize放大,kl+
+%\defaultCJKfontfeatures{Scale=1.2}
 ''',
     # Latex figure (float) alignment
     #
