@@ -145,7 +145,7 @@ latex_elements = {
     #
     'preamble': r'''
 %中文字体fontsize放大,kl+
-%\defaultCJKfontfeatures{Scale=2}
+%\defaultCJKfontfeatures{Scale=1.2}
 \usepackage{enumitem}
 \setlistdepth{99}
 ''',
