@@ -133,9 +133,9 @@ latex_elements = {
 \setlistdepth{99}
 ''',
     'fontpkg': r'''
-\setCJKmainfont{FZWeiBei-S03}
+\setCJKmainfont{Adobe Song Std}
 %中文字体fontsize放大，kl+
-\defaultCJKfontfeatures{Scale=1.5}
+%\defaultCJKfontfeatures{Scale=1.5}
 ''',
     # Latex figure (float) alignment
     #
