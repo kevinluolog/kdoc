@@ -440,6 +440,207 @@ latex_show_urls
 
 `让pandoc输出pdf时支持中文 <https://www.cnblogs.com/liuyangnuts/archive/2013/04/23/3038354.html>`__
 
+`Calibre 常用命令行工具详解之 ebook-convert <https://bookfere.com/post/642.html>`__
+
+`Calibre 常用命令行工具详解之 calibre-smtp <https://bookfere.com/post/646.html>`__
+
+`Calibre 常用命令行工具详解之 ebook-meta <https://bookfere.com/post/605.html#em>`__
+
+`《Calibre 使用教程之抓取网站页面制成电子书》 <https://bookfere.com/post/562.html>`__
+
+`Calibre 官方帮助页面-ebook-convert <https://manual.calibre-ebook.com/generated/en/ebook-convert.html>`__
+
+`南怀瑾-老子他说 <http://www.quanxue.cn/ct_nanhuaijin/LaoZiIndex.html>`__
+
+`南怀瑾-历史的经验 <http://www.quanxue.cn/ct_nanhuaijin/LiShiIndex.html>`__
+
+
+`劝学网-南怀瑾全集 <http://www.quanxue.cn/ct_nanhuaijin/index.html>`__
+
+`南怀瑾-论语别裁 <http://www.quanxue.cn/ct_nanhuaijin/LunYuIndex.html>`__
+
+`论语 <http://www.quanxue.cn/CT_RuJia/LunYuIndex.html>`__
+
+`青风乘翼分享的百度网盘资源 <http://www.rufengso.net/u/bd-2050031688>`__
+
+`如风搜：历史上最伟大的10个方程（美）Robert P.Crease.pdf <http://www.rufengso.net/r/42241052>`__
+
+`电子书下载: 周读 ireadweek.com <http://www.ireadweek.com/>`__
+
+`bash逐行读取文件内容 <https://blog.csdn.net/u011774239/article/details/51033960>`__
+
+`bash 文本读写 并 按照规则输出到新文件中 <https://www.jianshu.com/p/4acc22cd04f3>`__
+
+`shell比较两个字符串是否相等 <https://www.cnblogs.com/wangkongming/p/4221503.html>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
+` <>`__
+
 ` <>`__
 
 ` <>`__
