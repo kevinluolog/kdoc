@@ -461,6 +461,20 @@ latex_show_urls
 
 `论语 <http://www.quanxue.cn/CT_RuJia/LunYuIndex.html>`__
 
+
+`《楞严经》经文 <http://www.quanxue.cn/CT_FoJia/LengYanIndex.html>`__
+
+`南怀瑾-《楞严大义今释》 <http://www.quanxue.cn/ct_nanhuaijin/LengYanIndex.html>`__
+
+`南怀瑾-《金刚经说什么》 <http://www.quanxue.cn/ct_nanhuaijin/JinGangIndex.html>`__
+
+`《金刚经》经文 <http://www.quanxue.cn/CT_FoJia/JinGangIndex.html>`__
+
+`《金刚经》(原文) <http://www.quanxue.cn/CT_FoJia/JinGang/JinGang35.html>`__
+
+` <>`__
+
+
 `青风乘翼分享的百度网盘资源 <http://www.rufengso.net/u/bd-2050031688>`__
 
 `如风搜：历史上最伟大的10个方程（美）Robert P.Crease.pdf <http://www.rufengso.net/r/42241052>`__
