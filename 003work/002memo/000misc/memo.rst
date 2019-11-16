@@ -487,29 +487,29 @@ latex_show_urls
 
 `shell比较两个字符串是否相等 <https://www.cnblogs.com/wangkongming/p/4221503.html>`__
 
-` <>`__
+`有很多linux脚本使用：如何在Hexo中对文章md文件分类 <http://www.manongjc.com/article/30849.html>`__
 
-` <>`__
+`英语系列｜读完这100本英文名著，成为英语牛人（四） <https://www.jianshu.com/p/ee1a77357889>`__
 
-` <>`__
+`GrimmsFairyTales <http://www.gutenberg.org/files/2591/2591-h/2591-h.htm>`__
 
-` <>`__
+`A Little Princess <http://www.gutenberg.org/files/146/146-h/146-h.htm>`__
 
-` <>`__
+`古登堡计划，全球最著名的免费电子书网站——Project Gutenberg offers over 42 000 free ebooks <www.gutenberg.org>`__
 
-` <>`__
+`很多书 <www.manybooks.net>`__
 
-` <>`__
+` <www.feedbooks.com>`__
 
-` <>`__
+`原版英语论坛，国内网友自由分享海量热门畅销书 <http://bbs.en8848.com.cn/forum.php>`__
 
-` <>`__
+`掌上书苑，EPUB格式 <www.cnepub.com/catalogs.html>`__
 
-` <>`__
+`The Secret Garden by Frances Hodgson Burnett <http://www.gutenberg.org/files/113/113-h/113-h.htm>`__
 
-` <>`__
+`Little Lord Fauntleroy by Frances Hodgson Burnett <http://www.gutenberg.org/files/479/479-h/479-h.htm>`__
 
-` <>`__
+`The Adventures of Pinocchio by Carlo Collodi <http://www.gutenberg.org/ebooks/500>`__
 
 ` <>`__
 
