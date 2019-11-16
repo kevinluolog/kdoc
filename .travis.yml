@@ -178,8 +178,8 @@ script:
 # 因hexo和jekyll不要处理此类目录，会导致引用不到，所以在根目录要添加.nojekyll文件, 详细请参考 hexo.rst `怎么解决githubpages不能识别下划线开头的目录？`_
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-post/.nojekyll
 
-#3.1.3 .rst转换成 格式.pdf 003book sphinx
-#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-book
+#3.1.3 .rst转换成 格式.pdf 004book sphinx
+#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-book
 
 
 #3.书籍book文章： kdoc/003work/004book
@@ -354,10 +354,10 @@ script:
   - cp -f -rt ./source/_posts/kl_post $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post
 
 # 004book
-  - rm -r ./source/_posts/kl_book/003book
-# copy 003book 目录+文件 2 source/_posts/kl_notes
+  - rm -r ./source/_posts/kl_book/004book
+# copy 004book 目录+文件 2 source/_posts/kl_notes
   - mkdir -p ./source/_posts/kl_book
-  - cp -f -rt ./source/_posts/kl_book $TRAVIS_BUILD_DIR/output/pandoc/hexomd/003book
+  - cp -f -rt ./source/_posts/kl_book $TRAVIS_BUILD_DIR/output/pandoc/hexomd/004book
 
 
   - touch .nojekyll
