@@ -1955,7 +1955,7 @@ with delight.
 
 "It ain't nothin' but flannin, an' the flannin ain't new; but I wanted
 to give yer somethin' an' I made it of nights. I knew yer could PRETEND
-it was satin with diamond pins in. _I_ tried to when I was makin' it.
+it was satin with diamond pins in. I tried to when I was makin' it.
 The card, miss," rather doubtfully; "'t warn't wrong of me to pick it
 up out o' the dust-bin, was it?  Miss 'Meliar had throwed it away.  I
 hadn't no card o' my own, an' I knowed it wouldn't be a proper presink
@@ -5286,7 +5286,7 @@ What SHALL I do?"
 Sara stopped turning over the leaves and looked at her with an excited
 flush on her cheeks.
 
-"Look here," she cried, "if you'll lend me these books, _I'll_ read
+"Look here," she cried, "if you'll lend me these books, I'll read
 them--and tell you everything that's in them afterward--and I'll tell
 it so that you will remember it, too."
 
@@ -5315,7 +5315,7 @@ telling lies," she said.  "And lies--well, you see, they are not only
 wicked--they're VULGAR. Sometimes"--reflectively--"I've thought perhaps
 I might do something wicked--I might suddenly fly into a rage and kill
 Miss Minchin, you know, when she was ill-treating me--but I COULDN'T be
-vulgar.  Why can't you tell your father _I_ read them?"
+vulgar.  Why can't you tell your father I read them?"
 
 "He wants me to read them," said Ermengarde, a little discouraged by
 this unexpected turn of affairs.

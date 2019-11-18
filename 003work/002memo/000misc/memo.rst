@@ -511,15 +511,30 @@ latex_show_urls
 
 `The Adventures of Pinocchio by Carlo Collodi <http://www.gutenberg.org/ebooks/500>`__
 
-` <>`__
+`windows下修改文件创建时间 <https://blog.csdn.net/shinegogo/article/details/7506291?utm_source=blogxgwz4
+>`__
+
+使用windows的copy命令达到修改文件创建时间的目的,方法如下:
+1. 修改系统时间为你需要的修改到的目标时间;
+2. 运行命令:copy 文件名+,,(注意是连续两个英文逗号).
+done.
+
+`How to Change the Last Modified Date, Creation Date, and Last Accessed Date for Files and Folders
+ <https://www.online-tech-tips.com/computer-tips/how-to-change-the-last-modified-date-creation-date-and-last-accessed-date-for-files-and-folders/>`__
+
+`bulk_file_changer <http://www.nirsoft.net/utils/bulk_file_changer.html>`__
+
+`Linux sed 命令 <https://www.runoob.com/linux/linux-comm-sed.html>`__
 
 ` <>`__
 
-` <>`__
+#touch_time_$(1) := $$(shell tail -1 $$(TMP_TIME_FILE_$(1)))
+touch_time_$(1) := $$(shell tail -1 $$(TMP_TIME_FILE_$(1)) | sed 's/ .*:.*:.* / 08:08:08 /g')
 
-` <>`__
+#Guest@OEM-20090831LIJ MINGW32 /H/tmp_H/001.work/004.env/01prjsp/hexo/klBlog/source/_posts/kl_post/003post (hexo-maup)
+#$ git log --date=iso --format="%ad" -- "index.md" |tail -1 | sed 's/ .*:.*:.* / 08:08:08 /g'
+#2019-10-24 08:08:08 +0000
 
-` <>`__
 
 ` <>`__
 
