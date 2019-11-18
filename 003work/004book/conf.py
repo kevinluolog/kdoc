@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Hi post'
+project = '004book'
 copyright = '2019, kevinluo'
 author = 'kevinluo'
 
