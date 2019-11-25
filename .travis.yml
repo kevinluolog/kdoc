@@ -541,7 +541,8 @@ script:
 #  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-002memo -maxdepth 1 -type d | grep -E "doctrees|latex" | xargs rm -rfv 
 
 #2.2.3 .rst转换成 格式.pdf 003post sphinx
-  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post
+######  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post
+  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post
 #  find . -type f -name '*.pdf' -exec rm -rf {} \;
 #  (1) "." 表示从当前目录开始递归查找
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
@@ -557,7 +558,8 @@ script:
 #  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post -maxdepth 1 -type d | grep -E "doctrees|latex" | xargs rm -rfv 
 
 #3.2.3 .rst转换成 格式.pdf 004book sphinx
-  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
+######  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
+  - sphinx-build -b latexpdf $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
 #  find . -type f -name '*.pdf' -exec rm -rf {} \;
 #  (1) "." 表示从当前目录开始递归查找
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
