@@ -538,13 +538,14 @@ touch_time_$(1) := $$(shell tail -1 $$(TMP_TIME_FILE_$(1)) | sed 's/ .*:.*:.* / 
 
 `散策 VS 狩枫，游走在京都“立派”的秋色之中 <https://www.mafengwo.cn/i/17776687.html>`__
 
-` <>`__
+`《用金融科技赋能银行资管转型》 <http://www.sohu.com/a/283730483_211428>`__
 
-` <>`__
+`shell 判断文件夹或文件是否存在 <https://www.cnblogs.com/37yan/p/6962563.html>`__
 
-` <>`__
+`
+linux shell 脚本基本用法 <https://blog.csdn.net/weixin_44792344/article/details/88807391>`__
 
-` <>`__
+`【Linux】shell脚本参数传递 <https://www.cnblogs.com/jxd283465/p/11611146.html>`__
 
 ` <>`__
 

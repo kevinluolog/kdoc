@@ -1223,6 +1223,14 @@ https://github.com/settings/tokens
    
    - 增加 .travis.yml
      
+     直接git法
+     
+     ::
+        - git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git
+
+     hexo deploy法，用sed修改hexo _config.yml 中的deploy命令
+
+
      注意，如果源码是在分支上要修改branches为相应的分支名，缺省是master:
 
      ::
@@ -1267,8 +1275,12 @@ https://github.com/settings/tokens
           - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
           - hexo deploy
         # End: Build LifeCycle
-
-
+        
+        _config.yml中的代码如下：
+        deploy:
+        type: git
+        repo: https://gh_token@github.com/kevinluolog/        kevinluolog.github.io.git  
+        branch: master  
 
    - 修改 _config.yml
      

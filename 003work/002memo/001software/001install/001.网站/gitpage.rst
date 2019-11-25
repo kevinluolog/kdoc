@@ -19,13 +19,25 @@ kevinluolog/kdoc.git push触发
 触发仓/输出仓关系
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-+-------------+-----------+--------------------------+
-| 触发仓@分支 | 源仓@分支 | 输出仓@分支              |
-+=============+===========+==========================+
-| kdoc@dev    | kdoc@dev  | travisci_out_kdoc@dev    |
-+-------------+-----------+--------------------------+
-| kdoc@dev    | kdoc@dev  | hexo-klblog-src@x5个分支 |
-+-------------+-----------+--------------------------+
++-----------------+--------------------+-------------------------------+
+| 触发仓@分支     | 源仓@分支          | 输出仓@分支                   |
++=================+====================+===============================+
+| kdoc@dev        | kdoc@dev           | travisci_out_kdoc@output      |
++-----------------+--------------------+-------------------------------+
+| kdoc@dev        | kdoc@dev           | hexo-klblog-src@x5个分支      |
++-----------------+--------------------+-------------------------------+
+| kdoc@dev        | tran002memo@master | travisci_out_kdoc@tran002memo |
++-----------------+--------------------+-------------------------------+
+| kdoc@dev        | tran003post@master | travisci_out_kdoc@tran003post |
++-----------------+--------------------+-------------------------------+
+| kdoc@dev        | tran004book@master | travisci_out_kdoc@tran004book |
++-----------------+--------------------+-------------------------------+
+| tran005work@xxx | ~                  | travisci_out_005work@xxx      |
++-----------------+--------------------+-------------------------------+
+| tran006tmp@xxx  | ~ pdf html slide   | travisci_out_006tmp@xxx       |
++-----------------+--------------------+-------------------------------+
+
+xxx表示：dev=all pdf=pdf html=html slide=slide 
 
 完成功能：
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,7 +51,7 @@ kevinluolog/kdoc.git push触发
 
   ::
 
-    sphinx-build -b html $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/build-post
+    sphinx-build -b html $TRAVIS_BUILD_DIR/003work/006tmp $TRAVIS_BUILD_DIR/output/sphinx/build-post
 
   ::
 
@@ -58,7 +70,7 @@ kevinluolog/kdoc.git push触发
 
      输出到=>repo0: `github.com/kevinluolog/travisci_out_kdoc@dev`
      002memo=>deploy到WWWrepo3: `github.com/kevinluolog/gp-memo@gh-pages`
-     003post=>deploy到WWWrepo4: `github.com/kevinluolog/gp-post@gh-pages`
+     006tmp=>deploy到WWWrepo4: `github.com/kevinluolog/gp-post@gh-pages`
 
 
 kdoc发布 网站地址：
@@ -77,15 +89,15 @@ kdoc发布 网站地址：
 
   ::
 
-    make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+ CTL_TOC=TRUE
+    make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/006tmp DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/hexomd/006tmp DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.md DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=post+ CTL_TOC=TRUE
     
-    make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/003post DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/003post DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
+    make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/006tmp DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/html/006tmp DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.html DIR_TEMPLATE=$T_DIR_TEMPLATE ADD_HEXO_TAG_FROM_DIR=
 
 
   ::
 
      .md输出到本地output目录： `/output/pandoc/hexomd/002memo/*` 
-     .md输出到本地output目录： `/output/pandoc/hexomd/003post/*` 
+     .md输出到本地output目录： `/output/pandoc/hexomd/006tmp/*` 
 
 - 用git deploy： 
 
@@ -99,7 +111,7 @@ kdoc发布 网站地址：
 
      输出到=>repo1: `github.com/kevinluolog/travisci_out_kdoc@dev`
      002memo=>deploy到repo2-(@b1:b5): `hexo-klblog-src/source/_posts/kl_notes/   002memo@xxx`
-     003post=>deploy到repo2-(@b1-b5): `hexo-klblog-src/source/_posts/kl_notes/   002memo@xxx`
+     006tmp=>deploy到repo2-(@b1-b5): `hexo-klblog-src/source/_posts/kl_notes/   002memo@xxx`
      xxx:分支 = 
           master
           hexo-next-Gemini :注意大写，linux下大小写敏感
@@ -123,9 +135,9 @@ kdoc发布 网站地址：
    .md hexo：由Makefile 产生, pandoc.exe
    makefile位于/kdoc/003work/000tools/002makefiles/001pandoc/linux/
    /output/pandoc/hexomd/002memo
-   /output/pandoc/hexomd/003post
+   /output/pandoc/hexomd/006tmp
    
-hexo源码仓库中的_posts来源，是上面output目录中的pandoc/hexomd目录中的002memo和003post. 先clone下来，用rm删除002meo和003post,再用cp从hexomd中copy过来。
+hexo源码仓库中的_posts来源，是上面output目录中的pandoc/hexomd目录中的002memo和006tmp. 先clone下来，用rm删除002meo和006tmp,再用cp从hexomd中copy过来。
 
 
 kevinluolog/hexo-klblog-src.git push触发
@@ -266,7 +278,7 @@ hexo-klblog-src发布 网站地址：
    ::
 
      H:\\tmp_H\\001.work\\002git\\kdoc\\003work\\002memo
-     H:\\tmp_H\\001.work\\002git\\kdoc\\003work\\003post
+     H:\\tmp_H\\001.work\\002git\\kdoc\\003work\\006tmp
      =>
      H:\\tmp_H\\001.work\\004.env\\01prjsp\\hexo\\klBlog\\source\\_posts\\kl_notes
      H:\\tmp_H\\001.work\\004.env\\01prjsp\\hexo\\klBlog\\source\\_posts\\kl_post
@@ -298,13 +310,13 @@ hexo-klblog-src发布 网站地址：
 
 1. 写文档。
    
-   【在clone下来的kdoc@dev子目录中(003work/002memo/* 003work/003post/*)】
+   【在clone下来的kdoc@dev子目录中(003work/002memo/* 003work/006tmp/*)】
 
 3. 提交推送。
    
    【git add . ; git commit -m "" ; git push】
 
-5. 触发kdoc@dev/travis.yml工作，编译/002memo /003post/*文档内容。
+5. 触发kdoc@dev/travis.yml工作，编译/002memo /006tmp/*文档内容。
 
    详细参考  `kevinluolog/kdoc.git push触发`_
 

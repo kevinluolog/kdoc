@@ -492,7 +492,7 @@ script:
   - echo here,kl+1
   - pandoc --version
 #  - pandoc --help
-  - xelatex --version
+#  - xelatex --version
 
 #  - xelatex --help
 ######  - make startconv -f $TRAVIS_BUILD_DIR/003work/000tools/002makefiles/001pandoc/linux/Makefile DIR_BASE_SRC=$TRAVIS_BUILD_DIR/003work/002memo DIR_BASE_OBJ=$TRAVIS_BUILD_DIR/output/pandoc/pdf/002memo DIR_BASE_COPYTO= SUFFIX_FROM=.rst SUFFIX_TO=.pdf DIR_TEMPLATE=$T_DIR_TEMPLATE
