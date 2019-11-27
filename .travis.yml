@@ -549,7 +549,7 @@ script:
 #  (3) " -type f "查找的类型为文件
 #  (4) -exec rm -rf {} \; 执行命令，别忘记最后的 \;有空格的。
 #  *.pdf移动到根目录
-  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post {} \;
+######  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post {} \;
 #  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post/doctrees
 #  -type d：表示目录， -maxdepth 1 表示只找一级，必须放在-type之前，grep -E:表示扩展正则， "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
 # rm doctrees目录
