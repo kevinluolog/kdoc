@@ -181,7 +181,7 @@ script:
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-003post/.nojekyll
 
 #2.1.3 .rst转换成 格式.pdf 003post sphinx
-  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post
+#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/003post $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-003post
 
 
 #3.书籍004book文章： kdoc/003work/004book
@@ -219,7 +219,7 @@ script:
   - touch $TRAVIS_BUILD_DIR/output/sphinx/html/build-004book/.nojekyll
 
 #3.1.3 .rst转换成 格式.pdf 004book sphinx
-  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
+#  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
 
 
 #  - cp index.html ./output/
@@ -559,14 +559,14 @@ script:
 
 #3.2.3 .rst转换成 格式.pdf 004book sphinx
 ######  - sphinx-build -M latexpdf $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
-  - sphinx-build -b latexpdf $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
+  - sphinx-build -b latex $TRAVIS_BUILD_DIR/003work/004book $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book
 #  find . -type f -name '*.pdf' -exec rm -rf {} \;
 #  (1) "." 表示从当前目录开始递归查找
 #  (2) “ -name '*.pdf' "根据名称来查找，要查找所有以.exe结尾的文件夹或者文件
 #  (3) " -type f "查找的类型为文件
 #  (4) -exec rm -rf {} \; 执行命令，别忘记最后的 \;有空格的。
 #  *.pdf移动到根目录
-  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book {} \;
+######  - find $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book/latex -type f -name '*.pdf' -exec mv -t $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book {} \;
 #  - rmdir $TRAVIS_BUILD_DIR/output/sphinx/pdf/build-004book/doctrees
 #  -type d：表示目录， -maxdepth 1 表示只找一级，必须放在-type之前，grep -E:表示扩展正则， "doctrees|latex":表示正则这两个整体名字， xargs 表示依次作为参数送入后面命令
 # rm doctrees目录
