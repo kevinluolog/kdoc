@@ -171,15 +171,17 @@ reStructuredText Improved
 Headings and terms (from definition lists) are available as symbols, so
 you can use CTRL-R to jump to them.
 
-Restructured Text (RST) Snippets
---------------------------------
+Restructured Text (RST) Snippets rst-completion
+-------------------------------------------------------------
 
-装完后preferences-package setting中的名字为，sumlime-rst-completion
+装完后preferences-package setting中的名字为，sublime-rst-completion
 
 `Restructured Text (RST)
 Snippets <https://packagecontrol.io/\003work\002memo\001software\001install/Restructured%20Text%20(RST)%20Snippets>`__
 
 -  用法链接
+
+   - `packagecontrol.io/packages/Restructured Text (RST) Snippets <https://packagecontrol.io/packages/Restructured%20Text%20(RST)%20Snippets>`_ 
 
    -  `本地README <H:\tmp_H\001.work\002git\000study\000misc\sublime-rst-completion\README.rst>`__
 
@@ -856,3 +858,23 @@ equation.he Lorenz Equations
 
 inline an example of a LaTeX
 :math:`\sqrt{3x-1}+(1+x)^2`
+
+
+sublime 使用TIPS
+=====================================================================
+
+sublime 本身的使用
+---------------------------------------------------------------------
+
+开启Project文件视图，文件检索，文件搜索
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. 开启project侧边栏 ：Project -> Add Forder to Project
+2. 找文件： Ctrl + P 查找文件
+3. 找函数： Ctrl + P  @操作符(可以是变量名或函数名)
+4. 模糊匹配： 文件#搜索的变量
+5. 定位到行：:行数
+
+sublime 插件： insert nums的使用
+---------------------------------------------------------------------
+

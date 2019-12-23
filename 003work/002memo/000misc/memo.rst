@@ -626,27 +626,42 @@ http://www.ask.com/
 
 `reveal.js: markdown grammar <https://github.com/hakimel/reveal.js#markdown>`__
 
-` <>`__
+`使用pandoc制作幻灯片 <https://www.cnblogs.com/wybert/p/11523311.html>`__
 
-` <>`__
+包含在使用pandoc转化pptx的时候表格和图片会单独的出现在一页ppt里面的解决方案链接
 
-` <>`__
+`利用Markdown和Pandoc制作PPT（七）Pandoc的命令行参数 <https://zhuanlan.zhihu.com/p/35719599>`__
 
-` <>`__
+`利用Beamer做slides时让enumerate内容跨越2个frame显示 <https://blog.csdn.net/RobertChenGuangzhi/article/details/79467438>`__
 
-` <>`__
+`适合程序员的画图技法 <https://blog.csdn.net/younger_z/article/details/70227948>`__
 
-` <>`__
+`程序员的绘图利器 — Graphviz <https://blog.csdn.net/zhangskd/article/details/8250470>`__
 
-` <>`__
+案例全面
 
-` <>`__
+`程序员画图工具总结 <https://blog.csdn.net/judyjie/article/details/84454560>`__
 
-` <>`__
+1. visio：用的很多。做这个行业的码农，都知道吧。
+2. wps：用的多。用过电脑的民工，都知道吧。
+3. 亿图：很强大，功能丰富。就是要付费。想免费试用，你知道的。
+4. Astah Community：Astah Community是一个非常强大的免费的UML建图工具，支持最新的UML图。地址：http://astah.net/tutorial#new-to-astah。
+5. Graphviz：代码生成图像。AT&T实验室启动的开源工具包。DOT是一种图形描述语言，非常简单的
+6. Processon：在线流程图。专注于为作图人员提供价值，利用互联网和社交技术颠覆了人们梳理流程的方法习惯，继而使商业用户获得比传统模式更高的效率和回报，改善人们对流程图的创作过程。地址：https://www.processon.com
+7. XMind：思维脑图。要付费，要免费试用，你知道怎么做的。
+8. draw.io ：在线流程图。图形颜色很漂亮。
+9. OmniGraffle：OmniGraffle是由The Omni Group制作的一款绘图软件，其只能于运行在Mac OS X和iPad平台之上。
 
-` <>`__
 
-` <>`__
+`drawio-desktop/releases <https://github.com/jgraph/drawio-desktop/releases/tag/v12.3.2>`__
+
+`一键搭建drawio <https://blog.csdn.net/weixin_34056162/article/details/91468523?locationNum=7&fps=1>`__
+
+`使用drawio进行画图真的很方便(WEB版/Chrome APP版/桌面版) <https://blog.csdn.net/dog250/article/details/89272808>`__
+
+`代替Visio第三波，并且是开源的哦：le5le-topology <http://topology.le5le.com/>`__
+
+`代替Visio第三波详细介绍： <https://juejin.im/post/5d6c88726fb9a06b0e54ab35>`__
 
 ` <>`__
 
@@ -962,3 +977,33 @@ https://www.zhihu.com/question/21328313
 Bloomberg采访了很多华尔街金融机构的高管，制作了一系列自动化交易图。红色方框底部的黑色文字是在交易过程中使用的人工智能技术，包括机器学习(ML)、自然语言处理(NLP) 、机器人过程自动化(PRA) 、预测分析(PA)。
 
 
+干脆把图片导入到CDR中再描不是好一点吗？如果图比较简单的话，还可以用CDR的描幕位图功能来做，自动生成矢量图。
+
+
+建议到nocang<http://www.nocang.com/office2016/>下载office2016/visio2016，注意区分32位和64位。
+1.建议用KMSAuto Pro Net 2015 1.3.8激活工具直接激活，关闭杀毒软件和防火墙，运行后自动激活office/visio/project2010/13/16/win7/8/8.1/10系列系统。
+2.电话或密钥激活比较费时间，软件激活方法已经很常见了，成功率也高，没必要用电话或密钥激活。该工具可以自动将零售版转换为VOL版。只要不卸载相关服务，是自动续期永久激活的。
+https://zhidao.baidu.com/question/1244597580843857739.html
+
+https://www.nocang.com/vs2019zhuanyeban/   
+vs2019专业版激活序列号密钥，无需任何破解工作即可免费长久使用，需要的朋友赶紧下载使用吧。vs2019专业版激活序列号密钥：NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y。
+
+https://www.nocang.com/microsoft-visio-2016/
+Microsoft Visio 2016官方简体中文32位+64位破解版下载（含序列号密钥）
+
+https://www.nocang.com/office-2016-rtm/
+office2016
+
+https://www.nocang.com/office2016/
+Office2016/Project2016/Visio2016官方32位+64位大客户版下载(含激活工具)
+kl+:上面这个网址最全
+
+http://www.visiocafe.com
+visio 模具
+
+https://www.cnblogs.com/zhqian/p/9406520.html
+office 2016 官方原版 （含Visio Project 等全套 ）下载地址 （不含破解，非网盘下载）不用登录
+https://www.cnblogs.com/zhqian/p/9406520.html
+
+http://www.zdfans.com/html/27514.html
+techsmith camstasia
