@@ -171,7 +171,7 @@ reStructuredText Improved
 Headings and terms (from definition lists) are available as symbols, so
 you can use CTRL-R to jump to them.
 
-Restructured Text (RST) Snippets rst-completion
+Restructured Text (RST) Snippets rst-completion 用法
 ---------------------------------------------------------------------
 
 装完后preferences-package setting中的名字为，sublime-rst-completion
@@ -886,4 +886,29 @@ sublime 本身的使用
 
 sublime 插件： insert nums的使用
 ---------------------------------------------------------------------
+
+build System 新建或修改build System
+---------------------------------------------------------------------
+
+配置自己的build-system，在命令行中运行python
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`配置自己的build-system，在命令行中运行python <https://blog.csdn.net/hey_melody/article/details/94438969>`__ 
+
+在【工具】–【编译系统】–【新编译系统】或者你的 `Sublime\Data\Packages\User路径下新建一个Python_cmd.sublime-build` 
+
+更改已有的build system（debian jessie）
+
+`sublime text 3更改已有的build system（debian jessie） <https://blog.csdn.net/rootie321/article/details/44894361>`__
+
+sublime怎么修改之前写过的编译系统配置
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`sublime怎么修改之前写过的编译系统配置 <https://blog.csdn.net/a19990412/article/details/82659266>`_  
+
+工具 -> 编译系统 -> 新建编译系统, 佯作保存，找到目录。然后编辑原先的BUILD system 文件，用编辑器修改。
+
+::
+
+   E:\programfiles\portable\Sublime3207portable\Data\Packages\User
 

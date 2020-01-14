@@ -588,3 +588,18 @@ md2slide
 
      ![image](H:\\tmp_H\\001.work\\002git\\000GT\\001work\\resource\\image\\layoff.jpeg)
 
+rst2pdf colorlinks
+---------------------------------------------------------------------
+
+- pdf目录颜色是黑色的，改不了蓝色
+  
+  发现问题在metadata.yaml中，colorlinks没有定义，需要定义成TRUE or FALSE,可以在default.latex中找到代码。
+
+  ::
+  
+     #请参见default.latex中的逻辑
+     #如果colorlinks是TRUE,则表示有link颜色，否则没有
+     #有的情况下由klbordercolorlink定义与否决定是否linkborder有颜色。如果测定义     才轮到colorlinks来定义文字颜色。
+     colorlinks: TRUE
+     toccolor: blue
+     #klbordercolorlink: blue
