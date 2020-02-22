@@ -628,6 +628,7 @@ http://www.ask.com/
 
 `reveal.js: markdown grammar <https://github.com/hakimel/reveal.js#markdown>`__
 
+<<<<<<< HEAD
 `git-svn — 让git和svn协同工作 <https://blog.csdn.net/weixin_30484739/article/details/95816525>`__
 
 投资相关
@@ -650,6 +651,44 @@ ETL是将业务系统的数据经过抽取、清洗转换之后加载到数据�
 　　ETL的实现有多种方法，常用的有三种。一种是借助ETL工具(如Oracle的OWB、SQL Server 2000的DTS、SQL Server2005的SSIS服务、Informatic等)实现，一种是SQL方式实现，另外一种是ETL工具和SQL相结合。前两种方法各有各的优缺点，借助工具可以快速的建立起ETL工程，屏蔽了复杂的编码任务，提高了速度，降低了难度，但是缺少灵活性。SQL的方法优点是灵活，提高ETL运行效率，但是编码复杂，对技术要求比较高。第三种是综合了前面二种的优点，会极大地提高ETL的开发速度和效率。
 
 `阿里架构总监一次讲透中台架构，13页PPT精华详解 <http://www.sohu.com/a/331776003_692515>`__
+=======
+`使用pandoc制作幻灯片 <https://www.cnblogs.com/wybert/p/11523311.html>`__
+
+包含在使用pandoc转化pptx的时候表格和图片会单独的出现在一页ppt里面的解决方案链接
+
+`利用Markdown和Pandoc制作PPT（七）Pandoc的命令行参数 <https://zhuanlan.zhihu.com/p/35719599>`__
+
+`利用Beamer做slides时让enumerate内容跨越2个frame显示 <https://blog.csdn.net/RobertChenGuangzhi/article/details/79467438>`__
+
+`适合程序员的画图技法 <https://blog.csdn.net/younger_z/article/details/70227948>`__
+
+`程序员的绘图利器 — Graphviz <https://blog.csdn.net/zhangskd/article/details/8250470>`__
+
+案例全面
+
+`程序员画图工具总结 <https://blog.csdn.net/judyjie/article/details/84454560>`__
+
+1. visio：用的很多。做这个行业的码农，都知道吧。
+2. wps：用的多。用过电脑的民工，都知道吧。
+3. 亿图：很强大，功能丰富。就是要付费。想免费试用，你知道的。
+4. Astah Community：Astah Community是一个非常强大的免费的UML建图工具，支持最新的UML图。地址：http://astah.net/tutorial#new-to-astah。
+5. Graphviz：代码生成图像。AT&T实验室启动的开源工具包。DOT是一种图形描述语言，非常简单的
+6. Processon：在线流程图。专注于为作图人员提供价值，利用互联网和社交技术颠覆了人们梳理流程的方法习惯，继而使商业用户获得比传统模式更高的效率和回报，改善人们对流程图的创作过程。地址：https://www.processon.com
+7. XMind：思维脑图。要付费，要免费试用，你知道怎么做的。
+8. draw.io ：在线流程图。图形颜色很漂亮。
+9. OmniGraffle：OmniGraffle是由The Omni Group制作的一款绘图软件，其只能于运行在Mac OS X和iPad平台之上。
+
+
+`drawio-desktop/releases <https://github.com/jgraph/drawio-desktop/releases/tag/v12.3.2>`__
+
+`一键搭建drawio <https://blog.csdn.net/weixin_34056162/article/details/91468523?locationNum=7&fps=1>`__
+
+`使用drawio进行画图真的很方便(WEB版/Chrome APP版/桌面版) <https://blog.csdn.net/dog250/article/details/89272808>`__
+
+`代替Visio第三波，并且是开源的哦：le5le-topology <http://topology.le5le.com/>`__
+
+`代替Visio第三波详细介绍： <https://juejin.im/post/5d6c88726fb9a06b0e54ab35>`__
+>>>>>>> 54d7771b54c748ee1d33ed10f51f07f48a33a2e0
 
 `李广乾ppt：数据中台促进“互联网＋”产业创新 <https://www.jianshu.com/p/6edcdc98c33a>`__
 
@@ -1174,6 +1213,39 @@ david-mavell  未发  20200116  称不在mavell,没有继续谈
 3. cloudera
 
 
+<<<<<<< HEAD
 4. qualcomm
    
    https://www.qualcomm.cn/company/careers
+=======
+干脆把图片导入到CDR中再描不是好一点吗？如果图比较简单的话，还可以用CDR的描幕位图功能来做，自动生成矢量图。
+
+
+建议到nocang<http://www.nocang.com/office2016/>下载office2016/visio2016，注意区分32位和64位。
+1.建议用KMSAuto Pro Net 2015 1.3.8激活工具直接激活，关闭杀毒软件和防火墙，运行后自动激活office/visio/project2010/13/16/win7/8/8.1/10系列系统。
+2.电话或密钥激活比较费时间，软件激活方法已经很常见了，成功率也高，没必要用电话或密钥激活。该工具可以自动将零售版转换为VOL版。只要不卸载相关服务，是自动续期永久激活的。
+https://zhidao.baidu.com/question/1244597580843857739.html
+
+https://www.nocang.com/vs2019zhuanyeban/   
+vs2019专业版激活序列号密钥，无需任何破解工作即可免费长久使用，需要的朋友赶紧下载使用吧。vs2019专业版激活序列号密钥：NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y。
+
+https://www.nocang.com/microsoft-visio-2016/
+Microsoft Visio 2016官方简体中文32位+64位破解版下载（含序列号密钥）
+
+https://www.nocang.com/office-2016-rtm/
+office2016
+
+https://www.nocang.com/office2016/
+Office2016/Project2016/Visio2016官方32位+64位大客户版下载(含激活工具)
+kl+:上面这个网址最全
+
+http://www.visiocafe.com
+visio 模具
+
+https://www.cnblogs.com/zhqian/p/9406520.html
+office 2016 官方原版 （含Visio Project 等全套 ）下载地址 （不含破解，非网盘下载）不用登录
+https://www.cnblogs.com/zhqian/p/9406520.html
+
+http://www.zdfans.com/html/27514.html
+techsmith camstasia
+>>>>>>> 54d7771b54c748ee1d33ed10f51f07f48a33a2e0

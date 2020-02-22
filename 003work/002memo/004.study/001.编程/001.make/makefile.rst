@@ -6,6 +6,8 @@ makefiles
 .. section-numbering::
 
 
+`make之makefile 九 隐含规则 <https://blog.csdn.net/u013896064/article/details/83040906>`__
+
 案例
 ========
 
@@ -343,3 +345,27 @@ next
 
 next
 ----
+
+
+用法技巧
+=====================================================================
+
+Multiple Targets in a Rule 多目标写在一行
+---------------------------------------------------------------------
+
+相同依赖和生成方式的目标可以写在一起。 生成方式也不用一定一样的，可以用自动化变量加处理函数来处理。
+详见说明文档。
+
+::
+
+   bigoutput littleoutput : text.g
+     generate text.g -$(subst output,,$@) > $@
+
+is equivalent to:
+
+::
+
+   bigoutput : text.g
+      generate text.g -big > bigoutput
+   littleoutput : text.g
+      generate text.g -little > littleoutput

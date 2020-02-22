@@ -583,9 +583,30 @@ md2slide
   
   html形式的slide可以正反斜杠都可以,因最后输出到html标识中了，相对路径也可。
   beamer形式的pdf slide中需要双反斜杠全路径(windows下)，相对路径不行。
+<<<<<<< HEAD
   同时beamer引用文件时，文件名最好不用中文。有时会引用不到
+=======
+>>>>>>> 54d7771b54c748ee1d33ed10f51f07f48a33a2e0
 
   ::
 
      ![image](H:\\tmp_H\\001.work\\002git\\000GT\\001work\\resource\\image\\layoff.jpeg)
 
+<<<<<<< HEAD
+=======
+rst2pdf colorlinks
+---------------------------------------------------------------------
+
+- pdf目录颜色是黑色的，改不了蓝色
+  
+  发现问题在metadata.yaml中，colorlinks没有定义，需要定义成TRUE or FALSE,可以在default.latex中找到代码。
+
+  ::
+  
+     #请参见default.latex中的逻辑
+     #如果colorlinks是TRUE,则表示有link颜色，否则没有
+     #有的情况下由klbordercolorlink定义与否决定是否linkborder有颜色。如果测定义     才轮到colorlinks来定义文字颜色。
+     colorlinks: TRUE
+     toccolor: blue
+     #klbordercolorlink: blue
+>>>>>>> 54d7771b54c748ee1d33ed10f51f07f48a33a2e0
