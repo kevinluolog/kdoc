@@ -5,6 +5,57 @@ Little Tools
 .. contents:: contents
 .. section-numbering::
 
+
+工具应用汇总
+================
+
+文件比较
+---------------------
+
+1. winmerge
+
+文件解压缩
+---------------------
+
+1. Bandizip
+2. 7z
+3. unzip/zip
+4. 
+
+
+MISC
+---------------------
+
+1. iconv
+2. 
+
+winmerge
+================
+
+1. explorer右键菜单安装
+
+2. 设置
+
+   a) file filter: tools->filter->,filefilters(指文件名), linfilters(是指文件内容)。 include/exclude 语境是"include或exclude-全部文件除xxx以外"
+   b) tree浏览/Tabular: view->treemode, 一般是灰的，要valid需要在打开界面folder filter下面勾上：include subfolders. 这样tree可选。
+   c) 启用单侧目录内容展开，另一侧没目录时不会展开:edit->option->compare->folder->,单侧子文件夹内容;子文件夹
+   d) 启用比较简单模式，仅用时间和大小。edit->option->compare->folder->,compare method。
+      
+3. 案例
+
+   a) 带目录拷贝/移动。
+   
+
+      0. tabular模式查看
+      1. 选中要拷贝的文件，拷贝/移动这些文件，自然目录就创建了。如果是tree模式也可以，但是如果拷贝tree的话会把所有tree下的文件拷贝/移动的。
+   
+   b) 
+
+
+
+---------------------
+
+
 iconv 编码转换
 ================
 
