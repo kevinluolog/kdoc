@@ -123,13 +123,13 @@ TOC render Preview支持
 OmniMarkupPreviewer中支持LaTeX公式显示：
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-1.设置。
+1. 设置。
 
 ::
 
    公式的渲染使用了MathJax库，所以需要在OmniMarkupPreviewer的设置中，将"mathjax_enabled"设置为“true”。之后MathJax会在后端自动下载。
 
-2.可能是网速的原因，MathJax库下载很慢，所以可以选择手动安装。
+2. 可能是网速的原因，MathJax库下载很慢，所以可以选择手动安装。
 
 ::
 
@@ -141,6 +141,18 @@ OmniMarkupPreviewer中支持LaTeX公式显示：
        This expression 
        $\sqrt{3x-1}+(1+x)^2$ is an example of a $\LaTeX$ inline equation.he Lorenz Equations:
        $$\begin{aligned}\dot{x} & = \sigma(y-x) \\\dot{y} & = \rho x - y - xz \\\dot{z} & = -\beta z + xy\end{aligned}$$
+
+3. 使用参考网址
+   
+   - `用MathJax插入数学公式 <https://www.jianshu.com/p/4d38b0bee395>`_ 
+
+     * `LaTex 完整教程 <http://www.forkosh.com/mathtextutorial.html>`_ 
+     * `MathJax 支持的数学符号表 <http://mirrors.ctan.org/info/symbols/math/maths-symbols.pdf>`_ 
+     * `在线 Markdown MathJax 编辑器 <https://kerzol.github.io/markdown-mathjax/editor.html>`_ 
+
+   1. 行间公式:使用 $$ 来作为公式的左右边界;
+   2. 行内公式:使用 $ 号作为公式的左右边界;
+
 
 在Sublime Text 3中使用命令：
 
