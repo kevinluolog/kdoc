@@ -125,8 +125,7 @@ unzip
 用法 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-批处理：
-  
+* 批处理：
   ::
 
    set EXT_DIR="H:\tmp\downloads\chrome\周读readweek\000\pdf\xx"
@@ -136,6 +135,12 @@ unzip
    unzip -j *.zip -d %EXT_DIR%
 
 注意： 需要加入执行路径，如果直接打入路径引用unzip会提示出错。
+
+* 写过的工具：
+  ::
+
+    git@github.com:kevinluolog/000mytools.git
+    002pandoc/(git:kevinluolog)000mytools/002bat/001unzip-auto-alldir.bat
 
 7z.exe 
 ---------------------------------------------------------------------
