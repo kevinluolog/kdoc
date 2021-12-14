@@ -232,6 +232,10 @@ Snippets <https://packagecontrol.io/\003work\002memo\001software\001install/Rest
 
 -usage snippets
 
+Simple snippets work as tab-triggered shortcuts: type the shortcut and press ``<TAB>`` to
+replace it with the snippet. If the snippet has placeholders, you can jump between them
+using tab.
+
 =========== =========================== ========================
 shortcut    result                      key binding
 =========== =========================== ========================

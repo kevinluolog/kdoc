@@ -8,6 +8,61 @@ python
 install
 =======
 
+需要学习的东西
+--------------------
+
+大类：
+
+1. install environment
+2. module install and distribution
+3. language reference
+4. library reference
+5. tutorials
+
+小类：
+
+1. class 
+2. file. open, with open 
+
+安装过程
+--------------------
+
+python3 python2 共存安装
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. 下载安装包
+2. 分别安装
+3. 加入path, 修改python.exe 成python3.exe python2.exe; pythonw.exe同样修改
+4. 更新各自pip, python3 -m pip install --upgrade pip --force-reinstall, python3用pip3
+5. 建立虚拟环境，virtualenv -p python3 --no-download .\\std3 ，加上--no-download可以避免pypi.org 连接不上的报错。这样也可以安装pip，setuptools等。
+6. 激活退出虚拟环境，进入scription, activate激活，本质是设置最前的路径和相关工作目录
+7. 虚拟环境中安装包，pip install flask==0.10.1
+8. 查看虚拟环境中安装的包，pip freeze，pip list
+9. 在Pycharm中设置虚拟环境，在每个项目属性中选择
+10. 主要目录，Scripts：命令执行文件， site-packages：安装模块
+
+包安装工具
+--------------------
+
+`pip setuptools easy_install <https://blog.csdn.net/u010458170/article/details/46438763?utm_medium=distribute.pc_relevant_download.none-task-blog-blogcommendfrombaidu-1.nonecase&depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-blogcommendfrombaidu-1.nonecas>`_ 
+
+setuptools->distribute->pip
+
+easy_install .tgz .egg 均可安装
+
+pip 可以利用 requirments.txt 来实现在依赖的安装。
+
+Eggs格式是setuptools引入的一种文件格式，用于 Python 模块的安装。setuptools 可以识别这种格式。并解析它，安装它。
+wheel本质上是一个zip包格式，用于python编译过的模块的安装，较快，它的出现是为了替代Eggs。
+pip也可以直接安装wheel包。
+
+常用命令
+--------------------
+
+1. pip3, --help 查看用法
+2. virtualenv
+3. 
+
 主要相关工具和包为：
 --------------------
 
@@ -126,6 +181,10 @@ website
 
    https://www.python.org
 
+- help
+  
+  `docs.python.org <https://docs.python.org>`_ 
+
 -  package get:
 
 | PYPI/PYPA python package
@@ -138,3 +197,61 @@ website
 
 package
 =======
+
+mp3
+--------------------
+
+eye3D
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`eye3D help <https://eyed3.readthedocs.io/en/latest/>`_ 
+
+:: 
+
+pip3 install python-magic-bin :(Windows dep)
+pip3 install eyeD3
+pip3 install eyeD3[display-plugin]
+
+
+Development Dependencies(for development work)
+
+::
+
+  pip install -r requirements/test.txt $ pip install -r requirements/dev.txt
+
+- 从包安装：
+
+::
+
+  tar xzf eyeD3-X.Y.Z.tar.gz
+  cd eyeD3-X.Y.Z
+  This may require root access
+  python setup.py install
+
+
+安装总结
+
+::
+
+  pip install eyeD3
+  pip install python-magic-bin==0.4.
+  不执行这一句会报错的。eyeD3环境因为他整了好久。
+
+下面给网上安装问题
+
+::
+
+  pip install msgp
+  #不安装会报错distributed 1.21.8 requires msgpack, which is install
+  pip install python-magic-bin==0.4
+  #不安装，在import eyed3时会报错ImportError: failed to find libmagChecyour installat
+  pip install ey
+  实际安装3个包eyeD3-0.8.7 pathlib-1.0.1 python-magic-0.4
+  版权声明：本文为CSDN博主「优绎」的原创文章，遵循Cby-sa版权协议，转载请附上原文出处链接及本声明。
+  原文链接：https://blog.csdn.net/YeoYi/article/details/80880639
+
+使用命令行
+::
+
+  eyeD3 --encoding utf16-be --add-lyric ch01.rst ch01.mp3
+  eyeD3 --remove-all-lyric ch01.mp3

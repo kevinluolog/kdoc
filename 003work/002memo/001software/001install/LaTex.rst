@@ -54,6 +54,109 @@ memo of latex
  h8 
  ###
 
+学习资料
+=====================================================================
+
+LaTeX 
+---------------------------------------------------------------------
+
+Help
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`begin.html <http://tug.org/begin.html>`_ 
+Introduction to the TEX system, including LATEX, with further references.
+
+`latex2e.pdf <http://>`_ 
+
+`lshort.pdf <http://ctan.org/pkg/lshort>`_ 
+
+
+**further reference in latex2e.pdf** 
+
+- http://ctan.org/pkg/latex-doc-ptr
+  Two pages of recommended references to L
+  A T E X documentation.
+
+- http://ctan.org/pkg/first-latex-doc
+  Writing your first document, with a bit of both text and math.
+
+- http://ctan.org/pkg/usrguide
+  The guide for document authors that is maintained as part of L
+  A T E X. Many
+  other guides by many other people are also available, independent of L
+  A T E X
+  itself; one such is the next item:
+
+- http://ctan.org/pkg/lshort
+  A short introduction to L
+  A T E X, translated to many languages.
+
+- http://tug.org/begin.html
+  Introduction to the T E X system, including L
+  A T E X, with further references
+
+Online (La)TeX documentation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`begin.html <http://tug.org/begin.html>`_ 
+
+Here is just a little of the principal TeX documentation available on
+the web. A `more complete list of documentation
+links </interest.html#doc>`__ is available.
+
+**LaTeX** (`CTAN topic <https://ctan.org/topic/latex-doc>`__):
+
+-  `LearnLaTeX.org <https://learnlatex.org/>`__, focused lessons on
+   learning LaTeX, with online execution of examples.
+-  `A First LaTeX Document <https://ctan.org/pkg/first-latex-doc>`__
+   takes you through writing a small document with text and math for the
+   first time. Then `A First Set of LaTeX
+   Resources <https://ctan.org/pkg/latex-doc-ptr>`__ recommends packages
+   for common tasks (both documents by Jim Hefferon).
+-  `Getting Started with
+   LaTeX <http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/>`__, a primer
+   for text, math, and basic formatting (by David Wilkins).
+-  `Online LaTeX tutorials <http://www.andy-roberts.net/misc/latex/>`__,
+   a graduated series (by Andy Roberts).
+-  `The Not So Short Introduction to
+   LaTeX2e <https://ctan.org/pkg/lshort>`__ is a more comprehensive
+   manual on writing LaTeX (by Tobias Oetiker et al., translated into
+   many languages).
+-  `LaTeX Cheat Sheet <http://www.stdout.org/~winston/latex/>`__, a
+   two-page quick reference (by Winston Chang).
+
+**Plain TeX** (`more on plain TeX </interest.html#plain>`__): `TeX by
+Topic <http://www.eijkhout.net/tbt/>`__, by Victor Eijkhout.
+
+**Fonts:** a discussion of the `fonts available for use with
+TeX </fonts/>`__ is available separately.
+
+**General help:** `see below <#help>`__; first place to look is the
+`FAQ <http://www.tex.ac.uk/faq>`__.
+
+
+main reference files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- usrguide.pdf/usrguide3.pdf: (https://ctan.org/pkg/latex-doc) class and package
+- lualatex-doc.pdf: ``F:\F_ProgramFiles\portable\tex\texlive\2019\texmf-dist\doc\lualatex\lualatex-doc\``
+- luatex.pdf: ``F:\F_ProgramFiles\portable\tex\texlive\2019\texmf-dist\doc\luatex\base`` tex.sprintf(10 The TEX related libraries)
+- TeX by Topic.pdf： 同下
+- The TeXbook.pdf： ``H:\tmp\downloads\000周读\000tmp\00other\01latex\007texbook\kevinluolog-TeXBooks-master\TeXBooks``
+-  LATEX a Document Preparation System 2nd.pdf： ``H:\tmp\downloads\000周读\000tmp\00other\01latex``
+-  Mittlebach.The.LaTex.Companion.2ed.en..pdf: 同上
+
+
+pgf TikZ
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+context
+---------------------------------------------------------------------
+
+luatex
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 安装方法
 ========
 
